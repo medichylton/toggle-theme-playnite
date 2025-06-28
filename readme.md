@@ -56,3 +56,7 @@ Technically you can do whatever you want but the them looks and functions best w
 
 - ExtraMetadataLoader
 - Now Playing
+
+## Setting up filter names
+
+Filters need to have one of the names mentioned in [this document](./filter-icons.md) to function.
