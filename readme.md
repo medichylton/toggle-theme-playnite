@@ -6,8 +6,6 @@
 
 ![](screenshots/home-2.png)
 
-Based on your details, here's a description for your Toggle Playnite theme:
-
 **Toggle is a Handheld-First Playnite Theme** inspired by modern portable gaming aesthetics and brings sleek, Nintendo Switch 2-inspired design to your handheld PC. This theme prioritizes performance and usability on lower-powered devices while maintaining a polished, minimal appearance.
 
 ## Features
