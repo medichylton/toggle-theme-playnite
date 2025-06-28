@@ -1,0 +1,1148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DEFEF902-318F-4568-AEDB-4F681A2D1D9A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Theme</RootNamespace>
+    <AssemblyName>Theme</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Playnite">
+      <HintPath>..\..\..\Playnite.dll</HintPath>
+    </Reference>
+    <Reference Include="Playnite.SDK">
+      <HintPath>..\..\..\Playnite.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Playnite.FullscreenApp">
+      <HintPath>..\..\..\Playnite.FullscreenApp.exe</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WPF">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HtmlRenderer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PhotoSauce.MagicScaler">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PhotoSauce.MagicScaler.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fonts\icofont.ttf" />
+    <None Include="Fonts\PlayStation4.ttf" />
+    <None Include="Fonts\TitilliumWeb-Black.ttf" />
+    <None Include="Fonts\TitilliumWeb-Bold.ttf" />
+    <None Include="Fonts\TitilliumWeb-BoldItalic.ttf" />
+    <None Include="Fonts\TitilliumWeb-ExtraLight.ttf" />
+    <None Include="Fonts\TitilliumWeb-ExtraLightItalic.ttf" />
+    <None Include="Fonts\TitilliumWeb-Italic.ttf" />
+    <None Include="Fonts\TitilliumWeb-Light.ttf" />
+    <None Include="Fonts\TitilliumWeb-LightItalic.ttf" />
+    <None Include="Fonts\TitilliumWeb-Regular.ttf" />
+    <None Include="Fonts\TitilliumWeb-SemiBold.ttf" />
+    <None Include="Fonts\TitilliumWeb-SemiBoldItalic.ttf" />
+    <None Include="Fonts\XBOXONE.ttf" />
+    <None Include="theme.yaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="audio\activation.wav" />
+    <Content Include="audio\background.mp3" />
+    <Content Include="audio\navigation.wav" />
+    <Content Include="DescriptionView.html" />
+    <Content Include="Icons\AgeRating\PEGI 12.png" />
+    <Content Include="Icons\AgeRating\PEGI 16.png" />
+    <Content Include="Icons\AgeRating\PEGI 18.png" />
+    <Content Include="Icons\AgeRating\PEGI 3.png" />
+    <Content Include="Icons\AgeRating\PEGI 7.png" />
+    <Content Include="Icons\Filter\Active\All 2.png" />
+    <Content Include="Icons\Filter\Active\All Games.png" />
+    <Content Include="Icons\Filter\Active\All.png" />
+    <Content Include="Icons\Filter\Active\Amazon Prime Gaming.png" />
+    <Content Include="Icons\Filter\Active\Amazon.png" />
+    <Content Include="Icons\Filter\Active\Apps.png" />
+    <Content Include="Icons\Filter\Active\Battle.Net.png" />
+    <Content Include="Icons\Filter\Active\Bethesda.png" />
+    <Content Include="Icons\Filter\Active\Bookmark.png" />
+    <Content Include="Icons\Filter\Active\Commodore Amiga.png" />
+    <Content Include="Icons\Filter\Active\Controller Enabled.png" />
+    <Content Include="Icons\Filter\Active\Controller Support.png" />
+    <Content Include="Icons\Filter\Active\Couch Gaming.png" />
+    <Content Include="Icons\Filter\Active\Critically Acclaimed.png" />
+    <Content Include="Icons\Filter\Active\Demos.png" />
+    <Content Include="Icons\Filter\Active\EA app.png" />
+    <Content Include="Icons\Filter\Active\EA Play.png" />
+    <Content Include="Icons\Filter\Active\EAplay.png" />
+    <Content Include="Icons\Filter\Active\Epic Games Store.png" />
+    <Content Include="Icons\Filter\Active\Epic Games.png" />
+    <Content Include="Icons\Filter\Active\Epic.png" />
+    <Content Include="Icons\Filter\Active\Fanatical.png" />
+    <Content Include="Icons\Filter\Active\Favoriten.png" />
+    <Content Include="Icons\Filter\Active\Favorites 2.png" />
+    <Content Include="Icons\Filter\Active\Favorites.png" />
+    <Content Include="Icons\Filter\Active\Friends.png" />
+    <Content Include="Icons\Filter\Active\Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Active\Game Boy Color.png" />
+    <Content Include="Icons\Filter\Active\Game Boy Colour.png" />
+    <Content Include="Icons\Filter\Active\Game Boy.png" />
+    <Content Include="Icons\Filter\Active\Gameboy Colour.png" />
+    <Content Include="Icons\Filter\Active\Gameboy.png" />
+    <Content Include="Icons\Filter\Active\Gamecube.png" />
+    <Content Include="Icons\Filter\Active\Gba.png" />
+    <Content Include="Icons\Filter\Active\Gbc.png" />
+    <Content Include="Icons\Filter\Active\Geforce Now.png" />
+    <Content Include="Icons\Filter\Active\Gog Galaxy.png" />
+    <Content Include="Icons\Filter\Active\Gog.png" />
+    <Content Include="Icons\Filter\Active\Happy Halloween.png" />
+    <Content Include="Icons\Filter\Active\Humble.png" />
+    <Content Include="Icons\Filter\Active\Installed.png" />
+    <Content Include="Icons\Filter\Active\Itch.Io.png" />
+    <Content Include="Icons\Filter\Active\Legacy Games.png" />
+    <Content Include="Icons\Filter\Active\Library 1.png" />
+    <Content Include="Icons\Filter\Active\Library.png" />
+    <Content Include="Icons\Filter\Active\Media.png" />
+    <Content Include="Icons\Filter\Active\Most Played.png" />
+    <Content Include="Icons\Filter\Active\My Library.png" />
+    <Content Include="Icons\Filter\Active\My List.png" />
+    <Content Include="Icons\Filter\Active\N3ds.png" />
+    <Content Include="Icons\Filter\Active\N64.png" />
+    <Content Include="Icons\Filter\Active\Nds.png" />
+    <Content Include="Icons\Filter\Active\Neo Geo.png" />
+    <Content Include="Icons\Filter\Active\Nes.png" />
+    <Content Include="Icons\Filter\Active\New Releases.png" />
+    <Content Include="Icons\Filter\Active\New.png" />
+    <Content Include="Icons\Filter\Active\New2.png" />
+    <Content Include="Icons\Filter\Active\Nintendo 3ds.png" />
+    <Content Include="Icons\Filter\Active\Nintendo 64.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Ds.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Game Boy Color.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Game Boy.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Gamecube.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Switch.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Wii U.png" />
+    <Content Include="Icons\Filter\Active\Nintendo Wii.png" />
+    <Content Include="Icons\Filter\Active\Not Installed.png" />
+    <Content Include="Icons\Filter\Active\Nvidia Geforce Now.png" />
+    <Content Include="Icons\Filter\Active\Nvidia.png" />
+    <Content Include="Icons\Filter\Active\Origin.png" />
+    <Content Include="Icons\Filter\Active\PC %28Windows%29.png" />
+    <Content Include="Icons\Filter\Active\Pc-Games.png" />
+    <Content Include="Icons\Filter\Active\Pc.png" />
+    <Content Include="Icons\Filter\Active\Play.png" />
+    <Content Include="Icons\Filter\Active\Playnite.png" />
+    <Content Include="Icons\Filter\Active\Playstation 2.png" />
+    <Content Include="Icons\Filter\Active\Playstation 3.png" />
+    <Content Include="Icons\Filter\Active\Playstation 4.png" />
+    <Content Include="Icons\Filter\Active\Playstation 5.png" />
+    <Content Include="Icons\Filter\Active\Playstation Portable.png" />
+    <Content Include="Icons\Filter\Active\Prime Gaming.png" />
+    <Content Include="Icons\Filter\Active\Ps1.png" />
+    <Content Include="Icons\Filter\Active\Ps2.png" />
+    <Content Include="Icons\Filter\Active\Ps3.png" />
+    <Content Include="Icons\Filter\Active\Ps4.png" />
+    <Content Include="Icons\Filter\Active\Ps5.png" />
+    <Content Include="Icons\Filter\Active\Psp.png" />
+    <Content Include="Icons\Filter\Active\Recently Added.png" />
+    <Content Include="Icons\Filter\Active\Recently Played.png" />
+    <Content Include="Icons\Filter\Active\Riot.png" />
+    <Content Include="Icons\Filter\Active\Rockstar Games.png" />
+    <Content Include="Icons\Filter\Active\Sega Dreamcast.png" />
+    <Content Include="Icons\Filter\Active\Sega Genesis.png" />
+    <Content Include="Icons\Filter\Active\Sega Master System.png" />
+    <Content Include="Icons\Filter\Active\Sega Megadrive.png" />
+    <Content Include="Icons\Filter\Active\Sega Saturn.png" />
+    <Content Include="Icons\Filter\Active\Snes.png" />
+    <Content Include="Icons\Filter\Active\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation 2.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation 3.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation 4.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation 5.png" />
+    <Content Include="Icons\Filter\Active\Sony Playstation.png" />
+    <Content Include="Icons\Filter\Active\Steam Deck.png" />
+    <Content Include="Icons\Filter\Active\Steam.png" />
+    <Content Include="Icons\Filter\Active\Super Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Active\Switch.png" />
+    <Content Include="Icons\Filter\Active\Todo.png" />
+    <Content Include="Icons\Filter\Active\Top Rated.png" />
+    <Content Include="Icons\Filter\Active\Trending Now.png" />
+    <Content Include="Icons\Filter\Active\Ubisoft Connect.png" />
+    <Content Include="Icons\Filter\Active\Up Next.png" />
+    <Content Include="Icons\Filter\Active\Vrgames.png" />
+    <Content Include="Icons\Filter\Active\Wii U.png" />
+    <Content Include="Icons\Filter\Active\Wii.png" />
+    <Content Include="Icons\Filter\Active\Windows.png" />
+    <Content Include="Icons\Filter\Active\Xbox 360.png" />
+    <Content Include="Icons\Filter\Active\Xbox Cloud Gaming.png" />
+    <Content Include="Icons\Filter\Active\Xbox One.png" />
+    <Content Include="Icons\Filter\Active\Xbox.png" />
+    <Content Include="Icons\Filter\Active\Xcloud.png" />
+    <Content Include="Icons\Filter\All 2.png" />
+    <Content Include="Icons\Filter\All Games.png" />
+    <Content Include="Icons\Filter\All.png" />
+    <Content Include="Icons\Filter\Amazon Prime Gaming.png" />
+    <Content Include="Icons\Filter\Amazon.png" />
+    <Content Include="Icons\Filter\Apps.png" />
+    <Content Include="Icons\Filter\Battle.Net.png" />
+    <Content Include="Icons\Filter\Bethesda.png" />
+    <Content Include="Icons\Filter\Bookmark.png" />
+    <Content Include="Icons\Filter\Commodore Amiga.png" />
+    <Content Include="Icons\Filter\Controller Enabled.png" />
+    <Content Include="Icons\Filter\Controller Support.png" />
+    <Content Include="Icons\Filter\Couch Gaming.png" />
+    <Content Include="Icons\Filter\Critically Acclaimed.png" />
+    <Content Include="Icons\Filter\Default\All 2.png" />
+    <Content Include="Icons\Filter\Default\All Games.png" />
+    <Content Include="Icons\Filter\Default\All.png" />
+    <Content Include="Icons\Filter\Default\Amazon Prime Gaming.png" />
+    <Content Include="Icons\Filter\Default\Amazon.png" />
+    <Content Include="Icons\Filter\Default\Apps.png" />
+    <Content Include="Icons\Filter\Default\Battle.Net.png" />
+    <Content Include="Icons\Filter\Default\Bethesda.png" />
+    <Content Include="Icons\Filter\Default\Bookmark.png" />
+    <Content Include="Icons\Filter\Default\Commodore Amiga.png" />
+    <Content Include="Icons\Filter\Default\Controller Enabled.png" />
+    <Content Include="Icons\Filter\Default\Controller Support.png" />
+    <Content Include="Icons\Filter\Default\Couch Gaming.png" />
+    <Content Include="Icons\Filter\Default\Critically Acclaimed.png" />
+    <Content Include="Icons\Filter\Default\Demos.png" />
+    <Content Include="Icons\Filter\Default\EA app.png" />
+    <Content Include="Icons\Filter\Default\EA Play.png" />
+    <Content Include="Icons\Filter\Default\EAplay.png" />
+    <Content Include="Icons\Filter\Default\Epic Games Store.png" />
+    <Content Include="Icons\Filter\Default\Epic Games.png" />
+    <Content Include="Icons\Filter\Default\Epic.png" />
+    <Content Include="Icons\Filter\Default\Fanatical.png" />
+    <Content Include="Icons\Filter\Default\Favoriten.png" />
+    <Content Include="Icons\Filter\Default\Favorites 2.png" />
+    <Content Include="Icons\Filter\Default\Favorites.png" />
+    <Content Include="Icons\Filter\Default\Friends.png" />
+    <Content Include="Icons\Filter\Default\Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Default\Game Boy Color.png" />
+    <Content Include="Icons\Filter\Default\Game Boy Colour.png" />
+    <Content Include="Icons\Filter\Default\Game Boy.png" />
+    <Content Include="Icons\Filter\Default\Gameboy Colour.png" />
+    <Content Include="Icons\Filter\Default\Gameboy.png" />
+    <Content Include="Icons\Filter\Default\Gamecube.png" />
+    <Content Include="Icons\Filter\Default\Gba.png" />
+    <Content Include="Icons\Filter\Default\Gbc.png" />
+    <Content Include="Icons\Filter\Default\Geforce Now.png" />
+    <Content Include="Icons\Filter\Default\Gog Galaxy.png" />
+    <Content Include="Icons\Filter\Default\Gog.png" />
+    <Content Include="Icons\Filter\Default\Happy Halloween.png" />
+    <Content Include="Icons\Filter\Default\Humble.png" />
+    <Content Include="Icons\Filter\Default\Installed.png" />
+    <Content Include="Icons\Filter\Default\Itch.Io.png" />
+    <Content Include="Icons\Filter\Default\Legacy Games.png" />
+    <Content Include="Icons\Filter\Default\Library 1.png" />
+    <Content Include="Icons\Filter\Default\Library.png" />
+    <Content Include="Icons\Filter\Default\Media.png" />
+    <Content Include="Icons\Filter\Default\Most Played.png" />
+    <Content Include="Icons\Filter\Default\My Library.png" />
+    <Content Include="Icons\Filter\Default\My List.png" />
+    <Content Include="Icons\Filter\Default\N3ds.png" />
+    <Content Include="Icons\Filter\Default\N64.png" />
+    <Content Include="Icons\Filter\Default\Nds.png" />
+    <Content Include="Icons\Filter\Default\Neo Geo.png" />
+    <Content Include="Icons\Filter\Default\Nes.png" />
+    <Content Include="Icons\Filter\Default\New Releases.png" />
+    <Content Include="Icons\Filter\Default\New.png" />
+    <Content Include="Icons\Filter\Default\New2.png" />
+    <Content Include="Icons\Filter\Default\Nintendo 3ds.png" />
+    <Content Include="Icons\Filter\Default\Nintendo 64.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Ds.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Game Boy Color.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Game Boy.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Gamecube.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Switch.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Wii U.png" />
+    <Content Include="Icons\Filter\Default\Nintendo Wii.png" />
+    <Content Include="Icons\Filter\Default\Not Installed.png" />
+    <Content Include="Icons\Filter\Default\Nvidia Geforce Now.png" />
+    <Content Include="Icons\Filter\Default\Nvidia.png" />
+    <Content Include="Icons\Filter\Default\Origin.png" />
+    <Content Include="Icons\Filter\Default\PC %28Windows%29.png" />
+    <Content Include="Icons\Filter\Default\Pc-Games.png" />
+    <Content Include="Icons\Filter\Default\Pc.png" />
+    <Content Include="Icons\Filter\Default\Play.png" />
+    <Content Include="Icons\Filter\Default\Playnite.png" />
+    <Content Include="Icons\Filter\Default\Playstation 2.png" />
+    <Content Include="Icons\Filter\Default\Playstation 3.png" />
+    <Content Include="Icons\Filter\Default\Playstation 4.png" />
+    <Content Include="Icons\Filter\Default\Playstation 5.png" />
+    <Content Include="Icons\Filter\Default\Playstation Portable.png" />
+    <Content Include="Icons\Filter\Default\Prime Gaming.png" />
+    <Content Include="Icons\Filter\Default\Ps1.png" />
+    <Content Include="Icons\Filter\Default\Ps2.png" />
+    <Content Include="Icons\Filter\Default\Ps3.png" />
+    <Content Include="Icons\Filter\Default\Ps4.png" />
+    <Content Include="Icons\Filter\Default\Ps5.png" />
+    <Content Include="Icons\Filter\Default\Psp.png" />
+    <Content Include="Icons\Filter\Default\Recently Added.png" />
+    <Content Include="Icons\Filter\Default\Recently Played.png" />
+    <Content Include="Icons\Filter\Default\Riot.png" />
+    <Content Include="Icons\Filter\Default\Rockstar Games.png" />
+    <Content Include="Icons\Filter\Default\Sega Dreamcast.png" />
+    <Content Include="Icons\Filter\Default\Sega Genesis.png" />
+    <Content Include="Icons\Filter\Default\Sega Master System.png" />
+    <Content Include="Icons\Filter\Default\Sega Megadrive.png" />
+    <Content Include="Icons\Filter\Default\Sega Saturn.png" />
+    <Content Include="Icons\Filter\Default\Snes.png" />
+    <Content Include="Icons\Filter\Default\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation 2.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation 3.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation 4.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation 5.png" />
+    <Content Include="Icons\Filter\Default\Sony Playstation.png" />
+    <Content Include="Icons\Filter\Default\Steam Deck.png" />
+    <Content Include="Icons\Filter\Default\Steam.png" />
+    <Content Include="Icons\Filter\Default\Super Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Default\Switch.png" />
+    <Content Include="Icons\Filter\Default\Todo.png" />
+    <Content Include="Icons\Filter\Default\Top Rated.png" />
+    <Content Include="Icons\Filter\Default\Trending Now.png" />
+    <Content Include="Icons\Filter\Default\Ubisoft Connect.png" />
+    <Content Include="Icons\Filter\Default\Up Next.png" />
+    <Content Include="Icons\Filter\Default\Vrgames.png" />
+    <Content Include="Icons\Filter\Default\Wii U.png" />
+    <Content Include="Icons\Filter\Default\Wii.png" />
+    <Content Include="Icons\Filter\Default\Windows.png" />
+    <Content Include="Icons\Filter\Default\Xbox 360.png" />
+    <Content Include="Icons\Filter\Default\Xbox Cloud Gaming.png" />
+    <Content Include="Icons\Filter\Default\Xbox One.png" />
+    <Content Include="Icons\Filter\Default\Xbox.png" />
+    <Content Include="Icons\Filter\Default\Xcloud.png" />
+    <Content Include="Icons\Filter\Demos.png" />
+    <Content Include="Icons\Filter\EA app.png" />
+    <Content Include="Icons\Filter\EA Play.png" />
+    <Content Include="Icons\Filter\EAplay.png" />
+    <Content Include="Icons\Filter\Epic Games Store %282%29.png" />
+    <Content Include="Icons\Filter\Epic Games Store.png" />
+    <Content Include="Icons\Filter\Epic Games.png" />
+    <Content Include="Icons\Filter\Epic.png" />
+    <Content Include="Icons\Filter\Fanatical.png" />
+    <Content Include="Icons\Filter\Favoriten.png" />
+    <Content Include="Icons\Filter\Favorites 2.png" />
+    <Content Include="Icons\Filter\Favorites.png" />
+    <Content Include="Icons\Filter\Friends.png" />
+    <Content Include="Icons\Filter\Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Game Boy Color.png" />
+    <Content Include="Icons\Filter\Game Boy Colour.png" />
+    <Content Include="Icons\Filter\Game Boy.png" />
+    <Content Include="Icons\Filter\Gameboy Colour.png" />
+    <Content Include="Icons\Filter\Gameboy.png" />
+    <Content Include="Icons\Filter\Gamecube.png" />
+    <Content Include="Icons\Filter\Gba.png" />
+    <Content Include="Icons\Filter\Gbc.png" />
+    <Content Include="Icons\Filter\Geforce Now.png" />
+    <Content Include="Icons\Filter\Gog Galaxy.png" />
+    <Content Include="Icons\Filter\Gog.png" />
+    <Content Include="Icons\Filter\Happy Halloween.png" />
+    <Content Include="Icons\Filter\Humble.png" />
+    <Content Include="Icons\Filter\Installed.png" />
+    <Content Include="Icons\Filter\Itch.Io.png" />
+    <Content Include="Icons\Filter\Legacy Games.png" />
+    <Content Include="Icons\Filter\Library 1.png" />
+    <Content Include="Icons\Filter\Library.png" />
+    <Content Include="Icons\Filter\Media.png" />
+    <Content Include="Icons\Filter\Most Played.png" />
+    <Content Include="Icons\Filter\My Library.png" />
+    <Content Include="Icons\Filter\My List.png" />
+    <Content Include="Icons\Filter\N3ds.png" />
+    <Content Include="Icons\Filter\N64.png" />
+    <Content Include="Icons\Filter\Nds.png" />
+    <Content Include="Icons\Filter\Neo Geo.png" />
+    <Content Include="Icons\Filter\Neo•Geo.png" />
+    <Content Include="Icons\Filter\Nes.png" />
+    <Content Include="Icons\Filter\New Releases %282%29.png" />
+    <Content Include="Icons\Filter\New Releases.png" />
+    <Content Include="Icons\Filter\New.png" />
+    <Content Include="Icons\Filter\New2.png" />
+    <Content Include="Icons\Filter\Nintendo 3ds.png" />
+    <Content Include="Icons\Filter\Nintendo 64.png" />
+    <Content Include="Icons\Filter\Nintendo Ds.png" />
+    <Content Include="Icons\Filter\Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Nintendo Game Boy Advance.png" />
+    <Content Include="Icons\Filter\Nintendo Game Boy Color.png" />
+    <Content Include="Icons\Filter\Nintendo Game Boy.png" />
+    <Content Include="Icons\Filter\Nintendo Gamecube.png" />
+    <Content Include="Icons\Filter\Nintendo Switch.png" />
+    <Content Include="Icons\Filter\Nintendo Wii U.png" />
+    <Content Include="Icons\Filter\Nintendo Wii.png" />
+    <Content Include="Icons\Filter\Not Installed.png" />
+    <Content Include="Icons\Filter\Nvidia Geforce Now.png" />
+    <Content Include="Icons\Filter\Nvidia.png" />
+    <Content Include="Icons\Filter\Origin.png" />
+    <Content Include="Icons\Filter\PC %28Windows%29.png" />
+    <Content Include="Icons\Filter\Pc-Games.png" />
+    <Content Include="Icons\Filter\Pc.png" />
+    <Content Include="Icons\Filter\Play.png" />
+    <Content Include="Icons\Filter\Playnite.png" />
+    <Content Include="Icons\Filter\Playstation 2.png" />
+    <Content Include="Icons\Filter\Playstation 3.png" />
+    <Content Include="Icons\Filter\Playstation 4.png" />
+    <Content Include="Icons\Filter\Playstation 5.png" />
+    <Content Include="Icons\Filter\Playstation Portable.png" />
+    <Content Include="Icons\Filter\Prime Gaming.png" />
+    <Content Include="Icons\Filter\Ps1.png" />
+    <Content Include="Icons\Filter\Ps2.png" />
+    <Content Include="Icons\Filter\Ps3.png" />
+    <Content Include="Icons\Filter\Ps4.png" />
+    <Content Include="Icons\Filter\Ps5.png" />
+    <Content Include="Icons\Filter\Psp.png" />
+    <Content Include="Icons\Filter\Recently Added 2.png" />
+    <Content Include="Icons\Filter\Recently Added.png" />
+    <Content Include="Icons\Filter\Recently Played.png" />
+    <Content Include="Icons\Filter\Riot.png" />
+    <Content Include="Icons\Filter\Rockstar Games.png" />
+    <Content Include="Icons\Filter\S Egadr EAmcast.png" />
+    <Content Include="Icons\Filter\S Egagenesis.png" />
+    <Content Include="Icons\Filter\S Egamega Drive.png" />
+    <Content Include="Icons\Filter\S Egasaturn.png" />
+    <Content Include="Icons\Filter\Sega Dreamcast.png" />
+    <Content Include="Icons\Filter\Sega Genesis.png" />
+    <Content Include="Icons\Filter\Sega Master System.png" />
+    <Content Include="Icons\Filter\Sega Megadrive.png" />
+    <Content Include="Icons\Filter\Sega Saturn.png" />
+    <Content Include="Icons\Filter\Snes.png" />
+    <Content Include="Icons\Filter\Sony Playsation Portable.png" />
+    <Content Include="Icons\Filter\Sony Playstation 2.png" />
+    <Content Include="Icons\Filter\Sony Playstation 3.png" />
+    <Content Include="Icons\Filter\Sony Playstation 4.png" />
+    <Content Include="Icons\Filter\Sony Playstation 5.png" />
+    <Content Include="Icons\Filter\Sony Playstation.png" />
+    <Content Include="Icons\Filter\Steam Deck.png" />
+    <Content Include="Icons\Filter\Steam.png" />
+    <Content Include="Icons\Filter\Super Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter\Switch.png" />
+    <Content Include="Icons\Filter\Todo.png" />
+    <Content Include="Icons\Filter\Top Rated.png" />
+    <Content Include="Icons\Filter\Trending Now.png" />
+    <Content Include="Icons\Filter\Ubisoft Connect.png" />
+    <Content Include="Icons\Filter\Up Next.png" />
+    <Content Include="Icons\Filter\Vrgames.png" />
+    <Content Include="Icons\Filter\Wii U.png" />
+    <Content Include="Icons\Filter\Wii.png" />
+    <Content Include="Icons\Filter\Windows.png" />
+    <Content Include="Icons\Filter\Xbox 360.png" />
+    <Content Include="Icons\Filter\Xbox Cloud Gaming.png" />
+    <Content Include="Icons\Filter\Xbox Gamepass.png" />
+    <Content Include="Icons\Filter\Xbox One.png" />
+    <Content Include="Icons\Filter\Xbox.png" />
+    <Content Include="Icons\Filter\Xcloud.png" />
+    <Content Include="Icons\Filter_White\3DO Interactive Multiplayer.png" />
+    <Content Include="Icons\Filter_White\Acorn Archimedes.png" />
+    <Content Include="Icons\Filter_White\Acorn Electron.png" />
+    <Content Include="Icons\Filter_White\All Games.png" />
+    <Content Include="Icons\Filter_White\American Laser Games.png" />
+    <Content Include="Icons\Filter_White\Amstrad CPC.png" />
+    <Content Include="Icons\Filter_White\Amstrad GX4000.png" />
+    <Content Include="Icons\Filter_White\Android.png" />
+    <Content Include="Icons\Filter_White\APF Imagination Machine.png" />
+    <Content Include="Icons\Filter_White\Apple II.png" />
+    <Content Include="Icons\Filter_White\Apple IIGS.png" />
+    <Content Include="Icons\Filter_White\Apple iOS.png" />
+    <Content Include="Icons\Filter_White\Apple Mac OS.png" />
+    <Content Include="Icons\Filter_White\Apple Pippin.png" />
+    <Content Include="Icons\Filter_White\Applied Technology MicroBee.png" />
+    <Content Include="Icons\Filter_White\Arcade Classics.png" />
+    <Content Include="Icons\Filter_White\Arcade.png" />
+    <Content Include="Icons\Filter_White\Atari 2600.png" />
+    <Content Include="Icons\Filter_White\Atari 400.png" />
+    <Content Include="Icons\Filter_White\Atari 5200.png" />
+    <Content Include="Icons\Filter_White\Atari 7800.png" />
+    <Content Include="Icons\Filter_White\Atari 800.png" />
+    <Content Include="Icons\Filter_White\Atari Classics.png" />
+    <Content Include="Icons\Filter_White\Atari Jaguar CD.png" />
+    <Content Include="Icons\Filter_White\Atari Jaguar.png" />
+    <Content Include="Icons\Filter_White\Atari Lynx.png" />
+    <Content Include="Icons\Filter_White\Atari ST.png" />
+    <Content Include="Icons\Filter_White\Atari XEGS.png" />
+    <Content Include="Icons\Filter_White\Atari.png" />
+    <Content Include="Icons\Filter_White\Bally Astrocade.png" />
+    <Content Include="Icons\Filter_White\Banpresto.png" />
+    <Content Include="Icons\Filter_White\Battle.net.png" />
+    <Content Include="Icons\Filter_White\BBC Microcomputer System.png" />
+    <Content Include="Icons\Filter_White\Bethesda.png" />
+    <Content Include="Icons\Filter_White\Camputers Lynx.png" />
+    <Content Include="Icons\Filter_White\Capcom Classics.png" />
+    <Content Include="Icons\Filter_White\Capcom Play System II.png" />
+    <Content Include="Icons\Filter_White\Capcom Play System III.png" />
+    <Content Include="Icons\Filter_White\Capcom Play System.png" />
+    <Content Include="Icons\Filter_White\Capcom.png" />
+    <Content Include="Icons\Filter_White\Casio Loopy.png" />
+    <Content Include="Icons\Filter_White\Casio PV-1000.png" />
+    <Content Include="Icons\Filter_White\Cave.png" />
+    <Content Include="Icons\Filter_White\Coleco ADAM.png" />
+    <Content Include="Icons\Filter_White\ColecoVision.png" />
+    <Content Include="Icons\Filter_White\Commodore 128.png" />
+    <Content Include="Icons\Filter_White\Commodore 16.png" />
+    <Content Include="Icons\Filter_White\Commodore 64.png" />
+    <Content Include="Icons\Filter_White\Commodore Amiga 1200.png" />
+    <Content Include="Icons\Filter_White\Commodore Amiga 500.png" />
+    <Content Include="Icons\Filter_White\Commodore Amiga CD32.png" />
+    <Content Include="Icons\Filter_White\Commodore Amiga.png" />
+    <Content Include="Icons\Filter_White\Commodore CDTV.png" />
+    <Content Include="Icons\Filter_White\Commodore Max.png" />
+    <Content Include="Icons\Filter_White\Commodore PET.png" />
+    <Content Include="Icons\Filter_White\Commodore Plus 4.png" />
+    <Content Include="Icons\Filter_White\Commodore VIC-20.png" />
+    <Content Include="Icons\Filter_White\Daphne.png" />
+    <Content Include="Icons\Filter_White\Data East Classics.png" />
+    <Content Include="Icons\Filter_White\Data East.png" />
+    <Content Include="Icons\Filter_White\Dragon 32 64.png" />
+    <Content Include="Icons\Filter_White\Duckstation.png" />
+    <Content Include="Icons\Filter_White\EA Play.png" />
+    <Content Include="Icons\Filter_White\Eighting.png" />
+    <Content Include="Icons\Filter_White\Emerson Arcadia 2001.png" />
+    <Content Include="Icons\Filter_White\Enterprise.png" />
+    <Content Include="Icons\Filter_White\Entex Adventure Vision.png" />
+    <Content Include="Icons\Filter_White\Epic.png" />
+    <Content Include="Icons\Filter_White\Epoch Cassette Vision.png" />
+    <Content Include="Icons\Filter_White\Epoch Super Cassette Vision.png" />
+    <Content Include="Icons\Filter_White\Fairchild Channel F.png" />
+    <Content Include="Icons\Filter_White\Fanatical.png" />
+    <Content Include="Icons\Filter_White\Favourites.png" />
+    <Content Include="Icons\Filter_White\Final Burn Alpha.png" />
+    <Content Include="Icons\Filter_White\Final Burn Neo.png" />
+    <Content Include="Icons\Filter_White\Fujitsu FM Towns Marty.png" />
+    <Content Include="Icons\Filter_White\Fujitsu FM Towns.png" />
+    <Content Include="Icons\Filter_White\Fujitsu FM-7.png" />
+    <Content Include="Icons\Filter_White\Funtech Super Acan.png" />
+    <Content Include="Icons\Filter_White\Gaelco.png" />
+    <Content Include="Icons\Filter_White\Gamate.png" />
+    <Content Include="Icons\Filter_White\Game Boy Advance.png" />
+    <Content Include="Icons\Filter_White\Game Boy Color.png" />
+    <Content Include="Icons\Filter_White\Game Boy.png" />
+    <Content Include="Icons\Filter_White\GameCube.png" />
+    <Content Include="Icons\Filter_White\GBA.png" />
+    <Content Include="Icons\Filter_White\GBC.png" />
+    <Content Include="Icons\Filter_White\GCE Vectrex.png" />
+    <Content Include="Icons\Filter_White\GOG.png" />
+    <Content Include="Icons\Filter_White\Hartung Game Master.png" />
+    <Content Include="Icons\Filter_White\Humble.png" />
+    <Content Include="Icons\Filter_White\Hyper Neo Geo 64.png" />
+    <Content Include="Icons\Filter_White\Irem Classics.png" />
+    <Content Include="Icons\Filter_White\Irem.png" />
+    <Content Include="Icons\Filter_White\itch.io.png" />
+    <Content Include="Icons\Filter_White\Jaleco Classics.png" />
+    <Content Include="Icons\Filter_White\Kaneko.png" />
+    <Content Include="Icons\Filter_White\Kega Fusion.png" />
+    <Content Include="Icons\Filter_White\Konami Classics.png" />
+    <Content Include="Icons\Filter_White\Konami.png" />
+    <Content Include="Icons\Filter_White\Magnavox Odyssey 2.png" />
+    <Content Include="Icons\Filter_White\Magnavox Odyssey.png" />
+    <Content Include="Icons\Filter_White\MAME.png" />
+    <Content Include="Icons\Filter_White\Mattel Aquarius.png" />
+    <Content Include="Icons\Filter_White\Mattel Intellivision.png" />
+    <Content Include="Icons\Filter_White\Mega Duck.png" />
+    <Content Include="Icons\Filter_White\Microsoft MSX Turbo R.png" />
+    <Content Include="Icons\Filter_White\Microsoft MSX.png" />
+    <Content Include="Icons\Filter_White\Microsoft MSX2+.png" />
+    <Content Include="Icons\Filter_White\Microsoft MSX2.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox 360.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox Game Pass.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox Live Arcade.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox One.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox Series.png" />
+    <Content Include="Icons\Filter_White\Microsoft Xbox.png" />
+    <Content Include="Icons\Filter_White\Microsoft.png" />
+    <Content Include="Icons\Filter_White\Midway Classics.png" />
+    <Content Include="Icons\Filter_White\Milton Bradley Microvision.png" />
+    <Content Include="Icons\Filter_White\MS-DOS.png" />
+    <Content Include="Icons\Filter_White\N3DS.png" />
+    <Content Include="Icons\Filter_White\N64.png" />
+    <Content Include="Icons\Filter_White\Namco Classics.png" />
+    <Content Include="Icons\Filter_White\Namco System 22.png" />
+    <Content Include="Icons\Filter_White\Namco.png" />
+    <Content Include="Icons\Filter_White\NDS.png" />
+    <Content Include="Icons\Filter_White\NEC PC Engine CD.png" />
+    <Content Include="Icons\Filter_White\NEC PC Engine SuperGrafx.png" />
+    <Content Include="Icons\Filter_White\NEC PC Engine.png" />
+    <Content Include="Icons\Filter_White\NEC PC-6001.png" />
+    <Content Include="Icons\Filter_White\NEC PC-8801.png" />
+    <Content Include="Icons\Filter_White\NEC PC-9801.png" />
+    <Content Include="Icons\Filter_White\NEC PC-FX.png" />
+    <Content Include="Icons\Filter_White\NEC Turbo Duo.png" />
+    <Content Include="Icons\Filter_White\NEC TurboGrafx-16.png" />
+    <Content Include="Icons\Filter_White\NEC TurboGrafx-CD.png" />
+    <Content Include="Icons\Filter_White\Neo_Geo_AES.png" />
+    <Content Include="Icons\Filter_White\NES1.png" />
+    <Content Include="Icons\Filter_White\New Nintendo 3DS.png" />
+    <Content Include="Icons\Filter_White\Nichibutsu.png" />
+    <Content Include="Icons\Filter_White\Nintendo 3DS eShop.png" />
+    <Content Include="Icons\Filter_White\Nintendo 3DS.png" />
+    <Content Include="Icons\Filter_White\Nintendo 64 DD.png" />
+    <Content Include="Icons\Filter_White\Nintendo 64.png" />
+    <Content Include="Icons\Filter_White\Nintendo Classics.png" />
+    <Content Include="Icons\Filter_White\Nintendo Color TV-Game.png" />
+    <Content Include="Icons\Filter_White\Nintendo DS.png" />
+    <Content Include="Icons\Filter_White\Nintendo DSi Ware.png" />
+    <Content Include="Icons\Filter_White\Nintendo DSi.png" />
+    <Content Include="Icons\Filter_White\Nintendo e-Reader.png" />
+    <Content Include="Icons\Filter_White\Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter_White\Nintendo Famicom Disk System.png" />
+    <Content Include="Icons\Filter_White\Nintendo Famicom.png" />
+    <Content Include="Icons\Filter_White\Nintendo Game &amp; Watch.png" />
+    <Content Include="Icons\Filter_White\Nintendo Game Boy Advance.png" />
+    <Content Include="Icons\Filter_White\Nintendo Game Boy Color.png" />
+    <Content Include="Icons\Filter_White\Nintendo Game Boy Player.png" />
+    <Content Include="Icons\Filter_White\Nintendo Game Boy.png" />
+    <Content Include="Icons\Filter_White\Nintendo GameCube.png" />
+    <Content Include="Icons\Filter_White\Nintendo Pokémon Mini.png" />
+    <Content Include="Icons\Filter_White\Nintendo Satellaview.png" />
+    <Content Include="Icons\Filter_White\Nintendo Sufami Turbo.png" />
+    <Content Include="Icons\Filter_White\Nintendo Super Famicom.png" />
+    <Content Include="Icons\Filter_White\Nintendo Super Game Boy 2.png" />
+    <Content Include="Icons\Filter_White\Nintendo Super Game Boy.png" />
+    <Content Include="Icons\Filter_White\Nintendo Switch eShop.png" />
+    <Content Include="Icons\Filter_White\Nintendo Switch.png" />
+    <Content Include="Icons\Filter_White\Nintendo Virtual Boy.png" />
+    <Content Include="Icons\Filter_White\Nintendo Wii U eShop.png" />
+    <Content Include="Icons\Filter_White\Nintendo Wii U.png" />
+    <Content Include="Icons\Filter_White\Nintendo Wii.png" />
+    <Content Include="Icons\Filter_White\Nintendo WiiWare.png" />
+    <Content Include="Icons\Filter_White\Nintendo.png" />
+    <Content Include="Icons\Filter_White\Nintendoo.png" />
+    <Content Include="Icons\Filter_White\Nokia N-Gage.png" />
+    <Content Include="Icons\Filter_White\OpenBOR.png" />
+    <Content Include="Icons\Filter_White\Oric Atmos.png" />
+    <Content Include="Icons\Filter_White\Origin.png" />
+    <Content Include="Icons\Filter_White\Panic Playdate.png" />
+    <Content Include="Icons\Filter_White\PC.png" />
+    <Content Include="Icons\Filter_White\Philips CD-i.png" />
+    <Content Include="Icons\Filter_White\Phillips VG 5000.png" />
+    <Content Include="Icons\Filter_White\Phillips Videopac+.png" />
+    <Content Include="Icons\Filter_White\Pico-8.png" />
+    <Content Include="Icons\Filter_White\Pinball.png" />
+    <Content Include="Icons\Filter_White\Playstation 2.png" />
+    <Content Include="Icons\Filter_White\Playstation 3.png" />
+    <Content Include="Icons\Filter_White\Playstation 4.png" />
+    <Content Include="Icons\Filter_White\Playstation 5.png" />
+    <Content Include="Icons\Filter_White\Playstation Portable.png" />
+    <Content Include="Icons\Filter_White\PolyGame Master 2.png" />
+    <Content Include="Icons\Filter_White\PolyGame Master.png" />
+    <Content Include="Icons\Filter_White\Prime Gaming.png" />
+    <Content Include="Icons\Filter_White\PS1.png" />
+    <Content Include="Icons\Filter_White\PS2.png" />
+    <Content Include="Icons\Filter_White\PS3.png" />
+    <Content Include="Icons\Filter_White\PS4.png" />
+    <Content Include="Icons\Filter_White\PS5.png" />
+    <Content Include="Icons\Filter_White\Psikyo.png" />
+    <Content Include="Icons\Filter_White\PSP.png" />
+    <Content Include="Icons\Filter_White\Raizing.png" />
+    <Content Include="Icons\Filter_White\RCA Studio II.png" />
+    <Content Include="Icons\Filter_White\Resident Evil.png" />
+    <Content Include="Icons\Filter_White\Rockstar.png" />
+    <Content Include="Icons\Filter_White\Romstar.png" />
+    <Content Include="Icons\Filter_White\Ryujinx.png" />
+    <Content Include="Icons\Filter_White\SAM Coupé.png" />
+    <Content Include="Icons\Filter_White\Sammy Atomiswave.png" />
+    <Content Include="Icons\Filter_White\ScummVM.png" />
+    <Content Include="Icons\Filter_White\Sega %281%29.png" />
+    <Content Include="Icons\Filter_White\Sega %282%29.png" />
+    <Content Include="Icons\Filter_White\Sega 32X.png" />
+    <Content Include="Icons\Filter_White\Sega CD 32X.png" />
+    <Content Include="Icons\Filter_White\Sega CD.png" />
+    <Content Include="Icons\Filter_White\Sega Classics.png" />
+    <Content Include="Icons\Filter_White\Sega Dreamcast VMU.png" />
+    <Content Include="Icons\Filter_White\Sega Dreamcast.png" />
+    <Content Include="Icons\Filter_White\Sega Game Gear.png" />
+    <Content Include="Icons\Filter_White\SEGA Genesis.png" />
+    <Content Include="Icons\Filter_White\Sega Hikaru.png" />
+    <Content Include="Icons\Filter_White\Sega Mark III.png" />
+    <Content Include="Icons\Filter_White\Sega Master System.png" />
+    <Content Include="Icons\Filter_White\Sega Mega Drive.png" />
+    <Content Include="Icons\Filter_White\Sega Mega Mega-CD.png" />
+    <Content Include="Icons\Filter_White\Sega Model 1.png" />
+    <Content Include="Icons\Filter_White\Sega Model 2.png" />
+    <Content Include="Icons\Filter_White\Sega Model 3.png" />
+    <Content Include="Icons\Filter_White\Sega Naomi 2.png" />
+    <Content Include="Icons\Filter_White\Sega Naomi.png" />
+    <Content Include="Icons\Filter_White\Sega Pico.png" />
+    <Content Include="Icons\Filter_White\Sega Saturn %28Japan%29.png" />
+    <Content Include="Icons\Filter_White\SEGA Saturn.png" />
+    <Content Include="Icons\Filter_White\Sega SC-3000.png" />
+    <Content Include="Icons\Filter_White\Sega SG-1000.png" />
+    <Content Include="Icons\Filter_White\Sega ST-V.png" />
+    <Content Include="Icons\Filter_White\Sega System 16.png" />
+    <Content Include="Icons\Filter_White\Sega System 32.png" />
+    <Content Include="Icons\Filter_White\Sega Triforce.png" />
+    <Content Include="Icons\Filter_White\Sega.png" />
+    <Content Include="Icons\Filter_White\Seibu Kaihatsu.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-1200.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-2000.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-2200.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-2500.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-3500.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-700.png" />
+    <Content Include="Icons\Filter_White\Sharp MZ-800.png" />
+    <Content Include="Icons\Filter_White\Sharp X1.png" />
+    <Content Include="Icons\Filter_White\Sharp X68000.png" />
+    <Content Include="Icons\Filter_White\Sinclair ZX Spectrum.png" />
+    <Content Include="Icons\Filter_White\Sinclair ZX81.png" />
+    <Content Include="Icons\Filter_White\SNES.png" />
+    <Content Include="Icons\Filter_White\SNK Classics.png" />
+    <Content Include="Icons\Filter_White\SNK Neo Geo CD.png" />
+    <Content Include="Icons\Filter_White\SNK Neo Geo MVS.png" />
+    <Content Include="Icons\Filter_White\SNK Neo Geo Pocket Color.png" />
+    <Content Include="Icons\Filter_White\SNK Neo Geo Pocket.png" />
+    <Content Include="Icons\Filter_White\SNK Neo Geo.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation 2.png" />
+    <Content Include="Icons\Filter_White\Sony PlayStation 3 Network.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation 3.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation 4.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation 5.png" />
+    <Content Include="Icons\Filter_White\Sony PlayStation Network.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation VR.png" />
+    <Content Include="Icons\Filter_White\Sony Playstation.png" />
+    <Content Include="Icons\Filter_White\Sony PocketStation.png" />
+    <Content Include="Icons\Filter_White\Sony PS Vita.png" />
+    <Content Include="Icons\Filter_White\Sony PSP Minis.png" />
+    <Content Include="Icons\Filter_White\Sony PSP.png" />
+    <Content Include="Icons\Filter_White\Sony.png" />
+    <Content Include="Icons\Filter_White\Sord M5.png" />
+    <Content Include="Icons\Filter_White\SpectraVideo.png" />
+    <Content Include="Icons\Filter_White\Steam Deck.png" />
+    <Content Include="Icons\Filter_White\Steam.png" />
+    <Content Include="Icons\Filter_White\Stern.png" />
+    <Content Include="Icons\Filter_White\Super Nintendo Entertainment System.png" />
+    <Content Include="Icons\Filter_White\Super Nintendo.png" />
+    <Content Include="Icons\Filter_White\Taito Classics.png" />
+    <Content Include="Icons\Filter_White\Taito Type X.png" />
+    <Content Include="Icons\Filter_White\Taito Type X2.png" />
+    <Content Include="Icons\Filter_White\Taito.png" />
+    <Content Include="Icons\Filter_White\Tandy TRS-80.png" />
+    <Content Include="Icons\Filter_White\Technos.png" />
+    <Content Include="Icons\Filter_White\Tecmo.png" />
+    <Content Include="Icons\Filter_White\TeknoParrot.png" />
+    <Content Include="Icons\Filter_White\Texas Instruments TI 99 4A.png" />
+    <Content Include="Icons\Filter_White\Thomson MO5.png" />
+    <Content Include="Icons\Filter_White\Thomson TO7.png" />
+    <Content Include="Icons\Filter_White\TIC-80.png" />
+    <Content Include="Icons\Filter_White\Tiger Game.com.png" />
+    <Content Include="Icons\Filter_White\Tiger LCD Handhelds.png" />
+    <Content Include="Icons\Filter_White\Toaplan.png" />
+    <Content Include="Icons\Filter_White\Tomy Tutor.png" />
+    <Content Include="Icons\Filter_White\Ubisoft Connect.png" />
+    <Content Include="Icons\Filter_White\Universal.png" />
+    <Content Include="Icons\Filter_White\Video System Co.png" />
+    <Content Include="Icons\Filter_White\Visco.png" />
+    <Content Include="Icons\Filter_White\VTech CreatiVision.png" />
+    <Content Include="Icons\Filter_White\Watara Supervision.png" />
+    <Content Include="Icons\Filter_White\Wii U.png" />
+    <Content Include="Icons\Filter_White\Wii U1.png" />
+    <Content Include="Icons\Filter_White\Wii.png" />
+    <Content Include="Icons\Filter_White\Williams Classics.png" />
+    <Content Include="Icons\Filter_White\Williams.png" />
+    <Content Include="Icons\Filter_White\Windows 3.x.png" />
+    <Content Include="Icons\Filter_White\Windows.png" />
+    <Content Include="Icons\Filter_White\Wonderswan Color.png" />
+    <Content Include="Icons\Filter_White\WonderSwan.png" />
+    <Content Include="Icons\Filter_White\XBOX 360.png" />
+    <Content Include="Icons\Filter_White\XBOX Classic.png" />
+    <Content Include="Icons\Filter_White\Xbox Cloud Gaming.png" />
+    <Content Include="Icons\Filter_White\XBOX Games Pass.png" />
+    <Content Include="Icons\Filter_White\Xbox Games.png" />
+    <Content Include="Icons\Filter_White\Xbox One.png" />
+    <Content Include="Icons\Filter_White\XBOX Series X.png" />
+    <Content Include="Icons\Filter_White\XBOX Series.png" />
+    <Content Include="Icons\Filter_White\Xbox.png" />
+    <Content Include="Icons\Filter_White\Xcloud.png" />
+    <Content Include="Icons\Library\Amazon Games.png" />
+    <Content Include="Icons\Library\Battle.net.png" />
+    <Content Include="Icons\Library\EA app.png" />
+    <Content Include="Icons\Library\EA Play.png" />
+    <Content Include="Icons\Library\Epic.png" />
+    <Content Include="Icons\Library\Fanatical.png" />
+    <Content Include="Icons\Library\GOG.png" />
+    <Content Include="Icons\Library\Humble.png" />
+    <Content Include="Icons\Library\itch.io.png" />
+    <Content Include="Icons\Library\Origin.png" />
+    <Content Include="Icons\Library\Playnite.png" />
+    <Content Include="Icons\Library\Riot.png" />
+    <Content Include="Icons\Library\Rockstar Games.png" />
+    <Content Include="Icons\Library\Sony Playstation.png" />
+    <Content Include="Icons\Library\Steam.png" />
+    <Content Include="Icons\Library\Ubisoft Connect.png" />
+    <Content Include="Icons\Library\Xbox Game Pass.png" />
+    <Content Include="Icons\Library\Xbox Games.png" />
+    <Content Include="Icons\Library\xCloud.png" />
+    <Content Include="Icons\Platform\All2.png" />
+    <Content Include="Icons\Platform\Amazon.png" />
+    <Content Include="Icons\Platform\Amazon2.png" />
+    <Content Include="Icons\Platform\Apps.png" />
+    <Content Include="Icons\Platform\Arcade Stick Black.png" />
+    <Content Include="Icons\Platform\Arcade Stick Gray Black Red.png" />
+    <Content Include="Icons\Platform\Arcade Stick Street Fighter.png" />
+    <Content Include="Icons\Platform\Arcade Stick Street mortal kombat.png" />
+    <Content Include="Icons\Platform\Arcade Stick white.png" />
+    <Content Include="Icons\Platform\Atari 2600 Controller.png" />
+    <Content Include="Icons\Platform\Atari 2600 Driving.png" />
+    <Content Include="Icons\Platform\Atari 2600 Paddle.png" />
+    <Content Include="Icons\Platform\Atari 7800.png" />
+    <Content Include="Icons\Platform\Atari Jaguar.png" />
+    <Content Include="Icons\Platform\Atari Lynx.png" />
+    <Content Include="Icons\Platform\Atari VCS 2021.png" />
+    <Content Include="Icons\Platform\Backbone Playstation.png" />
+    <Content Include="Icons\Platform\Backbone Standard.png" />
+    <Content Include="Icons\Platform\Bandai Wonderswan Color Crystal Blue Violet.png" />
+    <Content Include="Icons\Platform\Bandai Wonderswan Color Crystal Red Wine.png" />
+    <Content Include="Icons\Platform\Battle.net.png" />
+    <Content Include="Icons\Platform\Coleco Colecovision Controller.png" />
+    <Content Include="Icons\Platform\Commodore 64 Keyboard and Mouse.png" />
+    <Content Include="Icons\Platform\commodore 64 Mouse.png" />
+    <Content Include="Icons\Platform\Commodore 64.png" />
+    <Content Include="Icons\Platform\Commodore Amiga.png" />
+    <Content Include="Icons\Platform\Controller Support.png" />
+    <Content Include="Icons\Platform\Couch Gaming.png" />
+    <Content Include="Icons\Platform\EA Play.png" />
+    <Content Include="Icons\Platform\Epic.png" />
+    <Content Include="Icons\Platform\Fanatical.png" />
+    <Content Include="Icons\Platform\Favourites.png" />
+    <Content Include="Icons\Platform\Favourites1.png" />
+    <Content Include="Icons\Platform\Game Boy Advance.png" />
+    <Content Include="Icons\Platform\Game Boy Colour.png" />
+    <Content Include="Icons\Platform\Game Boy.png" />
+    <Content Include="Icons\Platform\Gameboy Colour.png" />
+    <Content Include="Icons\Platform\Gameboy.png" />
+    <Content Include="Icons\Platform\Gamecube.png" />
+    <Content Include="Icons\Platform\Games.png" />
+    <Content Include="Icons\Platform\GBA.png" />
+    <Content Include="Icons\Platform\GBC.png" />
+    <Content Include="Icons\Platform\GCE Vectrex General Consumer Electronics.png" />
+    <Content Include="Icons\Platform\GCE Vectrex Milton Bradley.png" />
+    <Content Include="Icons\Platform\GOG.png" />
+    <Content Include="Icons\Platform\GOG1.png" />
+    <Content Include="Icons\Platform\Humble.png" />
+    <Content Include="Icons\Platform\itch.io.png" />
+    <Content Include="Icons\Platform\Mattle Intellivision Controller.png" />
+    <Content Include="Icons\Platform\Media.png" />
+    <Content Include="Icons\Platform\NEC TurboExpress.png" />
+    <Content Include="Icons\Platform\NEC TurboGrafx 16 Controller.png" />
+    <Content Include="Icons\Platform\NES.png" />
+    <Content Include="Icons\Platform\Nintendo 3DS.png" />
+    <Content Include="Icons\Platform\Nintendo 64.png" />
+    <Content Include="Icons\Platform\Nintendo 642.png" />
+    <Content Include="Icons\Platform\Nintendo DS lite.png" />
+    <Content Include="Icons\Platform\Nintendo DS.png" />
+    <Content Include="Icons\Platform\Nintendo Entertainment System.png" />
+    <Content Include="Icons\Platform\Nintendo Entertainment System1.png" />
+    <Content Include="Icons\Platform\Nintendo Family Computer.png" />
+    <Content Include="Icons\Platform\Nintendo Game &amp; Watch Legend of Zelda .png" />
+    <Content Include="Icons\Platform\Nintendo Game &amp; Watch Super Mario Bros.png" />
+    <Content Include="Icons\Platform\Nintendo Game Boy Advance SP Blue.png" />
+    <Content Include="Icons\Platform\Nintendo Game Boy Advance SP Red.png" />
+    <Content Include="Icons\Platform\Nintendo Game Boy Advance SP Silver.png" />
+    <Content Include="Icons\Platform\Nintendo Game Boy Advance.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy Color Blue.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy Color green.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy Color pink.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy Color purple.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy Color yellow.png" />
+    <Content Include="Icons\Platform\Nintendo Gameboy.png" />
+    <Content Include="Icons\Platform\Nintendo GameCube.png" />
+    <Content Include="Icons\Platform\Nintendo NES Zapper gray.png" />
+    <Content Include="Icons\Platform\Nintendo NES Zapper Orange.png" />
+    <Content Include="Icons\Platform\Nintendo PAL Super Nintendo.png" />
+    <Content Include="Icons\Platform\Nintendo Pokemon Blue.png" />
+    <Content Include="Icons\Platform\Nintendo Pokemon Mini Green.png" />
+    <Content Include="Icons\Platform\Nintendo Pokemon Mini Purple.png" />
+    <Content Include="Icons\Platform\Nintendo Super Nintendo Controller.png" />
+    <Content Include="Icons\Platform\Nintendo Switch Lite gray.png" />
+    <Content Include="Icons\Platform\Nintendo Switch Lite green.png" />
+    <Content Include="Icons\Platform\Nintendo Switch Lite pink.png" />
+    <Content Include="Icons\Platform\Nintendo Switch Lite purple.png" />
+    <Content Include="Icons\Platform\Nintendo Switch Lite yellow.png" />
+    <Content Include="Icons\Platform\Nintendo Switch OLED.png" />
+    <Content Include="Icons\Platform\Nintendo Switch.png" />
+    <Content Include="Icons\Platform\Nintendo Switch1.png" />
+    <Content Include="Icons\Platform\Nintendo Switch3.png" />
+    <Content Include="Icons\Platform\Nintendo Virtual Boy Controller.png" />
+    <Content Include="Icons\Platform\Nintendo Wii U.png" />
+    <Content Include="Icons\Platform\Nintendo Wii U1.png" />
+    <Content Include="Icons\Platform\Nintendo Wii.png" />
+    <Content Include="Icons\Platform\Origin.png" />
+    <Content Include="Icons\Platform\Panasonic 3DO Controller.png" />
+    <Content Include="Icons\Platform\PC %28Windows%29.png" />
+    <Content Include="Icons\Platform\Playnite.png" />
+    <Content Include="Icons\Platform\Playstation 2.png" />
+    <Content Include="Icons\Platform\Playstation 3.png" />
+    <Content Include="Icons\Platform\Playstation 4.png" />
+    <Content Include="Icons\Platform\Playstation 5.png" />
+    <Content Include="Icons\Platform\Playstation Portable.png" />
+    <Content Include="Icons\Platform\PS1.png" />
+    <Content Include="Icons\Platform\PS3.png" />
+    <Content Include="Icons\Platform\PS4.png" />
+    <Content Include="Icons\Platform\PS5.png" />
+    <Content Include="Icons\Platform\PSP.png" />
+    <Content Include="Icons\Platform\Recently Added.png" />
+    <Content Include="Icons\Platform\Recently Played.png" />
+    <Content Include="Icons\Platform\Riot.png" />
+    <Content Include="Icons\Platform\Rockstar Games.png" />
+    <Content Include="Icons\Platform\Sega Dreamcast Controller.png" />
+    <Content Include="Icons\Platform\SEGA Dreamcast.png" />
+    <Content Include="Icons\Platform\Sega Game Gear.png" />
+    <Content Include="Icons\Platform\Sega Genesis 6 Button Controller.png" />
+    <Content Include="Icons\Platform\Sega Genesis Controller.png" />
+    <Content Include="Icons\Platform\Sega Genesis.png" />
+    <Content Include="Icons\Platform\Sega Master System.png" />
+    <Content Include="Icons\Platform\Sega Mega Drive 6 Button Controller.png" />
+    <Content Include="Icons\Platform\Sega Mega Drive Controller.png" />
+    <Content Include="Icons\Platform\Sega Mega Drive.png" />
+    <Content Include="Icons\Platform\Sega Nomad.png" />
+    <Content Include="Icons\Platform\Sega Saturn 3D Controller.png" />
+    <Content Include="Icons\Platform\Sega Saturn 3D.png" />
+    <Content Include="Icons\Platform\Sega Saturn Controller B .png" />
+    <Content Include="Icons\Platform\Sega Saturn Controller C.png" />
+    <Content Include="Icons\Platform\Sega Saturn Controller.png" />
+    <Content Include="Icons\Platform\SEGA Saturn.png" />
+    <Content Include="Icons\Platform\SNES.png" />
+    <Content Include="Icons\Platform\SNK NEO GEO Arcade Stick 6 button.png" />
+    <Content Include="Icons\Platform\SNK Neo Geo CD.png" />
+    <Content Include="Icons\Platform\SNK Neo Geo Controller.png" />
+    <Content Include="Icons\Platform\SNK Neo Geo Pocket Color.png" />
+    <Content Include="Icons\Platform\SNK NEO GEO.png" />
+    <Content Include="Icons\Platform\Sony Playstation 2.png" />
+    <Content Include="Icons\Platform\Sony PlayStation 3 Boomerang Controller.png" />
+    <Content Include="Icons\Platform\Sony Playstation 3.png" />
+    <Content Include="Icons\Platform\Sony Playstation 4.png" />
+    <Content Include="Icons\Platform\Sony Playstation 5.png" />
+    <Content Include="Icons\Platform\Sony PlayStation Daul Analog Controller.png" />
+    <Content Include="Icons\Platform\Sony PlayStation DaulShock 1 Controller.png" />
+    <Content Include="Icons\Platform\Sony Playstation Portable.png" />
+    <Content Include="Icons\Platform\Sony Playstation Vita.png" />
+    <Content Include="Icons\Platform\Sony Playstation.png" />
+    <Content Include="Icons\Platform\Sony Playstation1.png" />
+    <Content Include="Icons\Platform\Steam.png" />
+    <Content Include="Icons\Platform\Super Nintendo Entertainment SYstem.png" />
+    <Content Include="Icons\Platform\Super Nintendo Entertainment System1.png" />
+    <Content Include="Icons\Platform\Switch.png" />
+    <Content Include="Icons\Platform\Ubisoft Connect.png" />
+    <Content Include="Icons\Platform\Valve Steam Deck.png" />
+    <Content Include="Icons\Platform\VR Games.png" />
+    <Content Include="Icons\Platform\Wii U.png" />
+    <Content Include="Icons\Platform\Wii.png" />
+    <Content Include="Icons\Platform\Xbox 360.png" />
+    <Content Include="Icons\Platform\Xbox Cloud Gaming.png" />
+    <Content Include="Icons\Platform\xbox Elite Series 2 Controller black.png" />
+    <Content Include="Icons\Platform\xbox Elite Series 2 Controller white.png" />
+    <Content Include="Icons\Platform\Xbox Game Pass.png" />
+    <Content Include="Icons\Platform\Xbox Games.png" />
+    <Content Include="Icons\Platform\Xbox One X.png" />
+    <Content Include="Icons\Platform\Xbox One.png" />
+    <Content Include="Icons\Platform\xbox Series X.png" />
+    <Content Include="Icons\Platform\Xbox.png" />
+    <Content Include="Icons\Platform\xCloud.png" />
+    <Content Include="Images\applogo.ico" />
+    <Content Include="Images\applogo.png" />
+    <Content Include="Images\applogo_clean.png" />
+    <Content Include="Images\applogo_full.png" />
+    <Content Include="Images\custom_cover_background.png" />
+    <Content Include="LocSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GlobalResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ControlGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Constants.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Media.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\ButtonPrompts\Xbox\Xbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DefaultControls\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustomControls\FilterEnumListSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustomControls\FilterStringListSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustomControls\FilterDbItemtSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CustomControls\FilterPresetSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DerivedStyles\ListGameItemStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DerivedStyles\ListGameItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DerivedStyles\ButtonBottomMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DerivedStyles\ButtonTopMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\FiltersAdditional.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\FiltersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\GameDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\GameMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\GameStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\HelpMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\MessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\NotificationsMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\SettingsMenus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\TextInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\ItemSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\CustomMenus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\ButtonPrompts\PlayStation\" />
+  </ItemGroup>
+</Project>
