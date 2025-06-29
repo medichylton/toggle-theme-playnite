@@ -20,7 +20,7 @@
                             <ColumnDefinition Width="24" />
                             <ColumnDefinition Width="480" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="480" />
+                            <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="24" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -31,8 +31,8 @@
                         <FadeImage HorizontalAlignment="Center" VerticalAlignment="Top"
                                    Grid.ColumnSpan="5" Grid.RowSpan="3" 
                                    x:Name="PART_ImageBackground" />
-                        <ButtonEx Style="{DynamicResource ButtonTopMenu}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="72" MinWidth="72" Margin="4,32,0,0" Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}">
-                            <TextBlock Style="{StaticResource FluentIconStyle}" FontSize="56" Opacity="0.9" Text="&#xf0b0;" Margin="6,8,6,6"/>
+                        <ButtonEx Style="{DynamicResource ButtonTopMenu}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="72" MinWidth="72" Margin="24,32,0,0" Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                            <TextBlock Style="{StaticResource FluentIconStyle}" FontSize="56" Opacity="0.9" Text="&#xf0b0;" Margin="6,0,6,6" Height="54" VerticalAlignment="Bottom"/>
                         </ButtonEx>
                         <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
                             <ContentControl.Style>
@@ -64,22 +64,18 @@
                         </Border>
 
                         <Border Background="Black" x:Name="Mask"
-                                Grid.Column="3" Grid.Row="1" CornerRadius="0,15,15,0"  Margin="58,1,1,1"/>
+                                Grid.Column="3" Grid.Row="1" CornerRadius="0,15,15,0"  Margin="1"/>
 
-                        <Border CornerRadius="3" BorderThickness="3" BorderBrush="{DynamicResource GameDetailsBackgroundBrush}"
-                                Margin="14,14,14,0" Grid.Column="3" Grid.Row="1"
-                                VerticalAlignment="Top"
-                                HorizontalAlignment="Right">
-                            <Image x:Name="PART_ImageCover" Margin="0,-16,-16,-2">
+                        
+                            <Image x:Name="PART_ImageCover" Margin="1" Grid.Column="3" Grid.Row="1" VerticalAlignment="Stretch">
                                 <Image.OpacityMask>
                                     <VisualBrush Visual="{Binding ElementName=Mask}"
                            RenderOptions.BitmapScalingMode="Fant"
                            Stretch="Fill"/>
                                 </Image.OpacityMask>
                             </Image>
-                        </Border>
 
-                        <DockPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+                            <DockPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
                                    Margin="32,32,0,0"
                                    HorizontalAlignment="Left">
 
