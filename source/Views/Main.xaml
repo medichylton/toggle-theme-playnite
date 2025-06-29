@@ -33,6 +33,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
                                 <ButtonEx Command="{PluginSettings Plugin=NowPlaying, Path=OpenDialog}" Grid.Column="1" Margin="12,8,32,8">
@@ -87,13 +88,15 @@
                                                 Height="38" Width="38" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Border>
+
                                 <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}"
-                                       VerticalAlignment="Center" Margin="0,0,0,0"
-                                       Grid.Column="5" FontSize="42"/>
+                                       VerticalAlignment="Center" Margin="32,0,0,0"
+                                       Grid.Column="6" FontSize="42"/>
+                                
 
                                 <ContentControl x:Name="PART_ElemBatteryStatus" Focusable="False" FontSize="96"
                                             VerticalAlignment="Center" Margin="0,-6,10,0"
-                                            Grid.Column="6">
+                                            Grid.Column="7">
                                     <ContentControl.Style>
                                         <Style TargetType="{x:Type ContentControl}">
                                             <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
@@ -114,7 +117,36 @@
                                                     <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding PowerStatus.IsCharging}" Value="True">
-                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusCharging}" />
+                                                        <Setter Property="Opacity" Value="0" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </ContentControl>
+                                <ContentControl x:Name="BatteryCharger" Focusable="False" FontSize="96"
+                                            VerticalAlignment="Center" Margin="0,-6,10,0"
+                                            Grid.Column="7">
+                                    <ContentControl.Style>
+                                        <Style TargetType="{x:Type ContentControl}">
+                                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding PowerStatus.IsCharging}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Critical">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusChargingCritical}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource AlertBrush}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Low">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusChargingLow}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Medium">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusChargingMedium}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="High">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusChargingHigh}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
@@ -123,7 +155,7 @@
 
                                 <TextBlock x:Name="PART_TextClock" Style="{DynamicResource TextBlockBaseStyle}"
                                        VerticalAlignment="Center" Margin="20,0,12,0"
-                                       Grid.Column="7" FontSize="42"/>
+                                       Grid.Column="8" FontSize="42"/>
                             </Grid>
                             <DockPanel Grid.Row="2">
                                 <Filters x:Name="PART_ElemFilters"
