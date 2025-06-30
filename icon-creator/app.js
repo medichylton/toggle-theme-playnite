@@ -34,20 +34,20 @@ const colorMap = {
   'Game Boy Advance': '#8E24AA',
   'Game Boy Color': '#FFD54F',
   'Game Boy Colour': '#FFD54F',
-  'Game Boy': '#CCCCCC', // Brightened from #9E9E9E
+  'Game Boy': '#CCCCCC',
   'Gameboy Colour': '#FFD54F',
-  Gameboy: '#CCCCCC', // Brightened from #9E9E9E
-  Gamecube: '#9C4DCC', // Brightened from #673AB7
+  Gameboy: '#CCCCCC',
+  Gamecube: '#9C4DCC',
   Gba: '#8E24AA',
   Gbc: '#FFD54F',
   'Geforce Now': '#76B900',
-  'Gog Galaxy': '#B764CE', // Brightened from #8B4A9C
-  Gog: '#B764CE', // Brightened from #8B4A9C
+  'Gog Galaxy': '#B764CE',
+  Gog: '#B764CE',
   'Happy Halloween': '#FF5722',
-  Humble: '#FF4444', // Brightened from #CC2929
+  Humble: '#FF4444',
   Installed: '#2196F3',
   'Itch.Io': '#FA5C5C',
-  'Legacy Games': '#A1887F', // Brightened from #795548
+  'Legacy Games': '#A1887F',
   'Library 1': '#2196F3',
   Library: '#2196F3',
   Media: '#FF9800',
@@ -55,26 +55,26 @@ const colorMap = {
   'My Library': '#2196F3',
   'My List': '#2196F3',
   N3ds: '#E53935',
-  N64: '#2196F3', // Brightened from #1976D2
-  Nds: '#607D8B', // Brightened from #37474F
+  N64: '#2196F3',
+  Nds: '#607D8B',
   'Neo Geo': '#FFD600',
   'Neo•Geo': '#FFD600',
-  Nes: '#F44336', // Brightened from #D32F2F
+  Nes: '#F44336',
   'New Releases': '#00E676',
   New: '#00E676',
   New2: '#00E676',
   'Nintendo 3ds': '#E53935',
-  'Nintendo 64': '#2196F3', // Brightened from #1976D2
-  'Nintendo Ds': '#607D8B', // Brightened from #37474F
-  'Nintendo Entertainment System': '#F44336', // Brightened from #D32F2F
+  'Nintendo 64': '#2196F3',
+  'Nintendo Ds': '#607D8B',
+  'Nintendo Entertainment System': '#F44336',
   'Nintendo Game Boy Advance': '#8E24AA',
   'Nintendo Game Boy Color': '#FFD54F',
-  'Nintendo Game Boy': '#CCCCCC', // Brightened from #9E9E9E
-  'Nintendo Gamecube': '#9C4DCC', // Brightened from #673AB7
+  'Nintendo Game Boy': '#CCCCCC',
+  'Nintendo Gamecube': '#9C4DCC',
   'Nintendo Switch': '#E60012',
-  'Nintendo Wii U': '#00BCD4', // Brightened from #009AC7
-  'Nintendo Wii': '#2196F3', // Brightened from #0066CC
-  'Not Installed': '#9E9E9E', // Brightened from #757575
+  'Nintendo Wii U': '#00BCD4',
+  'Nintendo Wii': '#2196F3',
+  'Not Installed': '#9E9E9E',
   'Nvidia Geforce Now': '#76B900',
   Nvidia: '#76B900',
   Origin: '#FF6600',
@@ -83,38 +83,40 @@ const colorMap = {
   Pc: '#00BCF2',
   Play: '#4CAF50',
   Playnite: '#2196F3',
-  'Playstation 2': '#2196F3', // Brightened from #003791
-  'Playstation 3': '#2196F3', // Brightened from #003791
-  'Playstation 4': '#2196F3', // Brightened from #003791
-  'Playstation 5': '#2196F3', // Brightened from #003791
-  'Playstation Portable': '#2196F3', // Brightened from #003791
+  Playstation: '#2196F3',
+  'Playstation 2': '#2196F3',
+  'Playstation 3': '#2196F3',
+  'Playstation 4': '#2196F3',
+  'Playstation 5': '#2196F3',
+  'Playstation Portable': '#2196F3',
   'Prime Gaming': '#00A8E1',
-  Ps1: '#2196F3', // Brightened from #003791
-  Ps2: '#2196F3', // Brightened from #003791
-  Ps3: '#2196F3', // Brightened from #003791
-  Ps4: '#2196F3', // Brightened from #003791
-  Ps5: '#2196F3', // Brightened from #003791
-  Psp: '#2196F3', // Brightened from #003791
+  Ps1: '#2196F3',
+  Ps2: '#2196F3',
+  Ps3: '#2196F3',
+  Ps4: '#2196F3',
+  Ps5: '#2196F3',
+  Psp: '#2196F3',
   'Recently Added 2': '#FF4444',
   'Recently Added': '#FF4444',
   'Recently Played': '#FF9800',
   Riot: '#FF6B6B',
   'Rockstar Games': '#FCAF17',
-  'Sega Dreamcast': '#0099FF', // Brightened from #0066FF
+  'Sega Dreamcast': '#0099FF',
   'Sega Genesis': '#FF4444', // Changed from black #000000 to bright red
   'Sega Mega Drive': '#FF4444', // Changed from black #000000 to bright red
-  'Sega Saturn': '#9575CD', // Brightened from #7B68EE
-  'Sega Master System': '#FF4444', // Brightened from #FF0000
-  Snes: '#9575CD', // Brightened from #7B68EE
-  'Sony Playsation Portable': '#2196F3', // Brightened from #003791
-  'Sony Playstation 2': '#2196F3', // Brightened from #003791
-  'Sony Playstation 3': '#2196F3', // Brightened from #003791
-  'Sony Playstation 4': '#2196F3', // Brightened from #003791
-  'Sony Playstation 5': '#2196F3', // Brightened from #003791
-  'Sony Playstation': '#2196F3', // Brightened from #003791
-  'Steam Deck': '#4A90E2', // Brightened from #1B2838
-  Steam: '#4A90E2', // Brightened from #1B2838
-  'Super Nintendo Entertainment System': '#9575CD', // Brightened from #7B68EE
+  'Sega Saturn': '#9575CD',
+  'Sega Master System': '#FF4444',
+  Snes: '#9575CD',
+  'Sony Playsation Portable': '#2196F3',
+  'Sony Playstation': '#2196F3',
+  'Sony Playstation 2': '#2196F3',
+  'Sony Playstation 3': '#2196F3',
+  'Sony Playstation 4': '#2196F3',
+  'Sony Playstation 5': '#2196F3',
+  'Sony Playstation': '#2196F3',
+  'Steam Deck': '#4A90E2',
+  Steam: '#4A90E2',
+  'Super Nintendo Entertainment System': '#9575CD',
   Switch: '#E60012',
   Todo: '#FF9800',
   'Top Rated': '#FFD700',
@@ -122,14 +124,14 @@ const colorMap = {
   'Ubisoft Connect': '#0084FF',
   'Up Next': '#9C27B0',
   Vrgames: '#00E676',
-  'Wii U': '#00BCD4', // Brightened from #009AC7
-  Wii: '#2196F3', // Brightened from #0066CC
+  'Wii U': '#00BCD4',
+  Wii: '#2196F3',
   Windows: '#00BCF2',
-  'Xbox 360': '#32CD32', // Brightened from #107C10
-  'Xbox Cloud Gaming': '#32CD32', // Brightened from #107C10
-  'Xbox One': '#32CD32', // Brightened from #107C10
-  Xbox: '#32CD32', // Brightened from #107C10
-  Xcloud: '#32CD32', // Brightened from #107C10
+  'Xbox 360': '#32CD32',
+  'Xbox Cloud Gaming': '#32CD32',
+  'Xbox One': '#32CD32',
+  Xbox: '#32CD32',
+  Xcloud: '#32CD32',
 };
 
 function getColorForIcon(filename) {
