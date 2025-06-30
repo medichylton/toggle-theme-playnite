@@ -21,96 +21,125 @@
     <Color x:Key="TextColorDark">#FF757575</Color>
     <Color x:Key="BorderColor">#FF444444</Color>
 
-    <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
-    <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
-    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
-    <SolidColorBrush x:Key="PrimaryBrush" Color="{DynamicResource GlyphColor}" />
-    <SolidColorBrush x:Key="GlyphLightBrush" Color="{DynamicResource GlyphLightColor}" />
-    <SolidColorBrush x:Key="GlyphDarkBrush" Color="{DynamicResource GlyphDarkColor}" />
-    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
-    <SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
-    <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource SelectionLightColor}" />
-    <SolidColorBrush x:Key="OverlayBrush" Color="{DynamicResource OverlayColor}" />
-    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
-    <SolidColorBrush x:Key="DefaultBorderBrush" Color="{DynamicResource BorderColor}" />
+    <SolidColorBrush x:Key="TextBrush"
+                     Color="{DynamicResource TextColor}"/>
+    <SolidColorBrush x:Key="TextBrushDark"
+                     Color="{DynamicResource TextColorDark}"/>
+    <SolidColorBrush x:Key="GlyphBrush"
+                     Color="{DynamicResource GlyphColor}"/>
+    <SolidColorBrush x:Key="PrimaryBrush"
+                     Color="{DynamicResource GlyphColor}"/>
+    <SolidColorBrush x:Key="GlyphLightBrush"
+                     Color="{DynamicResource GlyphLightColor}"/>
+    <SolidColorBrush x:Key="GlyphDarkBrush"
+                     Color="{DynamicResource GlyphDarkColor}"/>
+    <SolidColorBrush x:Key="ControlBackgroundBrush"
+                     Color="{DynamicResource ControlBackgroundColor}"/>
+    <SolidColorBrush x:Key="ControlBackgroundDarkBrush"
+                     Color="{DynamicResource ControlBackgroundColorDark}"/>
+    <SolidColorBrush x:Key="SelectionLightBrush"
+                     Color="{DynamicResource SelectionLightColor}"/>
+    <SolidColorBrush x:Key="OverlayBrush"
+                     Color="{DynamicResource OverlayColor}"/>
+    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush"
+                     Color="{DynamicResource ControlBackgroundColorDark}"/>
+    <SolidColorBrush x:Key="DefaultBorderBrush"
+                     Color="{DynamicResource BorderColor}"/>
 
     <sys:Double x:Key="FontSizeSmall">36</sys:Double>
     <sys:Double x:Key="FontSize">48</sys:Double>
 
     <sys:Double x:Key="FilterPanelWidth">480</sys:Double>
 
-    <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
-        <Setter Property="FontFamily" Value="{DynamicResource FontDefaultLight}" />
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    <Style x:Key="TextBlockBaseStyle"
+           TargetType="TextBlock">
+        <Setter Property="FontSize"
+                Value="{DynamicResource FontSize}"/>
+        <Setter Property="FontFamily"
+                Value="{DynamicResource FontDefaultLight}"/>
+        <Setter Property="Foreground"
+                Value="{DynamicResource TextBrush}"/>
     </Style>
 
-    <SolidColorBrush x:Key="MainBackgourndBrush" Color="#FF1E1E1E" />
+    <SolidColorBrush x:Key="MainBackgourndBrush"
+                     Color="#FF0F0F0F"/>
 
-    <SolidColorBrush x:Key="TopBarBackgroundBrush" Color="#BF2A2A2A" />
+    <SolidColorBrush x:Key="TopBarBackgroundBrush"
+                     Color="#BF2A2A2A"/>
 
-    <SolidColorBrush x:Key="BottomBarBackgroundBrush" Color="#FF2A2A2A" />
+    <SolidColorBrush x:Key="BottomBarBackgroundBrush"
+                     Color="#FF2A2A2A"/>
 
-    <SolidColorBrush x:Key="OverlayMenuBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="OverlayMenuBackgroundBrush"
+                     Color="{DynamicResource ControlBackgroundColor}"/>
 
-    <SolidColorBrush x:Key="SelectionBrush" Color="{DynamicResource GlyphColor}" />
+    <SolidColorBrush x:Key="SelectionBrush"
+                     Color="{DynamicResource GlyphColor}"/>
 
-    <SolidColorBrush x:Key="GameDetailsBackgroundBrush" Color="#F22A2A2A" />
+    <SolidColorBrush x:Key="GameDetailsBackgroundBrush"
+                     Color="#F22A2A2A"/>
 
-    <SolidColorBrush x:Key="WarningBrush" Color="#ef4444" />
-    <SolidColorBrush x:Key="AlertBrush" Color="#eab308" />
-    <SolidColorBrush x:Key="SuccessBrush" Color="#22c55e" />
+    <SolidColorBrush x:Key="WarningBrush"
+                     Color="#ef4444"/>
+    <SolidColorBrush x:Key="AlertBrush"
+                     Color="#eab308"/>
+    <SolidColorBrush x:Key="SuccessBrush"
+                     Color="#22c55e"/>
 
     <FontFamily x:Key="FontDefault">Segoe UI</FontFamily>
     <FontFamily x:Key="FontDefaultLight">Segoe UI</FontFamily>
     <FontFamily x:Key="FontDefaultBold">Segoe UI Bold</FontFamily>
 
-    <Style x:Key="FluentIconStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Segoe Fluent Icons"/>
-        <Setter Property="FontSize" Value="64"/>
-        <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+    <Style x:Key="FluentIconStyle"
+           TargetType="TextBlock">
+        <Setter Property="FontFamily"
+                Value="Segoe Fluent Icons"/>
+        <Setter Property="FontSize"
+                Value="64"/>
+        <Setter Property="Foreground"
+                Value="{DynamicResource TextBrush}"/>
     </Style>
 
     <Style x:Key="NowPlayingTitleStyle"
-         TargetType="TextBlock">
+           TargetType="TextBlock">
         <Setter Property="FontSize"
-            Value="12"/>
+                Value="12"/>
         <Setter Property="FontWeight"
-            Value="Bold"/>
+                Value="Bold"/>
         <Setter Property="Opacity"
-            Value="0.8"/>
+                Value="0.8"/>
         <Setter Property="Margin"
-            Value="0,2,0,-6"/>
+                Value="0,2,0,-6"/>
     </Style>
 
     <Style x:Key="NowPlayingGameStyle"
-         TargetType="TextBlock">
+           TargetType="TextBlock">
         <Setter Property="FontSize"
-            Value="36"/>
+                Value="36"/>
         <Setter Property="Margin"
-            Value="0,-4,0,-4"/>
+                Value="0,-4,0,-4"/>
         <Setter Property="MaxWidth"
-            Value="512"/>
+                Value="512"/>
         <Setter Property="TextTrimming"
-            Value="CharacterEllipsis"/>
+                Value="CharacterEllipsis"/>
     </Style>
 
     <!-- Override image style -->
     <Style x:Key="NowPlayingImageStyle"
-         TargetType="Image">
+           TargetType="Image">
         <Setter Property="Width"
-            Value="56"/>
+                Value="56"/>
         <Setter Property="Height"
-            Value="56"/>
+                Value="56"/>
         <Setter Property="Margin"
-            Value="-16,0,16,-4"/>
+                Value="-16,0,16,-4"/>
         <Setter Property="Stretch"
-            Value="UniformToFill"/>
+                Value="UniformToFill"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="2"
-                          ShadowDepth="1"
-                          Opacity="0.3"/>
+                                  ShadowDepth="1"
+                                  Opacity="0.3"/>
             </Setter.Value>
         </Setter>
     </Style>
