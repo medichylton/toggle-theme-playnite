@@ -38,7 +38,15 @@
                                 BorderThickness="3"
                                 Visibility="Hidden"
                                 CornerRadius="8"
-                                Background="{DynamicResource TextBrush}"/>
+                                Background="{DynamicResource TextBrush}">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black"
+                                                  Direction="315"
+                                                  ShadowDepth="5"
+                                                  Opacity="0.5"
+                                                  BlurRadius="10"/>
+                            </Border.Effect>
+                        </Border>
                         <TextBlock x:Name="Text"
                                    Style="{DynamicResource TextBlockBaseStyle}"
                                    Foreground="{TemplateBinding Foreground}"
@@ -273,7 +281,7 @@
 
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="{DynamicResource ControlBackgroundDarkBrush}"
+                                Background="{DynamicResource ControlBackgroundBrush}"
                                 x:Name="BorderStandard"
                                 CornerRadius="39">
                             <Border.Effect>

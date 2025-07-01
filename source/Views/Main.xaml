@@ -182,7 +182,7 @@
                                                     Focusable="False"
                                                     FontSize="96"
                                                     VerticalAlignment="Center"
-                                                    Margin="0,-9,10,0">
+                                                    Margin="0,-6,10,0">
                                         <ContentControl.Style>
                                             <Style TargetType="{x:Type ContentControl}">
                                                 <Setter Property="Foreground"

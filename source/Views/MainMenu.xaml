@@ -4,9 +4,9 @@
     
     <Style x:Key="MainMenuBorder" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
-        <Setter Property="Width" Value="600" />
+        <Setter Property="Width" Value="632" />
         <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Margin" Value="16" />
+        <Setter Property="Margin" Value="-32,16,16,16" />
         <Setter Property="CornerRadius" Value="16" />
         <Setter Property="Effect">
             <Setter.Value>
@@ -17,7 +17,7 @@
                                  BlurRadius="10"/>
             </Setter.Value>
         </Setter>
-        <Setter Property="Padding" Value="16" />
+        <Setter Property="Padding" Value="40,16,8,16" />
         <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Style.Triggers>
@@ -37,7 +37,7 @@
     </Style>
 
     <Style x:Key="MainMenuButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="Margin" Value="13,5,13,5" />
         <Setter Property="Padding" Value="20,3,20,3" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -45,13 +45,13 @@
 
     <DataTemplate x:Key="MainMenuHeaderTemplate">
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,30,40,30">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="30,16,30,16">
                 <Image Source="{pmrk:ThemeFile 'Images/applogo_clean.png'}" Height="48"
                    RenderOptions.BitmapScalingMode="Fant" />
                 <TextBlock Text="Playnite" FontSize="36" Style="{DynamicResource TextBlockBaseStyle}"
                        Margin="20,0,0,0"/>
             </StackPanel>
-            <Rectangle Width="568" Height="1" Fill="{DynamicResource TextBrushDark}" Margin="0,16,0,32"></Rectangle>
+            <Rectangle Width="568" Height="1" Fill="{DynamicResource TextBrushDark}" Margin="0,0,0,16"></Rectangle>
         </StackPanel>
     </DataTemplate>
 
