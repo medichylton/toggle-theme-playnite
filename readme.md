@@ -60,3 +60,7 @@ Technically you can do whatever you want but the them looks and functions best w
 ## Setting up filter names
 
 Filters need to have one of the names mentioned in [this document](./filter-icons.md) to function.
+
+# Special Thanks
+
+Thanks to V, Mike, and Skope for all their help with advice and QA ❤️

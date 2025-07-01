@@ -2,23 +2,22 @@
 
     <Style x:Key="SettingsMenuBorder" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
-        <Setter Property="Width" Value="600" />
+        <Setter Property="Width" Value="632" />
         <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Margin" Value="16" />
+        <Setter Property="Margin" Value="-32,16,16,16" />
         <Setter Property="CornerRadius" Value="16" />
-        <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect
-                    BlurRadius="10"
-                    Direction="315"
-                    Opacity="0.5"
-                    ShadowDepth="5"
-                    Color="Black" />
+                <DropShadowEffect Color="Black" 
+                                 Direction="315" 
+                                 ShadowDepth="5" 
+                                 Opacity="0.5" 
+                                 BlurRadius="10"/>
             </Setter.Value>
         </Setter>
-        <Setter Property="Padding" Value="16" />
+        <Setter Property="Padding" Value="56,16,8,16" />
+        <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
         <Style.Triggers>
             <EventTrigger RoutedEvent="Window.Loaded">
                 <BeginStoryboard>
@@ -40,7 +39,8 @@
     <Style x:Key="SettingsSectionBorder" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
         <Setter Property="CornerRadius" Value="16" />
-        <Setter Property="Margin" Value="16" />
+        <Setter Property="Margin" Value="-32,16,16,16" />
+        <Setter Property="Padding" Value="40,16,8,16" />
         <Setter Property="Width" Value="960" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="BorderBrush" Value="{DynamicResource DefaultBorderBrush}" />
@@ -79,6 +79,7 @@
         <Setter Property="Padding" Value="20,3,20,3" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="36" />
     </Style>
 
     <DataTemplate x:Key="SettingsMenuHeaderTemplate">
@@ -207,9 +208,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xefb0;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionGeneral}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionGeneral}" />
         </StackPanel>
     </DataTemplate>
 
@@ -220,9 +221,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xeef2;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionVisuals}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionVisuals}" />
         </StackPanel>
     </DataTemplate>
 
@@ -233,9 +234,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xeea8;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionAudio}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionAudio}" />
         </StackPanel>
     </DataTemplate>
 
@@ -246,9 +247,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xef5d;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionLayout}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionLayout}" />
         </StackPanel>
     </DataTemplate>
 
@@ -259,9 +260,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xefa2;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionMenus}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionMenus}" />
         </StackPanel>
     </DataTemplate>
 
@@ -272,9 +273,9 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="24"
+                FontSize="36"
                 Text="&#xea30;" />
-            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSection}" />
+            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSection}" />
         </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

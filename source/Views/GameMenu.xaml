@@ -48,7 +48,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xec74;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -62,7 +62,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xef08;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -76,7 +76,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xf000;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -90,7 +90,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xef21;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -104,7 +104,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xeef2;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -118,7 +118,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xeee4;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -132,7 +132,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xec53;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -168,7 +168,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xeded;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
@@ -182,7 +182,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 FontFamily="{DynamicResource FontIcoFont}"
-                FontSize="{DynamicResource FontSizeSmall}"
+                FontSize="{DynamicResource FixedFontSizeSmall}"
                 Text="&#xefc7;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>

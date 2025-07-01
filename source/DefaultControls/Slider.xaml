@@ -20,7 +20,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
                     <Rectangle  Width="{TemplateBinding Width}" Height="Auto"
-                                Fill="{TemplateBinding Foreground}" />
+                                Fill="{TemplateBinding Foreground}" RadiusX="4" RadiusY="4"/>
           
                 </ControlTemplate>
             </Setter.Value>

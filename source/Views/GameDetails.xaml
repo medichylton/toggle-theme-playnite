@@ -47,6 +47,13 @@
                             VerticalAlignment="Top"
                             Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                             Style="{DynamicResource ButtonTopMenu}">
+                            <ButtonEx.Effect>
+                                <DropShadowEffect Color="Black" 
+                                 Direction="315" 
+                                 ShadowDepth="0" 
+                                 Opacity="0.75" 
+                                 BlurRadius="10"/>
+                            </ButtonEx.Effect>
                             <TextBlock
                                 Height="54"
                                 Margin="6,0,6,6"

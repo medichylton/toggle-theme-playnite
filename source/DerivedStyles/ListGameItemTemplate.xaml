@@ -31,7 +31,7 @@
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Bottom"
                             Background="{DynamicResource ControlBackgroundDarkBrush}"
-                            FontSize="{DynamicResource FontSizeSmall}"
+                            FontSize="{DynamicResource FixedFontSizeSmall}"
                             Style="{DynamicResource TextBlockBaseStyle}"
                             Text="{Binding DisplayName}"
                             TextAlignment="Center"
