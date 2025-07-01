@@ -6,3 +6,11 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.0.3/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_0_3.pthm
     Changelog:
       - Initial listing on Addon DB
+  - Version: 1.0.4
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-6-30
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.0.4/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_0_4.pthm
+    Changelog:
+      - Increased focused element contrast
+      - Better coloring
+      - Integrated MoData Extension (experimental)
