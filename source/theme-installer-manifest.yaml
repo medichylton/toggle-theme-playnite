@@ -14,3 +14,10 @@ Packages:
       - Increased focused element contrast
       - Better coloring
       - Integrated MoData Extension (experimental)
+  - Version: 1.0.5
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-7-01
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.0.5/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_0_5.pthm
+    Changelog:
+      - Bugfixes
+      - Accent color now set to Windows accent color
