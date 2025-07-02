@@ -6,9 +6,23 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type FilterDbItemtSelection}">
-                    <DockPanel Width="{DynamicResource FilterPanelWidth}"
-                               Background="{DynamicResource OverlayMenuBackgroundBrush}"
-                               x:Name="PART_MenuHost">
+                    <Border
+                        Width="{DynamicResource FilterPanelWidth}"
+                        Margin="-56,-96,-8,0"
+                        Padding="64,8,8,8"
+                        Background="{DynamicResource OverlayMenuBackgroundBrush}"
+                        BorderBrush="{DynamicResource DefaultBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="16">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="10"
+                                Direction="315"
+                                Opacity="0.5"
+                                ShadowDepth="5"
+                                Color="Black" />
+                        </Border.Effect>
+                    <DockPanel x:Name="PART_MenuHost">
                         <ButtonEx DockPanel.Dock="Top" Margin="15,5,15,5" BorderThickness="2"
                                   x:Name="PART_ButtonBack">
                             <Button.Content>
@@ -16,9 +30,8 @@
                                     <TextBlock Text="&#xeab5;" FontFamily="{StaticResource FontIcoFont}"
                                                FontSize="20" VerticalAlignment="Center"
                                                Margin="0,0,10,0" />
-                                    <TextBlock Text="{Binding Title}"
-                                               VerticalAlignment="Center"
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
+                                    <TextBlock Text="{Binding Title}" FontSize="{DynamicResource FixedFontSize}"
+                                               VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button.Content>
                         </ButtonEx>
@@ -31,6 +44,7 @@
                                         DockPanel.Dock="Top" Focusable="False"
                                         KeyboardNavigation.DirectionalNavigation="Once" />
                     </DockPanel>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

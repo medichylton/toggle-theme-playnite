@@ -127,7 +127,6 @@
             VerticalAlignment="Center"
             FontFamily="{DynamicResource FontIcoFont}"
             FontSize="20"
-            Foreground="{DynamicResource TextBrush}"
             Text="&#xee00;"
             TextAlignment="Center" />
     </DataTemplate>
@@ -138,7 +137,6 @@
             VerticalAlignment="Center"
             FontFamily="{DynamicResource FontIcoFont}"
             FontSize="20"
-            Foreground="{DynamicResource TextBrush}"
             Text="&#xec55;"
             TextAlignment="Center" />
     </DataTemplate>
@@ -149,7 +147,6 @@
             VerticalAlignment="Center"
             FontFamily="{DynamicResource FontIcoFont}"
             FontSize="20"
-            Foreground="{DynamicResource TextBrush}"
             Text="&#xec53;"
             TextAlignment="Center" />
     </DataTemplate>
