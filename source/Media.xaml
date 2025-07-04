@@ -14,8 +14,17 @@
     <TextBlock x:Key="BatteryStatusChargingLow" Text="&#xe85d;" FontFamily="Segoe Fluent Icons" />
     <TextBlock x:Key="BatteryStatusChargingMedium" Text="&#xe860;" FontFamily="Segoe Fluent Icons" />
     <TextBlock x:Key="BatteryStatusChargingHigh" Text="&#xe862;" FontFamily="Segoe Fluent Icons" />
-    
-    
+    <TextBlock x:Key="DetailsBatteryStatusCritical" Text="&#xe852;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusLow" Text="&#xe854;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusMedium" Text="&#xe857;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusHigh" Text="&#xe83f;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusCharging" Text="&#xe85a;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusChargingCritical" Text="&#xe85b;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusChargingLow" Text="&#xe85d;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusChargingMedium" Text="&#xe860;" FontFamily="Segoe Fluent Icons" />
+    <TextBlock x:Key="DetailsBatteryStatusChargingHigh" Text="&#xe862;" FontFamily="Segoe Fluent Icons" />
+
+
     <Style x:Key="ProgressIndicator" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
