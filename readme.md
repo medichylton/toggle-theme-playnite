@@ -1,3 +1,5 @@
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/jonosellier/toggle-theme-playnite/total?style=for-the-badge&color=e11d48)
+
 ![](./screenshots/title.png)
 
 # Toggle

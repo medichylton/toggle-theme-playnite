@@ -13,7 +13,7 @@ Packages:
     Changelog:
       - Increased focused element contrast
       - Better coloring
-      - Integrated MoData Extension (experimental)
+      - Integrated Mo Data Extension (experimental)
   - Version: 1.0.5
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2024-7-01
@@ -21,3 +21,10 @@ Packages:
     Changelog:
       - Bugfixes
       - Accent color now set to Windows accent color
+  - Version: 1.1.0
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-7-08
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.1.0/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_1_0.pthm
+    Changelog:
+      - Full Mo Data Support
+      - Includes WiFi and Disk Usage stats
