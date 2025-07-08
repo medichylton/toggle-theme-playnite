@@ -607,26 +607,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="24"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="1"
-                                           HorizontalAlignment="Right"
-                                           VerticalAlignment="Center"
-                                           Margin="24"
-                                           FontSize="48"
-                                           Opacity="0.67"
-                                           Foreground="{DynamicResource TextBrush}">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Text" Value="f" />
-                                            <Setter Property="FontFamily" Value="{DynamicResource FontXboxOneController}"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding AppSettings.Fullscreen.ButtonPrompts}" Value="PlayStation">
-                                                    <Setter Property="FontFamily" Value="{DynamicResource FontPlayStation4Controller}"/>
-                                                    <Setter Property="Text" Value="f" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
+
+                                <ContentControl ContentTemplate="{StaticResource ButtonPromptLB}" Height="72" Width="72" Grid.Column="1" HorizontalAlignment="Right" Margin="16,0" Opacity="0.67"/>
                                 <Border  Margin="10"
                                          Background="{DynamicResource TopBarBackgroundBrush}"
                                          CornerRadius="60"
@@ -717,26 +699,7 @@
                                                               Margin="-12,0,0,0"/>
                                     </Grid>
                                 </Border>
-                                <TextBlock Grid.Column="3"
-                                           HorizontalAlignment="Left"
-                                           VerticalAlignment="Center"
-                                           Margin="24"
-                                           FontSize="48"
-                                           Opacity="0.67"
-                                           Foreground="{DynamicResource TextBrush}">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="FontFamily" Value="{DynamicResource FontXboxOneController}"/>
-                                            <Setter Property="Text" Value="z" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding AppSettings.Fullscreen.ButtonPrompts}" Value="PlayStation">
-                                                    <Setter Property="FontFamily" Value="{DynamicResource FontPlayStation4Controller}"/>
-                                                    <Setter Property="Text" Value="l" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
+                                <ContentControl ContentTemplate="{StaticResource ButtonPromptRB}" Height="72" Width="72" Grid.Column="3" HorizontalAlignment="Left" Margin="16,0" Opacity="0.67"/>
                             </Grid>
                             <Grid Grid.Row="4"
                                   Height="70">

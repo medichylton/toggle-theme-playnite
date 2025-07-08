@@ -12,9 +12,9 @@
                     <Border
                         Margin="20,0,20,0"
                         Padding="4,4,12,4"
-                        Background="{TemplateBinding Background}"
+                        Background="Transparent"
                         BorderBrush="{DynamicResource DefaultBorderBrush}"
-                        BorderThickness="1"
+                        BorderThickness="0"
                         CornerRadius="20">
                         <StackPanel Orientation="Horizontal">
                             <ContentControl
@@ -27,7 +27,8 @@
                                 VerticalAlignment="Center"
                                 FontFamily="{DynamicResource FontDefault}"
                                 FontSize="12"
-                                Style="{DynamicResource TextBlockBaseStyle}">
+                                Style="{DynamicResource TextBlockBaseStyle}"
+                                Foreground="{DynamicResource TextBrushDark}">
                                 <ContentPresenter />
                             </TextBlock>
                         </StackPanel>

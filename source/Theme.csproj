@@ -992,6 +992,32 @@
     <Content Include="Images\applogo.png" />
     <Content Include="Images\applogo_clean.png" />
     <Content Include="Images\applogo_full.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptA.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptB.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptBack.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptLB.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptLS.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptLT.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptRB.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptRS.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptRT.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptStart.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptX.png" />
+    <Content Include="Images\Buttons\PS\ButtonPromptY.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptA.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptB.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptBack.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptLB.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptLS.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptLT.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptMenu.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptRB.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptRS.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptRT.png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptStart.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptView.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptX.Png" />
+    <Content Include="Images\Buttons\Xbox\ButtonPromptY.Png" />
     <Content Include="Images\custom_cover_background.png" />
     <Content Include="LocSource.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1014,6 +1040,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\ButtonPrompts\Xbox\Xbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\ButtonPrompts\PlayStation\PlayStation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Content>
@@ -1142,7 +1172,5 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\ButtonPrompts\PlayStation\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
