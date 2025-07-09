@@ -347,7 +347,7 @@
                                     FocusVisualStyle="{x:Null}"
                                     HtmlFontSize="32"
                                     HtmlForeground="{DynamicResource TextColor}"
-                                    LinkForeground="{DynamicResource GlyphColor}" />
+                                    LinkForeground="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
                             </ScrollViewerEx>
                         </DockPanel>
                     </Grid>

@@ -28,3 +28,10 @@ Packages:
     Changelog:
       - Full Mo Data Support
       - Includes WiFi and Disk Usage stats
+  - Version: 1.1.1
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-7-08
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.1.1/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_1_1.pthm
+    Changelog:
+      - Fix UI colors not being respected on Game Selection glow and certain hyperlinks
+      - ⚠️PSA⚠️ Toggle uses your windows accent color for the theme accent color. Change it in Windows Settings and restart Playnite to see.

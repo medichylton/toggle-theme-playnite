@@ -43,7 +43,7 @@
                                 Margin="-3" Visibility="Collapsed" CornerRadius="16">
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="0" Opacity="1"
-                                                  Color="{DynamicResource GlyphColor}"                                                  
+                                                  Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}"                                                  
                                                   RenderingBias="Quality" BlurRadius="20"/>
                             </Border.Effect>
                         </Border>
