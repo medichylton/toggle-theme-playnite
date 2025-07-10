@@ -18,16 +18,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border
+                        Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="4"
+                        CornerRadius="8"
                         SnapsToDevicePixels="true">
                         <Grid x:Name="PART_Track" ClipToBounds="true">
-                            <Rectangle x:Name="PART_Indicator"
-                                   Fill="{TemplateBinding Foreground}"
-                                   HorizontalAlignment="Left"
-                                   RadiusX="4" RadiusY="4" />
+                            <Rectangle
+                                x:Name="PART_Indicator"
+                                HorizontalAlignment="Left"
+                                Fill="{TemplateBinding Foreground}"
+                                RadiusX="8"
+                                RadiusY="8" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
@@ -35,7 +38,10 @@
         </Setter>
     </Style>
 
-    <Style x:Key="BarRound8" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+    <Style
+        x:Key="BarRound12"
+        BasedOn="{StaticResource {x:Type ProgressBar}}"
+        TargetType="ProgressBar">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
@@ -46,16 +52,20 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border
+                        Margin="-1"
+                        Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="8"
-                        SnapsToDevicePixels="true" Margin="-1">
+                        CornerRadius="12"
+                        SnapsToDevicePixels="true">
                         <Grid x:Name="PART_Track" ClipToBounds="true">
-                            <Rectangle x:Name="PART_Indicator"
-                                   Fill="{TemplateBinding Foreground}"
-                                   HorizontalAlignment="Left"
-                                   RadiusX="8" RadiusY="8" />
+                            <Rectangle
+                                x:Name="PART_Indicator"
+                                HorizontalAlignment="Left"
+                                Fill="{TemplateBinding Foreground}"
+                                RadiusX="12"
+                                RadiusY="12" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
