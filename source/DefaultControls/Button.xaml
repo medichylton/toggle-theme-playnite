@@ -24,11 +24,11 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         Background="{DynamicResource TextBrush}"
                                                         BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="8"
+                                                        BorderThickness="2"
+                                                        CornerRadius="10"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -102,10 +102,10 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="8"
+                                                        BorderThickness="2"
+                                                        CornerRadius="10"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden" />
                                                 <TextBlock
@@ -167,11 +167,11 @@
                                                 </Border>
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         Background="{DynamicResource TextBrush}"
                                                         BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="39"
+                                                        BorderThickness="2"
+                                                        CornerRadius="40"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -243,11 +243,11 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         Background="{DynamicResource TextBrush}"
                                                         BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="39"
+                                                        BorderThickness="2"
+                                                        CornerRadius="40"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -318,11 +318,11 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         Background="{DynamicResource GlyphBrush}"
                                                         BorderBrush="{DynamicResource TextBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="39"
+                                                        BorderThickness="2"
+                                                        CornerRadius="40"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>
@@ -383,11 +383,11 @@
 
                                                 <Border
                                                         x:Name="BorderFocus"
-                                                        Margin="-3"
+                                                        Margin="-6"
                                                         Background="{DynamicResource TextBrush}"
                                                         BorderBrush="{DynamicResource SelectionBrush}"
-                                                        BorderThickness="3"
-                                                        CornerRadius="16"
+                                                        BorderThickness="2"
+                                                        CornerRadius="17"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                         Visibility="Hidden">
                                                         <Border.Effect>

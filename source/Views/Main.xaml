@@ -177,7 +177,7 @@
                                         <DataTemplate>
                                             <Grid Margin="0,8,0,8" Visibility="{Binding Converter={StaticResource NullToVisibilityConverter}}">
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="64" />
+                                                    <ColumnDefinition Width="80" />
                                                     <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
 
@@ -188,15 +188,15 @@
                                                     VerticalAlignment="Center"
                                                     Orientation="Vertical">
                                                     <TextBlock
-                                                        HorizontalAlignment="Center"
+                                                        HorizontalAlignment="Left"
                                                         FontSize="32"
                                                         FontWeight="Bold"
                                                         Foreground="{DynamicResource TextBrush}"
                                                         Text="{Binding Label, Mode=OneWay}" />
 
                                                     <TextBlock
-                                                        HorizontalAlignment="Center"
-                                                        FontSize="8"
+                                                        HorizontalAlignment="Left"
+                                                        FontSize="14"
                                                         FontWeight="SemiBold"
                                                         Foreground="{DynamicResource TextBrush}"
                                                         Opacity="0.75"
@@ -204,7 +204,7 @@
                                                 </StackPanel>
 
                                                 <!--  Disk Info  -->
-                                                <StackPanel Grid.Column="1" Margin="16,8,0,8">
+                                                <StackPanel Grid.Column="1" Margin="0,8,0,8">
                                                     <Grid>
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition Width="Auto" />
@@ -214,7 +214,7 @@
                                                         <TextBlock
                                                             Grid.Column="0"
                                                             VerticalAlignment="Center"
-                                                            FontSize="8"
+                                                            FontSize="14"
                                                             FontWeight="Bold"
                                                             Foreground="{DynamicResource TextBrush}"
                                                             Text="{Binding UsedPercentageString, Mode=OneWay}" />
@@ -225,12 +225,12 @@
                                                             Orientation="Horizontal">
                                                             <TextBlock
                                                                 VerticalAlignment="Center"
-                                                                FontSize="8"
+                                                                FontSize="14"
                                                                 Foreground="{DynamicResource TextBrush}"
                                                                 Text="Free Space: " />
                                                             <TextBlock
                                                                 VerticalAlignment="Center"
-                                                                FontSize="8"
+                                                                FontSize="14"
                                                                 FontWeight="SemiBold"
                                                                 Foreground="{DynamicResource TextBrush}"
                                                                 Text="{Binding FreeSpaceString, Mode=OneWay}" />
@@ -238,11 +238,11 @@
                                                     </Grid>
 
                                                     <ProgressBar
-                                                        Height="16"
+                                                        Height="24"
                                                         Margin="0,4,0,0"
                                                         HorizontalAlignment="Stretch"
                                                         Maximum="100"
-                                                        Style="{DynamicResource BarRound8}"
+                                                        Style="{DynamicResource BarRound12}"
                                                         Value="{Binding UsedPercentage, Mode=OneWay}" />
                                                 </StackPanel>
                                             </Grid>
@@ -592,7 +592,6 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
-
                                 <ContentControl
                                     Grid.Column="1"
                                     Width="72"
