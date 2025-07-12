@@ -592,27 +592,15 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock
+                                <ContentControl
                                     Grid.Column="1"
-                                    Margin="24"
+                                    Width="72"
+                                    Height="72"
+                                    Margin="16,0"
                                     HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    FontSize="48"
-                                    Foreground="{DynamicResource TextBrush}"
-                                    Opacity="0.67">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Text" Value="f" />
-                                            <Setter Property="FontFamily" Value="{DynamicResource FontXboxOneController}" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding AppSettings.Fullscreen.ButtonPrompts}" Value="PlayStation">
-                                                    <Setter Property="FontFamily" Value="{DynamicResource FontPlayStation4Controller}" />
-                                                    <Setter Property="Text" Value="f" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
+                                    ContentTemplate="{StaticResource ButtonPromptLB}"
+                                    Focusable="False"
+                                    Opacity="0.67" />
                                 <Border
                                     Grid.Column="2"
                                     MinWidth="480"
@@ -711,27 +699,15 @@
                                             Margin="-12,0,0,0" />
                                     </Grid>
                                 </Border>
-                                <TextBlock
+                                <ContentControl
                                     Grid.Column="3"
-                                    Margin="24"
+                                    Width="72"
+                                    Height="72"
+                                    Margin="16,0"
                                     HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
-                                    FontSize="48"
-                                    Foreground="{DynamicResource TextBrush}"
-                                    Opacity="0.67">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="FontFamily" Value="{DynamicResource FontXboxOneController}" />
-                                            <Setter Property="Text" Value="z" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding AppSettings.Fullscreen.ButtonPrompts}" Value="PlayStation">
-                                                    <Setter Property="FontFamily" Value="{DynamicResource FontPlayStation4Controller}" />
-                                                    <Setter Property="Text" Value="l" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
+                                    ContentTemplate="{StaticResource ButtonPromptRB}"
+                                    Focusable="False"
+                                    Opacity="0.67" />
                             </Grid>
                             <Grid Grid.Row="4" Height="70">
                                 <Grid.ColumnDefinitions>

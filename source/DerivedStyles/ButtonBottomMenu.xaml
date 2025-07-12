@@ -12,11 +12,11 @@
                     <Border
                         Margin="20,0,20,0"
                         Padding="4,4,12,4"
-                        Background="{TemplateBinding Background}"
+                        Background="Transparent"
                         BorderBrush="{DynamicResource DefaultBorderBrush}"
-                        BorderThickness="1"
+                        BorderThickness="0"
                         CornerRadius="20">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <ContentControl
                                 Height="30"
                                 Margin="0,0,10,0"
@@ -26,8 +26,11 @@
                             <TextBlock
                                 VerticalAlignment="Center"
                                 FontFamily="{DynamicResource FontDefault}"
-                                FontSize="12"
-                                Style="{DynamicResource TextBlockBaseStyle}">
+                                FontSize="16"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource TextBrushDark}"
+                                Style="{DynamicResource TextBlockBaseStyle}"
+                                Typography.Capitals="AllSmallCaps">
                                 <ContentPresenter />
                             </TextBlock>
                         </StackPanel>
