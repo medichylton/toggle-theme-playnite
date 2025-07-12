@@ -16,7 +16,7 @@
                         BorderBrush="{DynamicResource DefaultBorderBrush}"
                         BorderThickness="0"
                         CornerRadius="20">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <ContentControl
                                 Height="30"
                                 Margin="0,0,10,0"
@@ -26,9 +26,11 @@
                             <TextBlock
                                 VerticalAlignment="Center"
                                 FontFamily="{DynamicResource FontDefault}"
-                                FontSize="12"
+                                FontSize="16"
+                                FontWeight="SemiBold"
+                                Foreground="{DynamicResource TextBrushDark}"
                                 Style="{DynamicResource TextBlockBaseStyle}"
-                                Foreground="{DynamicResource TextBrushDark}">
+                                Typography.Capitals="AllSmallCaps">
                                 <ContentPresenter />
                             </TextBlock>
                         </StackPanel>
