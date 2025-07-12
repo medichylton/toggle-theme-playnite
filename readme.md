@@ -65,4 +65,6 @@ Filters need to have one of the names mentioned in [this document](./filter-icon
 
 # Special Thanks
 
+Thanks to [Kenny](https://kenney.nl/) for their [awesome icon assets](https://kenney.nl/assets/game-icons)
+
 Thanks to V, Mike, and Skope for all their help with advice and QA ❤️
