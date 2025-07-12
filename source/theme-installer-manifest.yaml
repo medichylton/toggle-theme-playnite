@@ -41,7 +41,7 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.1.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_1_2.pthm
     Changelog:
       - Change text sizing in Mo Data details window
-  - Version: 1.1.2
+  - Version: 1.1.3
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2024-7-12
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.1.3/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_1_3.pthm
