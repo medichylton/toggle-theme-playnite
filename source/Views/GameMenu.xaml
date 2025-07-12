@@ -47,9 +47,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xec74;" />
+                Text="&#xe768;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -61,9 +61,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xef08;" />
+                Text="&#xe896;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -75,9 +75,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xf000;" />
+                Text="&#xe224;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -89,9 +89,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xef21;" />
+                Text="&#xed1a;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -103,9 +103,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xeef2;" />
+                Text="&#xe7f4;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -117,9 +117,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xeee4;" />
+                Text="&#xe74d;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -131,9 +131,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xec53;" />
+                Text="&#xec91;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -167,9 +167,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xeded;" />
+                Text="&#xe70f;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>
@@ -181,9 +181,9 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
                 FontSize="{DynamicResource FixedFontSizeSmall}"
-                Text="&#xefc7;" />
+                Text="&#xea86;" />
             <TextBlock VerticalAlignment="Center" Text="{Binding}" />
         </StackPanel>
     </DataTemplate>

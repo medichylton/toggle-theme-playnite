@@ -8,11 +8,12 @@
         <Setter Property="CornerRadius" Value="16" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect Color="Black" 
-                                 Direction="315" 
-                                 ShadowDepth="5" 
-                                 Opacity="0.5" 
-                                 BlurRadius="10"/>
+                <DropShadowEffect
+                    BlurRadius="10"
+                    Direction="315"
+                    Opacity="0.5"
+                    ShadowDepth="5"
+                    Color="Black" />
             </Setter.Value>
         </Setter>
         <Setter Property="Padding" Value="56,16,8,16" />
@@ -204,78 +205,96 @@
     <DataTemplate x:Key="SettingsMenuGeneralButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe713;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xefb0;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionGeneral}" />
+                Text="{DynamicResource LOCSettingsFSSectionGeneral}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SettingsMenuVisualsButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe7f4;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xeef2;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionVisuals}" />
+                Text="{DynamicResource LOCSettingsFSSectionVisuals}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SettingsMenuAudioButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe767;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xeea8;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionAudio}" />
+                Text="{DynamicResource LOCSettingsFSSectionAudio}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SettingsMenuLayoutButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xeca5;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xef5d;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionLayout}" />
+                Text="{DynamicResource LOCSettingsFSSectionLayout}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SettingsMenuMenusButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe8fd;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xefa2;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSectionMenus}" />
+                Text="{DynamicResource LOCSettingsFSSectionMenus}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SettingsMenuInputButtonTemplate">
         <StackPanel Orientation="Horizontal">
             <TextBlock
-                Margin="0,0,10,0"
+                Margin="0,0,24,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                FontFamily="{DynamicResource FontIcoFont}"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe7fc;" />
+            <TextBlock
+                VerticalAlignment="Center"
                 FontSize="36"
-                Text="&#xea30;" />
-            <TextBlock FontSize="36" VerticalAlignment="Center" Text="{DynamicResource LOCSettingsFSSection}" />
+                Text="{DynamicResource LOCSettingsFSSection}" />
         </StackPanel>
     </DataTemplate>
 </ResourceDictionary>
