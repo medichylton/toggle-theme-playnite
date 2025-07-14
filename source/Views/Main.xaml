@@ -710,6 +710,12 @@
                                     Opacity="0.67" />
                             </Grid>
                             <Grid Grid.Row="4" Height="70">
+                                <Grid.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="#000F0F0F" />
+                                        <GradientStop Offset="1" Color="#CC0F0F0F" />
+                                    </LinearGradientBrush>
+                                </Grid.Background>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="24" />
                                     <ColumnDefinition Width="Auto" />
@@ -717,43 +723,48 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
-
-                                <StackPanel
-                                    Grid.Column="1"
-                                    VerticalAlignment="Center"
-                                    Orientation="Horizontal">
-                                    <!--  Install  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonInstall"
-                                        Content="{DynamicResource LOCInstallGame}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                    <!--  Play  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonPlay"
-                                        Content="{DynamicResource LOCPlayGame}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                    <!--  Details  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonDetails"
-                                        Content="{DynamicResource LOCGameDetails}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                    <!--  Options  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonGameOptions"
-                                        Content="{DynamicResource LOCGameOptions}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                    <!--  Search  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonSearch"
-                                        Content="{DynamicResource LOCSearchLabel}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                    <!--  Filter  -->
-                                    <ButtonEx
-                                        x:Name="PART_ButtonFilter"
-                                        Content="{DynamicResource LOCFilter}"
-                                        Style="{DynamicResource ButtonBottomMenu}" />
-                                </StackPanel>
-
+                                <Border Grid.Column="1">
+                                    <Border.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="16"
+                                            Direction="315"
+                                            Opacity="0.9"
+                                            ShadowDepth="0"
+                                            Color="Black" />
+                                    </Border.Effect>
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                        <!--  Install  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonInstall"
+                                            Content="{DynamicResource LOCInstallGame}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Play  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonPlay"
+                                            Content="{DynamicResource LOCPlayGame}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Details  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonDetails"
+                                            Content="{DynamicResource LOCGameDetails}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Options  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonGameOptions"
+                                            Content="{DynamicResource LOCGameOptions}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Search  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonSearch"
+                                            Content="{DynamicResource LOCSearchLabel}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Filter  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonFilter"
+                                            Content="{DynamicResource LOCFilter}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                    </StackPanel>
+                                </Border>
                                 <StackPanel
                                     x:Name="PART_ElemSearchActive"
                                     Grid.Column="2"

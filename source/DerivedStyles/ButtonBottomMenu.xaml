@@ -28,7 +28,7 @@
                                 FontFamily="{DynamicResource FontDefault}"
                                 FontSize="16"
                                 FontWeight="SemiBold"
-                                Foreground="{DynamicResource TextBrushDark}"
+                                Foreground="{DynamicResource TextBrush}"
                                 Style="{DynamicResource TextBlockBaseStyle}"
                                 Typography.Capitals="AllSmallCaps">
                                 <ContentPresenter />
