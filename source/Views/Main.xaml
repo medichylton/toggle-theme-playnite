@@ -242,8 +242,27 @@
                                                         Margin="0,4,0,0"
                                                         HorizontalAlignment="Stretch"
                                                         Maximum="100"
-                                                        Style="{DynamicResource BarRound12}"
-                                                        Value="{Binding UsedPercentage, Mode=OneWay}" />
+                                                        Value="{Binding UsedPercentage, Mode=OneWay}">
+                                                        <ProgressBar.Style>
+                                                            <Style BasedOn="{StaticResource BarRound12}" TargetType="ProgressBar">
+                                                                <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding UsedTenthsInt, Mode=OneWay}" Value="7">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource AlertBrush}" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding UsedTenthsInt, Mode=OneWay}" Value="8">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource AlertBrush}" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding UsedTenthsInt, Mode=OneWay}" Value="9">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource WarningBrush}" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding UsedTenthsInt, Mode=OneWay}" Value="10">
+                                                                        <Setter Property="Foreground" Value="{DynamicResource WarningBrush}" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </ProgressBar.Style>
+                                                    </ProgressBar>
                                                 </StackPanel>
                                             </Grid>
                                         </DataTemplate>
