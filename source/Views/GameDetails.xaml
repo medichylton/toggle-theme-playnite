@@ -48,11 +48,12 @@
                             Command="{Binding DataContext.ToggleGameDetailsCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                             Style="{DynamicResource ButtonTopMenu}">
                             <ButtonEx.Effect>
-                                <DropShadowEffect Color="Black" 
-                                 Direction="315" 
-                                 ShadowDepth="0" 
-                                 Opacity="0.75" 
-                                 BlurRadius="10"/>
+                                <DropShadowEffect
+                                    BlurRadius="10"
+                                    Direction="315"
+                                    Opacity="0.75"
+                                    ShadowDepth="0"
+                                    Color="Black" />
                             </ButtonEx.Effect>
                             <TextBlock
                                 Height="54"
@@ -294,7 +295,11 @@
                                         </Style>
                                     </ButtonEx.Style>
                                 </ButtonEx>
-                                <ButtonEx Margin="32,2,2,2" Command="{PluginSettings Plugin=NowPlaying, Path=ReturnToGame}">
+                                <ButtonEx
+                                    Margin="32,2,2,2"
+                                    BorderThickness="2"
+                                    Command="{PluginSettings Plugin=NowPlaying,
+                                                             Path=ReturnToGame}">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
                                             <Setter Property="Visibility" Value="Visible" />
@@ -307,7 +312,11 @@
                                     </ButtonEx.Style>
                                     Return to Game
                                 </ButtonEx>
-                                <ButtonEx Margin="32,2,2,2" Command="{PluginSettings Plugin=NowPlaying, Path=CloseGame}">
+                                <ButtonEx
+                                    Margin="32,2,2,2"
+                                    BorderThickness="2"
+                                    Command="{PluginSettings Plugin=NowPlaying,
+                                                             Path=CloseGame}">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
                                             <Setter Property="Visibility" Value="Visible" />

@@ -6,6 +6,166 @@
     xmlns:pbeh="clr-namespace:Playnite.Behaviors;assembly=Playnite"
     mc:Ignorable="d">
 
+    <Style x:Key="NowPlayingWindowStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Border
+                            Width="1280"
+                            Height="640"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="{DynamicResource BottomBarBackgroundBrush}"
+                            BorderBrush="{DynamicResource DefaultBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="16">
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="10"
+                                    Direction="315"
+                                    Opacity="0.5"
+                                    ShadowDepth="5"
+                                    Color="Black" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  Cover Image with mask for blending  -->
+                                <Border
+                                    x:Name="CoverMask"
+                                    Grid.Column="1"
+                                    Margin="0"
+                                    Background="Black"
+                                    CornerRadius="0,16,16,0" />
+
+                                <Image
+                                    Grid.Column="1"
+                                    Margin="0"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Source="{PluginSettings Plugin=NowPlaying,
+                                                            Path=RunningGame.CoverPath}"
+                                    Stretch="UniformToFill">
+                                    <Image.OpacityMask>
+                                        <VisualBrush
+                                            RenderOptions.BitmapScalingMode="Fant"
+                                            Stretch="Fill"
+                                            Visual="{Binding ElementName=CoverMask}" />
+                                    </Image.OpacityMask>
+                                </Image>
+
+                                <!--  Game Details  -->
+                                <StackPanel
+                                    Grid.Column="0"
+                                    Margin="48,48,24,48"
+                                    VerticalAlignment="Top">
+
+                                    <TextBlock
+                                        Margin="0,0,0,16"
+                                        FontFamily="{DynamicResource FontDefaultBold}"
+                                        FontSize="24"
+                                        Foreground="{DynamicResource TextBrushDark}"
+                                        Style="{DynamicResource TextBlockBaseStyle}">
+                                        Currently Playing
+                                    </TextBlock>
+                                    <!--  Game Title  -->
+                                    <TextBlock
+                                        Margin="0,0,0,40"
+                                        FontFamily="{DynamicResource FontDefaultBold}"
+                                        FontSize="64"
+                                        Foreground="{DynamicResource TextBrush}"
+                                        Style="{DynamicResource TextBlockBaseStyle}"
+                                        Text="{PluginSettings Plugin=NowPlaying,
+                                                              Path=RunningGame.GameName}"
+                                        TextWrapping="Wrap">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect
+                                                Opacity="1"
+                                                RenderingBias="Quality"
+                                                ShadowDepth="2"
+                                                Color="Black" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+
+                                    <!--  Game Info  -->
+                                    <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
+                                        <!--  Session Length  -->
+                                        <TextBlock
+                                            Margin="72,0,12,0"
+                                            Opacity="0.75"
+                                            Style="{StaticResource FluentIconStyle}"
+                                            Text="&#xe916;" />
+                                        <StackPanel>
+                                            <TextBlock
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=NowPlaying,
+                                                                      Path=SessionLength}" />
+                                            <TextBlock
+                                                FontSize="22"
+                                                Opacity="0.75"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="This Session" />
+                                        </StackPanel>
+
+                                        <!--  Start Time  -->
+                                        <TextBlock
+                                            Margin="72,0,12,0"
+                                            Opacity="0.75"
+                                            Style="{StaticResource FluentIconStyle}"
+                                            Text="&#xed5a;" />
+                                        <StackPanel>
+                                            <TextBlock
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=NowPlaying,
+                                                                      Path=RunningGame.StartTime,
+                                                                      StringFormat='HH:mm'}" />
+                                            <TextBlock
+                                                FontSize="22"
+                                                Opacity="0.75"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="Started" />
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <!--  Controls  -->
+                                    <StackPanel
+                                        Margin="0,20,0,0"
+                                        pbeh:FocusBahaviors.FocusBinding="True"
+                                        pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                                        Orientation="Horizontal">
+                                        <ButtonEx
+                                            Margin="0,2,2,2"
+                                            BorderThickness="2"
+                                            Command="{PluginSettings Plugin=NowPlaying,
+                                                                     Path=ReturnToGame}"
+                                            Style="{DynamicResource ButtonBig}">
+                                            Return to Game
+                                        </ButtonEx>
+                                        <ButtonEx
+                                            Margin="32,2,2,2"
+                                            BorderThickness="2"
+                                            Command="{PluginSettings Plugin=NowPlaying,
+                                                                     Path=CloseGame}"
+                                            Style="{DynamicResource ButtonBig}">
+                                            Exit
+                                        </ButtonEx>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="MoDataWindowStyle" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -330,7 +490,7 @@
                                     Grid.Column="1"
                                     Margin="12,8,32,8"
                                     Command="{PluginSettings Plugin=NowPlaying,
-                                                             Path=OpenDialog}">
+                                                             Path=OpenCustomDialog}">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonNowPlaying}" TargetType="ButtonEx">
                                             <Setter Property="Visibility" Value="Visible" />
