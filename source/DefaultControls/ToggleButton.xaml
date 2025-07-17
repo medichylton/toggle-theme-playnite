@@ -31,7 +31,7 @@
                         <Border
                             x:Name="BorderFocus"
                             Margin="-3"
-                            BorderBrush="{DynamicResource SelectionBrush}"
+                            BorderBrush="{DynamicResource PrimaryBrush}"
                             BorderThickness="3"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                             Visibility="Hidden" />
@@ -51,7 +51,7 @@
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource SelectionBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

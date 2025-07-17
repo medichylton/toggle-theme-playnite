@@ -302,8 +302,8 @@
 
                                                 <Border
                                                         x:Name="BorderStandard"
-                                                        Background="{DynamicResource GlyphDarkBrush}"
-                                                        BorderBrush="{DynamicResource GlyphLightBrush}"
+                                                        Background="{DynamicResource PrimaryBrush}"
+                                                        BorderBrush="{DynamicResource PrimaryBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}"
                                                         CornerRadius="39">
                                                         <Border.Effect>
@@ -319,7 +319,7 @@
                                                 <Border
                                                         x:Name="BorderFocus"
                                                         Margin="-6"
-                                                        Background="{DynamicResource GlyphBrush}"
+                                                        Background="{DynamicResource PrimaryBrush}"
                                                         BorderBrush="{DynamicResource TextBrush}"
                                                         BorderThickness="2"
                                                         CornerRadius="40"
@@ -385,7 +385,7 @@
                                                         x:Name="BorderFocus"
                                                         Margin="-6"
                                                         Background="{DynamicResource TextBrush}"
-                                                        BorderBrush="{DynamicResource SelectionBrush}"
+                                                        BorderBrush="{DynamicResource PrimaryBrush}"
                                                         BorderThickness="2"
                                                         CornerRadius="17"
                                                         SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"

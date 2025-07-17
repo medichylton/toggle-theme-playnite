@@ -44,7 +44,7 @@
                         <Border
                             x:Name="BorderFocus"
                             Margin="-3"
-                            BorderBrush="{DynamicResource SelectionBrush}"
+                            BorderBrush="{DynamicResource PrimaryBrush}"
                             BorderThickness="3"
                             CornerRadius="8"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
@@ -62,7 +62,7 @@
                             <Setter TargetName="BorderStandard" Property="Visibility" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="Tag" Value="{StaticResource True}">
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphLightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -94,7 +94,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Style.Triggers>
             <Trigger Property="Tag" Value="{StaticResource True}">
-                <Setter Property="Foreground" Value="{DynamicResource GlyphLightBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -20,7 +20,7 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                                 <Trigger Property="IsFocused" Value="True">
-                                                        <Setter TargetName="MainBorder" Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                                                        <Setter TargetName="MainBorder" Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
                                                         <Setter TargetName="MainBorder" Property="Background" Value="#1AFFFFFF" />
                                                 </Trigger>
                                         </ControlTemplate.Triggers>
@@ -49,7 +49,7 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                                 <Trigger Property="IsFocused" Value="True">
-                                                        <Setter TargetName="MainBorder" Property="BorderBrush" Value="{DynamicResource GlyphBrush}" />
+                                                        <Setter TargetName="MainBorder" Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
                                                         <Setter TargetName="MainBorder" Property="Background" Value="#1AFFFFFF" />
                                                 </Trigger>
                                         </ControlTemplate.Triggers>

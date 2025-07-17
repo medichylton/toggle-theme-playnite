@@ -9,8 +9,8 @@
 
         <Color x:Key="BlackColor">#FF000000</Color>
         <Color x:Key="WhiteColor">#FFFFFFFF</Color>
-        
-    <Color x:Key="SelectionLightColor">#FF606060</Color>
+
+        <Color x:Key="SelectionLightColor">#FF606060</Color>
         <Color x:Key="OverlayColor">#BB000000</Color>
 
         <Color x:Key="ControlBackgroundColor">#FF3A3A3A</Color>
@@ -22,10 +22,7 @@
 
         <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
         <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
-        <SolidColorBrush x:Key="GlyphBrush" Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
         <SolidColorBrush x:Key="PrimaryBrush" Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
-        <SolidColorBrush x:Key="GlyphLightBrush" Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
-        <SolidColorBrush x:Key="GlyphDarkBrush" Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
         <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
         <SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
         <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource SelectionLightColor}" />
@@ -54,8 +51,6 @@
         <SolidColorBrush x:Key="BottomBarBackgroundBrush" Color="#FF2A2A2A" />
 
         <SolidColorBrush x:Key="OverlayMenuBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
-
-        <SolidColorBrush x:Key="SelectionBrush" Color="{Binding Source={x:Static SystemParameters.WindowGlassBrush}, Path=Color}" />
 
         <SolidColorBrush x:Key="GameDetailsBackgroundBrush" Color="#F22A2A2A" />
 

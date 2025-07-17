@@ -20,6 +20,10 @@
                             BorderBrush="{DynamicResource DefaultBorderBrush}"
                             BorderThickness="1"
                             CornerRadius="16">
+                            <Border.Opacity>0</Border.Opacity>
+                            <Border.RenderTransform>
+                                <TranslateTransform Y="-200" />
+                            </Border.RenderTransform>
                             <Border.Effect>
                                 <DropShadowEffect
                                     BlurRadius="10"
@@ -28,6 +32,47 @@
                                     ShadowDepth="5"
                                     Color="Black" />
                             </Border.Effect>
+                            <Border.Triggers>
+                                <!--  Fade in animation on load  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                                To="0"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <!--  Fade out animation on unload  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                                To="-200"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseIn" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
@@ -185,6 +230,11 @@
                             BorderBrush="{DynamicResource DefaultBorderBrush}"
                             BorderThickness="1"
                             CornerRadius="16">
+                            <!--  Set initial state for animation  -->
+                            <Border.Opacity>0</Border.Opacity>
+                            <Border.RenderTransform>
+                                <TranslateTransform X="200" />
+                            </Border.RenderTransform>
                             <Border.Effect>
                                 <DropShadowEffect
                                     BlurRadius="10"
@@ -193,6 +243,47 @@
                                     ShadowDepth="5"
                                     Color="Black" />
                             </Border.Effect>
+                            <Border.Triggers>
+                                <!--  Fade in animation on load  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                                To="0"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <!--  Fade out animation on unload  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                                To="200"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseIn" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
                             <StackPanel
                                 pbeh:FocusBahaviors.FocusBinding="True"
                                 pbeh:FocusBahaviors.OnVisibilityFocus="True"
@@ -558,6 +649,66 @@
                                     </StackPanel>
                                 </Border>
 
+                                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                    <Border
+                                        x:Name="PART_ElemSearchActive"
+                                        Height="64"
+                                        Margin="12,8,32,8"
+                                        Padding="16,0"
+                                        VerticalAlignment="Center"
+                                        Background="{DynamicResource TopBarBackgroundBrush}"
+                                        BorderBrush="{DynamicResource DefaultBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="16">
+                                        <Border.Effect>
+                                            <DropShadowEffect
+                                                BlurRadius="10"
+                                                Direction="315"
+                                                Opacity="0.5"
+                                                ShadowDepth="5"
+                                                Color="Black" />
+                                        </Border.Effect>
+                                        <StackPanel
+                                            Margin="0,0,0,0"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                            <TextBlock
+                                                FontSize="14"
+                                                Foreground="{DynamicResource TextBrushDark}"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{DynamicResource LOCGameListSearchResults}" />
+                                            <TextBlock
+                                                FontSize="24"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{Binding AppSettings.Fullscreen.FilterSettings.Name}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border
+                                        x:Name="PART_ElemExtraFilterActive"
+                                        Height="64"
+                                        Margin="12,8,32,8"
+                                        Padding="16,0"
+                                        VerticalAlignment="Center"
+                                        Background="{DynamicResource TopBarBackgroundBrush}"
+                                        BorderBrush="{DynamicResource DefaultBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="16">
+                                        <Border.Effect>
+                                            <DropShadowEffect
+                                                BlurRadius="10"
+                                                Direction="315"
+                                                Opacity="0.5"
+                                                ShadowDepth="5"
+                                                Color="Black" />
+                                        </Border.Effect>
+                                        <TextBlock
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontSize="20"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{DynamicResource LOCGameListExtraFiltered}" />
+                                    </Border>
+                                </StackPanel>
                                 <ButtonEx
                                     x:Name="ShowDataButton"
                                     Grid.Column="5"
@@ -713,24 +864,6 @@
                                     x:Name="PART_ContentFilterItems"
                                     DockPanel.Dock="Left"
                                     Focusable="False" />
-
-
-                                <TextBlock
-                                    Margin="96,-72,0,16"
-                                    DockPanel.Dock="Bottom"
-                                    FontSize="64"
-                                    FontWeight="Bold"
-                                    Style="{DynamicResource TextBlockBaseStyle}"
-                                    Text="{Binding SelectedGame.DisplayName}">
-                                    <TextBlock.Effect>
-                                        <DropShadowEffect
-                                            BlurRadius="10"
-                                            Direction="315"
-                                            Opacity="0.5"
-                                            ShadowDepth="3"
-                                            Color="Black" />
-                                    </TextBlock.Effect>
-                                </TextBlock>
                                 <ListBoxEx
                                     x:Name="PART_ListGameItems"
                                     Margin="0,-64,0,0"
@@ -864,7 +997,7 @@
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource FontIcoFont}"
                                                 FontSize="30"
-                                                Foreground="{DynamicResource GlyphLightBrush}"
+                                                Foreground="{DynamicResource PrimaryBrush}"
                                                 Text="&#xEF08;" />
                                         </ButtonEx>
                                         <Rectangle
@@ -944,33 +1077,6 @@
                                             Style="{DynamicResource ButtonBottomMenu}" />
                                     </StackPanel>
                                 </Border>
-                                <StackPanel
-                                    x:Name="PART_ElemSearchActive"
-                                    Grid.Column="2"
-                                    Margin="0,15,0,0"
-                                    HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Top">
-                                    <TextBlock
-                                        FontSize="18"
-                                        Style="{DynamicResource TextBlockBaseStyle}"
-                                        Text="{DynamicResource LOCGameListSearchResults}"
-                                        TextAlignment="Center" />
-                                    <TextBlock
-                                        Foreground="White"
-                                        Style="{DynamicResource TextBlockBaseStyle}"
-                                        Text="{Binding AppSettings.Fullscreen.FilterSettings.Name}"
-                                        TextAlignment="Center" />
-                                </StackPanel>
-
-                                <TextBlock
-                                    x:Name="PART_ElemExtraFilterActive"
-                                    Grid.Column="2"
-                                    HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Center"
-                                    FontSize="20"
-                                    Style="{DynamicResource TextBlockBaseStyle}"
-                                    Text="{DynamicResource LOCGameListExtraFiltered}"
-                                    TextAlignment="Right" />
                             </Grid>
                         </Grid>
 

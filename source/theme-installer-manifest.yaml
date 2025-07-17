@@ -48,3 +48,13 @@ Packages:
     Changelog:
       - New colorful icons
       - Thanks to Kenny.nl for the icons!
+  - Version: 1.2.0
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-7-16
+    PackageUrl: NULL
+    Changelog:
+      - Fix icon contrast
+      - Utilize custom Now Playing Window (Make sure you update Now Playing to v0.4.0 or higher before you install this update)
+      - Added some animation and changed the game list view slightly
+      - Fix some outstanding UI issues
+      - Add custom color schemes

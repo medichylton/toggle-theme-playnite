@@ -37,7 +37,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     FontSize="28"
-                                    Foreground="{DynamicResource SelectionBrush}"
+                                    Foreground="{DynamicResource PrimaryBrush}"
                                     Style="{StaticResource FluentIconStyle}"
                                     Text="&#xe73d;"
                                     Visibility="Collapsed" />
@@ -57,7 +57,7 @@
                         <Border
                             x:Name="BorderFocus"
                             Margin="-3"
-                            BorderBrush="{DynamicResource SelectionBrush}"
+                            BorderBrush="{DynamicResource PrimaryBrush}"
                             BorderThickness="3"
                             CornerRadius="8"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"

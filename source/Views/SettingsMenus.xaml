@@ -158,7 +158,7 @@
                                 Grid.Column="1"
                                 Width="62"
                                 Height="34"
-                                BorderBrush="{DynamicResource SelectionBrush}"
+                                BorderBrush="{DynamicResource PrimaryBrush}"
                                 BorderThickness="3"
                                 CornerRadius="17"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
@@ -174,11 +174,11 @@
                             <Setter TargetName="CheckedIcon" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphLightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
                             <Setter TargetName="BorderFocus" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource GlyphLightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
                             <Setter TargetName="BorderFocus" Property="Visibility" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -191,7 +191,7 @@
         x:Key="SettingsSectionCombobox"
         BasedOn="{StaticResource {x:Type ComboBoxEx}}"
         TargetType="ComboBoxEx">
-        <Setter Property="MinWidth" Value="200" />
+        <Setter Property="MinWidth" Value="300" />
         <Setter Property="Margin" Value="{DynamicResource SettingsSectionItemSpacing}" />
     </Style>
 
@@ -258,7 +258,7 @@
                 VerticalAlignment="Center"
                 FontFamily="Segoe Fluent Icons"
                 FontSize="32"
-                Text="&#xeca5;" />
+                Text="&#xf246;" />
             <TextBlock
                 VerticalAlignment="Center"
                 FontSize="36"
@@ -297,4 +297,31 @@
                 Text="{DynamicResource LOCSettingsFSSection}" />
         </StackPanel>
     </DataTemplate>
+
+    <Style x:Key="ThemeOptionsPreviewImageGridStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="896,0,-560,0" />
+        <Setter Property="Width" Value="480" />
+        <Setter Property="Height" Value="360" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="ThemeOptionsPreviewImageStyle" TargetType="Image">
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <DataTemplate x:Key="SettingsMenuThemeOptionsButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                Margin="0,0,24,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Segoe Fluent Icons"
+                FontSize="32"
+                Text="&#xe771;" />
+            <TextBlock VerticalAlignment="Center" Text="{DynamicResource LOCThemeOptionsSettingsMenu}" />
+        </StackPanel>
+    </DataTemplate>
+
 </ResourceDictionary>
