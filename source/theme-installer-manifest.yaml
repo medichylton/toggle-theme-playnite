@@ -48,3 +48,13 @@ Packages:
     Changelog:
       - New colorful icons
       - Thanks to Kenny.nl for the icons!
+  - Version: 1.2.0
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-7-17
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.2.0/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_2_0.pthm
+    Changelog:
+      - Fix icon contrast
+      - Utilize custom Now Playing Window (Make sure you update Now Playing to v0.4.0 or higher before you install this update)
+      - Added some animation and changed the game list view slightly
+      - Fix some outstanding UI issues
+      - Add custom color schemes

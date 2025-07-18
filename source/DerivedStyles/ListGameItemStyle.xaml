@@ -19,26 +19,26 @@
                                 Storyboard.TargetName="ScaleTransform"
                                 Storyboard.TargetProperty="ScaleX"
                                 From="1"
-                                To="1.25"
+                                To="1.125"
                                 Duration="0:0:0.1" />
                             <DoubleAnimation
                                 Storyboard.TargetName="ScaleTransform"
                                 Storyboard.TargetProperty="ScaleY"
                                 From="1"
-                                To="1.25"
+                                To="1.125"
                                 Duration="0:0:0.1" />
                         </Storyboard>
                         <Storyboard x:Key="FocusedOff">
                             <DoubleAnimation
                                 Storyboard.TargetName="ScaleTransform"
                                 Storyboard.TargetProperty="ScaleX"
-                                From="1.25"
+                                From="1.125"
                                 To="1"
                                 Duration="0:0:0.2" />
                             <DoubleAnimation
                                 Storyboard.TargetName="ScaleTransform"
                                 Storyboard.TargetProperty="ScaleY"
-                                From="1.25"
+                                From="1.125"
                                 To="1"
                                 Duration="0:0:0.2" />
                         </Storyboard>
