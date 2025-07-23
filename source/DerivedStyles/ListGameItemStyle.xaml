@@ -73,10 +73,11 @@
                                 x:Name="GameTitle"
                                 MinWidth="{Binding ActualWidth, ElementName=ContentPresenter}"
                                 HorizontalAlignment="Center"
-                                FontSize="24"
+                                FontSize="32"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource PrimaryBrush}"
-                                LineHeight="26"
+                                LineHeight="28"
+                                LineStackingStrategy="BlockLineHeight"
                                 Text="{Binding DisplayName}"
                                 TextAlignment="Left"
                                 TextWrapping="Wrap"
@@ -95,7 +96,6 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="MainBorder" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="GameTitle" Property="Visibility" Value="Visible" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
                             <Trigger.ExitActions>
                                 <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
@@ -104,6 +104,13 @@
                                 <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="True" />
+                                <Condition Binding="{Settings Fullscreen.ShowGameTitles}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="GameTitle" Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
