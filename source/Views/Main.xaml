@@ -713,7 +713,7 @@
                                     x:Name="ShowDataButton"
                                     Grid.Column="5"
                                     VerticalAlignment="Center"
-                                    Background="Transparent"
+                                    Background="#20000000"
                                     Command="{PluginSettings Plugin=MoData,
                                                              Path=MoDetails}">
                                     <ButtonEx.Style>
@@ -725,11 +725,27 @@
                                             </Style.Triggers>
                                         </Style>
                                     </ButtonEx.Style>
+                                    <ButtonEx.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="16"
+                                            Direction="315"
+                                            Opacity="0.9"
+                                            ShadowDepth="0"
+                                            Color="Black" />
+                                    </ButtonEx.Effect>
                                     <StackPanel
                                         Height="76"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Center"
                                         Orientation="Horizontal">
+                                        <!-- <StackPanel.Effect>
+                                            <DropShadowEffect
+                                                BlurRadius="16"
+                                                Direction="315"
+                                                Opacity="0.9"
+                                                ShadowDepth="0"
+                                                Color="Black" />
+                                        </StackPanel.Effect>-->
                                         <TextBlock
                                             x:Name="MoData_Wifi"
                                             Margin="0,0,10,0"
