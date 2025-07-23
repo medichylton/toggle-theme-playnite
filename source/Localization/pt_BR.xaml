@@ -5,13 +5,13 @@
   <!--  This Session  -->
   <sys:String x:Key="LOCThisSession">Esta Sessão</sys:String>
   <!--  Started  -->
-  <sys:String x:Key="LOCStarted">Iniciado</sys:String>
+  <sys:String x:Key="LOCStarted">Iniciou</sys:String>
   <!--  Free Space:  -->
   <sys:String x:Key="LOCFreeSpace">Espaço Livre:</sys:String>
   <!--  Manage Apps and Games  -->
   <sys:String x:Key="LOCManageApps">Gerenciar Aplicativos e Jogos</sys:String>
   <!--  NOW PLAYING  -->
-  <sys:String x:Key="LOCNowPlayingCaps">REPRODUZINDO AGORA</sys:String>
+  <sys:String x:Key="LOCNowPlayingCaps">JOGANDO AGORA</sys:String>
   <!--  Currently Playing  -->
   <sys:String x:Key="LOCCurrentlyPlaying">Reproduzindo Atualmente</sys:String>
   <!--  Network Connectivity  -->
