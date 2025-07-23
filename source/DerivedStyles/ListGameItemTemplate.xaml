@@ -26,6 +26,33 @@
                             x:Name="BorderDarken"
                             Background="#AA000000"
                             Visibility="Collapsed" />
+                        <Border
+                            x:Name="InGame"
+                            Margin="8"
+                            Padding="8,4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Background="#AA000000"
+                            BorderBrush="{DynamicResource DefaultBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Height="24"
+                                    Margin="0"
+                                    FontSize="24"
+                                    Style="{StaticResource FluentIconStyle}"
+                                    Text="&#xf5b0;" />
+                                <TextBlock
+                                    x:Name="PlayTime"
+                                    Margin="8,0,0,0"
+                                    FontSize="24"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{PluginSettings Plugin=NowPlaying,
+                                                          Path=SessionLength}" />
+                            </StackPanel>
+                        </Border>
                         <Grid.OpacityMask>
                             <VisualBrush
                                 RenderOptions.BitmapScalingMode="Fant"
@@ -40,6 +67,13 @@
                                 <Condition Binding="{Settings Fullscreen.DarkenUninstalledGamesGrid}" Value="True" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="BorderDarken" Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="True" />
+                                <Condition Binding="{Binding IsRunning}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="InGame" Property="Visibility" Value="Visible" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
