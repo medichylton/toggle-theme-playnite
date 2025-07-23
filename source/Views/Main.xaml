@@ -114,9 +114,8 @@
                                         FontFamily="{DynamicResource FontDefaultBold}"
                                         FontSize="24"
                                         Foreground="{DynamicResource TextBrushDark}"
-                                        Style="{DynamicResource TextBlockBaseStyle}">
-                                        Currently Playing
-                                    </TextBlock>
+                                        Style="{DynamicResource TextBlockBaseStyle}"
+                                        Text="{DynamicResource LOCCurrentlyPlaying}" />
                                     <!--  Game Title  -->
                                     <TextBlock
                                         Margin="0,0,0,40"
@@ -140,7 +139,7 @@
                                     <StackPanel Margin="0,0,0,20" Orientation="Horizontal">
                                         <!--  Session Length  -->
                                         <TextBlock
-                                            Margin="72,0,12,0"
+                                            Margin="0,0,12,0"
                                             Opacity="0.75"
                                             Style="{StaticResource FluentIconStyle}"
                                             Text="&#xe916;" />
@@ -154,7 +153,7 @@
                                                 FontSize="22"
                                                 Opacity="0.75"
                                                 Style="{DynamicResource TextBlockBaseStyle}"
-                                                Text="This Session" />
+                                                Text="{DynamicResource LOCThisSession}" />
                                         </StackPanel>
 
                                         <!--  Start Time  -->
@@ -174,7 +173,7 @@
                                                 FontSize="22"
                                                 Opacity="0.75"
                                                 Style="{DynamicResource TextBlockBaseStyle}"
-                                                Text="Started" />
+                                                Text="{DynamicResource LOCStarted}" />
                                         </StackPanel>
                                     </StackPanel>
 
@@ -378,7 +377,10 @@
                                         Text="{PluginSettings Plugin=MoData,
                                                               Path=Time}" />
                                 </StackPanel>
-                                <TextBlock Margin="0,64,0,16" Style="{DynamicResource TextBlockBaseStyle}">Network Connectivity</TextBlock>
+                                <TextBlock
+                                    Margin="0,64,0,16"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{DynamicResource LOCNetworkConnectivity}" />
                                 <ButtonEx Margin="0,16,0,16" Command="{PluginSettings Plugin=MoData, Path=OpenNetworkSettings}">
                                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock
@@ -422,7 +424,10 @@
                                                                   Path=NetworkName}" />
                                     </StackPanel>
                                 </ButtonEx>
-                                <TextBlock Margin="0,64,0,16" Style="{DynamicResource TextBlockBaseStyle}">Storage</TextBlock>
+                                <TextBlock
+                                    Margin="0,64,0,16"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{DynamicResource LOCStorage}" />
                                 <ItemsControl Focusable="False" ItemsSource="{PluginSettings Plugin=MoData, Path=DiskUsages}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
@@ -478,7 +483,7 @@
                                                                 VerticalAlignment="Center"
                                                                 FontSize="14"
                                                                 Foreground="{DynamicResource TextBrush}"
-                                                                Text="Free Space: " />
+                                                                Text="{DynamicResource LOCFreeSpace}" />
                                                             <TextBlock
                                                                 VerticalAlignment="Center"
                                                                 FontSize="14"
@@ -530,7 +535,7 @@
                                         <TextBlock
                                             Margin="16,0,0,0"
                                             FontSize="36"
-                                            Text="Manage Apps and Games" />
+                                            Text="{DynamicResource LOCManageApps}" />
                                     </StackPanel>
                                 </ButtonEx>
                             </StackPanel>
@@ -606,7 +611,7 @@
                                             <TextBlock
                                                 x:Name="NowPlaying_Title"
                                                 Style="{DynamicResource NowPlayingTitleStyle}"
-                                                Text="NOW PLAYING" />
+                                                Text="{DynamicResource LOCNowPlayingCaps}" />
                                             <TextBlock
                                                 x:Name="NowPlaying_Game"
                                                 Style="{DynamicResource NowPlayingGameStyle}"
