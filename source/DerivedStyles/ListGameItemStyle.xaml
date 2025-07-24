@@ -68,9 +68,10 @@
                             BorderThickness="4"
                             CornerRadius="20"
                             Visibility="Collapsed" />
-                        <Grid Grid.Row="1" Margin="-64,24,-64,-64">
+                        <Grid Grid.Row="1" Margin="-64,18,-64,-128">
                             <TextBlock
                                 x:Name="GameTitle"
+                                Height="84"
                                 MinWidth="{Binding ActualWidth, ElementName=ContentPresenter}"
                                 HorizontalAlignment="Center"
                                 FontSize="32"
