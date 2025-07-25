@@ -47,6 +47,15 @@
                         Margin="{Settings FullscreenItemSpacingMargin}"
                         d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}"
                         RenderTransformOrigin="0.5,0.5">
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                        <Setter Property="Margin" Value="4,0" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
@@ -95,15 +104,21 @@
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="True" />
+                                <Condition Binding="{Settings Fullscreen.HorizontalLayout}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </MultiDataTrigger.ExitActions>
+                            <MultiDataTrigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </MultiDataTrigger.EnterActions>
+                        </MultiDataTrigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="MainBorder" Property="Visibility" Value="Visible" />
                             <Setter Property="Canvas.ZIndex" Value="90" />
-                            <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
-                            </Trigger.ExitActions>
-                            <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
-                            </Trigger.EnterActions>
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>

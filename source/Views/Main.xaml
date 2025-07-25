@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pbeh="clr-namespace:Playnite.Behaviors;assembly=Playnite"
+    xmlns:pin="clr-namespace:Playnite.Input;assembly=Playnite"
     mc:Ignorable="d">
 
     <Style x:Key="NowPlayingWindowStyle" TargetType="ContentControl">
@@ -555,6 +556,18 @@
                         d:DataContext="{x:Static DesignMainViewModel.DesignIntance}"
                         d:DesignHeight="{StaticResource DesignHeight}"
                         d:DesignWidth="{StaticResource DesignWidth}">
+                        <Grid.InputBindings>
+                            <pin:GameControllerInputBinding
+                                Button="B"
+                                Command="{Binding Content.ChangeProperty, ElementName=ThemeOptions_Command}"
+                                CommandParameter="[Setter ElementName=CbChangeLayout, Property=IsChecked, Value=True]" />
+                        </Grid.InputBindings>
+                        <ContentControl x:Name="ThemeOptions_Command" Focusable="False" />
+                        <CheckBox
+                            x:Name="CbChangeLayout"
+                            IsChecked="{Settings Fullscreen.HorizontalLayout,
+                                                 Mode=TwoWay}"
+                            Opacity="0" />
                         <Grid x:Name="PART_ViewHost" Background="{DynamicResource MainBackgourndBrush}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -563,12 +576,285 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-
                             <FadeImage
                                 x:Name="PART_ImageBackground"
                                 Grid.RowSpan="5"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top" />
+                            <DockPanel Grid.Row="2">
+                                <Filters
+                                    x:Name="PART_ElemFilters"
+                                    Margin="0,-96,-8,0"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+
+                                <FiltersAdditional
+                                    x:Name="PART_ElemFiltersAdditional"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+
+                                <ContentControl
+                                    x:Name="PART_ContentFilterItems"
+                                    DockPanel.Dock="Left"
+                                    Focusable="False" />
+                                <ListBoxEx
+                                    x:Name="PART_ListGameItems"
+                                    Margin="0,-64,0,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    DockPanel.Dock="Right"
+                                    KeyboardNavigation.DirectionalNavigation="Once"
+                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                    VirtualizingStackPanel.IsVirtualizing="True">
+                                    <ListBoxEx.Style>
+                                        <Style TargetType="ListBoxEx">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                                    <Setter Property="Margin" Value="0,0,0,-72" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ListBoxEx.Style>
+                                    <ListBoxEx.OpacityMask>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0" Color="Transparent" />
+                                            <GradientStop Offset="0.05" Color="Black" />
+                                            <GradientStop Offset="0.95" Color="Black" />
+                                            <GradientStop Offset="1" Color="Transparent" />
+                                        </LinearGradientBrush>
+                                    </ListBoxEx.OpacityMask>
+                                </ListBoxEx>
+                            </DockPanel>
+                            <TextBlock
+                                Grid.Row="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="40"
+                                Text="{DynamicResource LOCNoGamesFound}"
+                                TextAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <Grid Grid.Row="3" Margin="0">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Height" Value="140" />
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="24" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="24" />
+                                </Grid.ColumnDefinitions>
+                                <ContentControl
+                                    Grid.Column="1"
+                                    Width="72"
+                                    Height="72"
+                                    Margin="16,0"
+                                    HorizontalAlignment="Right"
+                                    ContentTemplate="{StaticResource ButtonPromptLB}"
+                                    Focusable="False"
+                                    Opacity="0.67" />
+                                <Border
+                                    Grid.Column="2"
+                                    MinWidth="480"
+                                    MaxWidth="1580"
+                                    Margin="10"
+                                    Background="{DynamicResource TopBarBackgroundBrush}"
+                                    BorderBrush="{DynamicResource DefaultBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="60">
+                                    <Border.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="10"
+                                            Direction="315"
+                                            Opacity="0.5"
+                                            ShadowDepth="5"
+                                            Color="Black" />
+                                    </Border.Effect>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="24" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <ButtonEx
+                                            x:Name="PART_ButtonMainMenu"
+                                            Grid.Column="0"
+                                            Height="72"
+                                            MinWidth="72"
+                                            Margin="32,0,16,0"
+                                            VerticalAlignment="Center"
+                                            Style="{DynamicResource ButtonTopMenu}">
+                                            <TextBlock
+                                                Margin="8,9"
+                                                FontSize="52"
+                                                Style="{StaticResource FluentIconStyle}"
+                                                Text="&#xe700;" />
+                                        </ButtonEx>
+                                        <ButtonEx
+                                            x:Name="PART_ButtonNotifications"
+                                            Grid.Column="1"
+                                            Height="72"
+                                            MinWidth="72"
+                                            Margin="8,0,16,0"
+                                            VerticalAlignment="Center">
+                                            <ButtonEx.Style>
+                                                <Style BasedOn="{StaticResource ButtonTopMenu}" TargetType="{x:Type Button}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Api Notifications.Count}" Value="0">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ButtonEx.Style>
+                                            <Grid>
+                                                <TextBlock
+                                                    Margin="8,6"
+                                                    FontSize="52"
+                                                    Style="{StaticResource FluentIconStyle}"
+                                                    Text="&#xf2a5;" />
+                                                <TextBlock
+                                                    Margin="0,12,6,-4"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Bottom"
+                                                    FontSize="32"
+                                                    Foreground="{DynamicResource WarningBrush}"
+                                                    Text="●" />
+                                            </Grid>
+                                        </ButtonEx>
+                                        <ButtonEx
+                                            x:Name="PART_ButtonProgramUpdate"
+                                            Grid.Column="2"
+                                            Height="72"
+                                            MinWidth="72"
+                                            Margin="8,0,16,0"
+                                            VerticalAlignment="Center"
+                                            Style="{DynamicResource ButtonTopMenu}">
+                                            <TextBlock
+                                                Margin="2"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                FontFamily="{StaticResource FontIcoFont}"
+                                                FontSize="30"
+                                                Foreground="{DynamicResource PrimaryBrush}"
+                                                Text="&#xEF08;" />
+                                        </ButtonEx>
+                                        <CheckBoxEx
+                                            x:Name="ChangeViewButton"
+                                            Grid.Column="3"
+                                            Height="72"
+                                            MinWidth="72"
+                                            Margin="8,0,16,0"
+                                            VerticalAlignment="Center"
+                                            IsChecked="{Settings Fullscreen.HorizontalLayout,
+                                                                 Mode=TwoWay}">
+                                            <CheckBoxEx.Style>
+                                                <Style BasedOn="{StaticResource ChangeViewButton}" TargetType="CheckBoxEx">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ShowChangeViewButtonAlt]}" Value="Show" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </CheckBoxEx.Style>
+                                        </CheckBoxEx>
+                                        <Rectangle
+                                            Grid.Column="4"
+                                            Width="1"
+                                            Height="48"
+                                            Fill="{DynamicResource TextBrushDark}" />
+                                        <FilterPresetSelector
+                                            x:Name="PART_FilterPresetSelector"
+                                            Grid.Column="5"
+                                            Margin="-12,0,0,0" />
+                                    </Grid>
+                                </Border>
+                                <ContentControl
+                                    Grid.Column="3"
+                                    Width="72"
+                                    Height="72"
+                                    Margin="16,0"
+                                    HorizontalAlignment="Left"
+                                    ContentTemplate="{StaticResource ButtonPromptRB}"
+                                    Focusable="False"
+                                    Opacity="0.67" />
+                            </Grid>
+                            <Grid Grid.Row="4" Height="70">
+                                <Grid.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0" Color="#000F0F0F" />
+                                        <GradientStop Offset="1" Color="#CC0F0F0F" />
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="24" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="24" />
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="1">
+                                    <Border.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="16"
+                                            Direction="315"
+                                            Opacity="0.9"
+                                            ShadowDepth="0"
+                                            Color="Black" />
+                                    </Border.Effect>
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                        <!--  Install  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonInstall"
+                                            Content="{DynamicResource LOCInstallGame}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Play  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonPlay"
+                                            Content="{DynamicResource LOCPlayGame}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Details  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonDetails"
+                                            Content="{DynamicResource LOCGameDetails}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Options  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonGameOptions"
+                                            Content="{DynamicResource LOCGameOptions}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Search  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonSearch"
+                                            Content="{DynamicResource LOCSearchLabel}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                        <!--  Filter  -->
+                                        <ButtonEx
+                                            x:Name="PART_ButtonFilter"
+                                            Content="{DynamicResource LOCFilter}"
+                                            Style="{DynamicResource ButtonBottomMenu}" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
                             <Grid
                                 Grid.Row="0"
                                 Height="80"
@@ -866,238 +1152,6 @@
                                             Style="{DynamicResource TextBlockBaseStyle}" />
                                     </StackPanel>
                                 </ButtonEx>
-
-
-                            </Grid>
-                            <DockPanel Grid.Row="2">
-                                <Filters
-                                    x:Name="PART_ElemFilters"
-                                    Margin="0,-96,-8,0"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
-
-                                <FiltersAdditional
-                                    x:Name="PART_ElemFiltersAdditional"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
-
-                                <ContentControl
-                                    x:Name="PART_ContentFilterItems"
-                                    DockPanel.Dock="Left"
-                                    Focusable="False" />
-                                <ListBoxEx
-                                    x:Name="PART_ListGameItems"
-                                    Margin="0,-64,0,0"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    DockPanel.Dock="Right"
-                                    KeyboardNavigation.DirectionalNavigation="Once"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                    VirtualizingStackPanel.IsVirtualizing="True" />
-                            </DockPanel>
-                            <TextBlock
-                                Grid.Row="2"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="40"
-                                Text="{DynamicResource LOCNoGamesFound}"
-                                TextAlignment="Center">
-                                <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock">
-                                        <Setter Property="Visibility" Value="Collapsed" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
-                                                <Setter Property="Visibility" Value="Visible" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <Grid
-                                Grid.Row="3"
-                                Height="140"
-                                Margin="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="24" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="24" />
-                                </Grid.ColumnDefinitions>
-                                <ContentControl
-                                    Grid.Column="1"
-                                    Width="72"
-                                    Height="72"
-                                    Margin="16,0"
-                                    HorizontalAlignment="Right"
-                                    ContentTemplate="{StaticResource ButtonPromptLB}"
-                                    Focusable="False"
-                                    Opacity="0.67" />
-                                <Border
-                                    Grid.Column="2"
-                                    MinWidth="480"
-                                    MaxWidth="1850"
-                                    Margin="10"
-                                    Background="{DynamicResource TopBarBackgroundBrush}"
-                                    BorderBrush="{DynamicResource DefaultBorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="60">
-                                    <Border.Effect>
-                                        <DropShadowEffect
-                                            BlurRadius="10"
-                                            Direction="315"
-                                            Opacity="0.5"
-                                            ShadowDepth="5"
-                                            Color="Black" />
-                                    </Border.Effect>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="24" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <ButtonEx
-                                            x:Name="PART_ButtonMainMenu"
-                                            Grid.Column="0"
-                                            Height="72"
-                                            MinWidth="72"
-                                            Margin="32,0,16,0"
-                                            VerticalAlignment="Center"
-                                            Style="{DynamicResource ButtonTopMenu}">
-                                            <TextBlock
-                                                Margin="8,9"
-                                                FontSize="52"
-                                                Style="{StaticResource FluentIconStyle}"
-                                                Text="&#xe700;" />
-                                        </ButtonEx>
-                                        <ButtonEx
-                                            x:Name="PART_ButtonNotifications"
-                                            Grid.Column="1"
-                                            Height="72"
-                                            MinWidth="72"
-                                            Margin="8,0,16,0"
-                                            VerticalAlignment="Center">
-                                            <ButtonEx.Style>
-                                                <Style BasedOn="{StaticResource ButtonTopMenu}" TargetType="{x:Type Button}">
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Api Notifications.Count}" Value="0">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </ButtonEx.Style>
-                                            <Grid>
-                                                <TextBlock
-                                                    Margin="8,6"
-                                                    FontSize="52"
-                                                    Style="{StaticResource FluentIconStyle}"
-                                                    Text="&#xf2a5;" />
-                                                <TextBlock
-                                                    Margin="0,12,6,-4"
-                                                    HorizontalAlignment="Right"
-                                                    VerticalAlignment="Bottom"
-                                                    FontSize="32"
-                                                    Foreground="{DynamicResource WarningBrush}"
-                                                    Text="●" />
-                                            </Grid>
-                                        </ButtonEx>
-                                        <ButtonEx
-                                            x:Name="PART_ButtonProgramUpdate"
-                                            Grid.Column="2"
-                                            Height="48"
-                                            MinWidth="48"
-                                            Margin="10,0,10,0"
-                                            VerticalAlignment="Center"
-                                            Style="{DynamicResource ButtonTopMenu}">
-                                            <TextBlock
-                                                Margin="2"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"
-                                                FontFamily="{StaticResource FontIcoFont}"
-                                                FontSize="30"
-                                                Foreground="{DynamicResource PrimaryBrush}"
-                                                Text="&#xEF08;" />
-                                        </ButtonEx>
-                                        <Rectangle
-                                            Grid.Column="3"
-                                            Width="1"
-                                            Height="48"
-                                            Fill="{DynamicResource TextBrushDark}" />
-                                        <FilterPresetSelector
-                                            x:Name="PART_FilterPresetSelector"
-                                            Grid.Column="4"
-                                            Margin="-12,0,0,0" />
-                                    </Grid>
-                                </Border>
-                                <ContentControl
-                                    Grid.Column="3"
-                                    Width="72"
-                                    Height="72"
-                                    Margin="16,0"
-                                    HorizontalAlignment="Left"
-                                    ContentTemplate="{StaticResource ButtonPromptRB}"
-                                    Focusable="False"
-                                    Opacity="0.67" />
-                            </Grid>
-                            <Grid Grid.Row="4" Height="70">
-                                <Grid.Background>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                        <GradientStop Offset="0" Color="#000F0F0F" />
-                                        <GradientStop Offset="1" Color="#CC0F0F0F" />
-                                    </LinearGradientBrush>
-                                </Grid.Background>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="24" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="24" />
-                                </Grid.ColumnDefinitions>
-                                <Border Grid.Column="1">
-                                    <Border.Effect>
-                                        <DropShadowEffect
-                                            BlurRadius="16"
-                                            Direction="315"
-                                            Opacity="0.9"
-                                            ShadowDepth="0"
-                                            Color="Black" />
-                                    </Border.Effect>
-                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                        <!--  Install  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonInstall"
-                                            Content="{DynamicResource LOCInstallGame}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                        <!--  Play  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonPlay"
-                                            Content="{DynamicResource LOCPlayGame}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                        <!--  Details  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonDetails"
-                                            Content="{DynamicResource LOCGameDetails}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                        <!--  Options  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonGameOptions"
-                                            Content="{DynamicResource LOCGameOptions}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                        <!--  Search  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonSearch"
-                                            Content="{DynamicResource LOCSearchLabel}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                        <!--  Filter  -->
-                                        <ButtonEx
-                                            x:Name="PART_ButtonFilter"
-                                            Content="{DynamicResource LOCFilter}"
-                                            Style="{DynamicResource ButtonBottomMenu}" />
-                                    </StackPanel>
-                                </Border>
                             </Grid>
                         </Grid>
 
