@@ -38,7 +38,7 @@
 
         <sys:Double x:Key="FilterPanelWidth">480</sys:Double>
 
-        <sys:Boolean x:Key="ShowChangeViewButtonAlt">False</sys:Boolean>
+        <sys:Boolean x:Key="HideChangeView">True</sys:Boolean>
 
         <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="{DynamicResource FixedFontSize}" />

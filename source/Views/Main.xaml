@@ -765,15 +765,7 @@
                                                                  Mode=TwoWay}">
                                             <CheckBoxEx.Style>
                                                 <Style BasedOn="{StaticResource ChangeViewButton}" TargetType="CheckBoxEx">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                    <Style.Triggers>
-                                                        <MultiDataTrigger>
-                                                            <MultiDataTrigger.Conditions>
-                                                                <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ShowChangeViewButtonAlt]}" Value="Show" />
-                                                            </MultiDataTrigger.Conditions>
-                                                            <Setter Property="Visibility" Value="Visible" />
-                                                        </MultiDataTrigger>
-                                                    </Style.Triggers>
+                                                    <Setter Property="Visibility" Value="{Binding Source={StaticResource HideChangeView}, Converter={StaticResource InvertedBooleanToVisibilityConverter}}" />
                                                 </Style>
                                             </CheckBoxEx.Style>
                                         </CheckBoxEx>

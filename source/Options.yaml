@@ -148,24 +148,10 @@
             Type: SolidColorBrush
             Value: '#64748b'
         Preview: color-swatches/Slate.png
-  ChangeViewButton:
-    Name: Show Change View Button
-    LocKey: LOCChangeViewButton
-    Presets:
-      Default:
-        Name: Hide
-        NeedRestart: True
-        LocKey: LOCHide
-        Constants:
-          ShowChangeViewButtonAlt:
-            Type: String
-            Default: 'Hide'
-            Value: 'Hide'
-      Show:
-        Name: Show
-        NeedRestart: True
-        LocKey: LOCShow
-        Constants:
-          ShowChangeViewButtonAlt:
-            Type: String
-            Value: 'Show'
+Variables:
+  HideChangeView:
+    Title: Hide Change View Button
+    LocKey: LOCHideChangeView
+    Type: Boolean
+    Default: True
+    NeedRestart: True
