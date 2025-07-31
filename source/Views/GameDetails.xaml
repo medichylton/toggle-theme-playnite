@@ -6,6 +6,396 @@
     xmlns:pbeh="clr-namespace:Playnite.Behaviors;assembly=Playnite"
     mc:Ignorable="d">
 
+    <Style x:Key="GameAchievementsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border Background="{DynamicResource ControlBackgroundDarkBrush}" CornerRadius="16" BorderBrush="{DynamicResource DefaultBorderBrush}" BorderThickness="1" Margin="24,16">
+                        <Grid pbeh:FocusBahaviors.FocusBinding="True"
+                              pbeh:FocusBahaviors.OnVisibilityFocus="True" Margin="16">
+                            <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="640" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                            <StackPanel Orientation="Vertical" Margin="16">
+                                <TextBlock
+                                    FontFamily="{DynamicResource FontDefaultBold}"
+                                    FontSize="64"
+                                    Foreground="White"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    Text="{DynamicResource LOCSuccessStoryManualAchievements}" Margin="0,0,0,64"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                                    <TextBlock
+            Margin="0,0,12,0"
+            Opacity="0.75"
+            Style="{StaticResource FluentIconStyle}"
+            Text="&#xe734;" />
+                                    <StackPanel Margin="0,0,12,0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Unlocked,
+                                              FallbackValue='-'}" />
+                                                <TextBlock
+                        Margin="2,0,2,0"
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="/" />
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Total,
+                                              FallbackValue='-'}" />
+                                                <TextBlock
+                        Margin="5,0,0,0"
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Percent,
+                                              FallbackValue='-',
+                                              StringFormat='({0}%)'}" />
+                                            </StackPanel>
+                                            <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="22"
+                    Opacity="0.75"
+                    Style="{DynamicResource TextBlockBaseStyle}"
+                    Text="{DynamicResource LOCSuccessStoryAchievements}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- Rare Achievements (Gold Star) -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                                    <TextBlock
+            Margin="0,0,12,0"
+            Opacity="0.75">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource FluentIconStyle}">
+                                                <Setter Property="Text" Value="&#xe734;" />
+                                                <Setter Property="Foreground" Value="#efbf04" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Rare.Locked}" Value="0">
+                                                        <Setter Property="Text" Value="&#xe735;" />
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect Color="#ffdb4d" BlurRadius="8" ShadowDepth="0" Opacity="0.8"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <StackPanel Margin="0,0,12,0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Rare.UnLocked,
+                                              FallbackValue='-'}" />
+                                                <TextBlock
+                        Margin="2,0,2,0"
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="/" />
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Rare.Total,
+                                              FallbackValue='-'}" />
+                                            </StackPanel>
+                                            <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="22"
+                    Opacity="0.75"
+                    Style="{DynamicResource TextBlockBaseStyle}"
+                    Text="{DynamicResource LOCSuccessStoryRare}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- No Common Achievements (Silver Star) -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                                    <TextBlock
+            Margin="0,0,12,0"
+            Opacity="0.75">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource FluentIconStyle}">
+                                                <Setter Property="Text" Value="&#xe734;" />
+                                                <Setter Property="Foreground" Value="#bcc6cc" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=NoCommon.Locked}" Value="0">
+                                                        <Setter Property="Text" Value="&#xe735;" />
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect Color="#e6ebf0" BlurRadius="8" ShadowDepth="0" Opacity="0.8"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <StackPanel Margin="0,0,12,0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=NoCommon.UnLocked,
+                                              FallbackValue='-'}" />
+                                                <TextBlock
+                        Margin="2,0,2,0"
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="/" />
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=NoCommon.Total,
+                                              FallbackValue='-'}" />
+                                            </StackPanel>
+                                            <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="22"
+                    Opacity="0.75"
+                    Style="{DynamicResource TextBlockBaseStyle}"
+                    Text="{DynamicResource LOCSuccessStoryNoCommon}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- Common Achievements (Bronze Star) -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,32">
+                                    <TextBlock
+            Margin="0,0,12,0"
+            Opacity="0.75">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource FluentIconStyle}">
+                                                <Setter Property="Text" Value="&#xe734;" />
+                                                <Setter Property="Foreground" Value="#874233" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Common.Locked}" Value="0">
+                                                        <Setter Property="Text" Value="&#xe735;" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <StackPanel Margin="0,0,12,0">
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Common.UnLocked,
+                                              FallbackValue='-'}" />
+                                                <TextBlock
+                        Margin="2,0,2,0"
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="/" />
+                                                <TextBlock
+                        FontFamily="{DynamicResource FontDefaultBold}"
+                        Style="{DynamicResource TextBlockBaseStyle}"
+                        Text="{PluginSettings Plugin=SuccessStory,
+                                              Path=Common.Total,
+                                              FallbackValue='-'}" />
+                                            </StackPanel>
+                                            <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="22"
+                    Opacity="0.75"
+                    Style="{DynamicResource TextBlockBaseStyle}"
+                    Text="{DynamicResource LOCSuccessStoryCommon}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <ListView x:Name="AchievementList" SelectionMode="Single" VerticalAlignment="Top" HorizontalAlignment="Right"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"
+                                  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"  BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1,0,0,0" Background="Transparent"
+                                  FocusVisualStyle="{x:Null}" Focusable="False" KeyboardNavigation.DirectionalNavigation="Local" ItemsSource="{PluginSettings Plugin=SuccessStory, Path=ListAchUnlockDateDesc}" Grid.Column="1">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="Visibility" Value="{Binding IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                        <Setter Property="Focusable" Value="True"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListViewItem">
+                                                    <Grid Margin="10" Width="1080" MinHeight="140" VerticalAlignment="Top">
+                                                        <Border Background="{DynamicResource ControlBackgroundDarkBrush}"
+                                                        CornerRadius="15">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <!-- Achievement Image -->
+                                                                <Image Grid.Column="0" Grid.RowSpan="2" Height="130"  Margin="5,5,0,5"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Left"
+                                                                Source="{Binding Icon}"
+                                                                Stretch="Uniform">
+                                                                    <Image.Style>
+                                                                        <Style TargetType="Image">
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding IsGray}" Value="True">
+                                                                                    <Setter Property="Opacity" Value="0.5"/>
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </Image.Style>
+                                                                </Image>
+
+                                                                <!-- Achievement Name -->
+                                                                <TextBlock Grid.Column="1" Grid.Row="0"
+                                                                     Text="{Binding Name}"
+                                                                     TextTrimming="CharacterEllipsis"
+                                                                     VerticalAlignment="Top"
+                                                                     FontWeight="Bold"
+                                                                     Margin="16,13,38,0">
+                                                                    <TextBlock.Style>
+                                                                        <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                                                            <Style.Triggers>
+                                                                                <MultiDataTrigger>
+                                                                                    <MultiDataTrigger.Conditions>
+                                                                                        <Condition Binding="{Binding IsUnlock}" Value="False"/>
+                                                                                        <Condition Binding="{Binding IsHidden}" Value="True"/>
+                                                                                    </MultiDataTrigger.Conditions>
+                                                                                    <Setter Property="Effect">
+                                                                                        <Setter.Value>
+                                                                                            <BlurEffect Radius="16" KernelType="Box"/>
+                                                                                        </Setter.Value>
+                                                                                    </Setter>
+                                                                                </MultiDataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </TextBlock.Style>
+                                                                </TextBlock>
+
+                                                                <!-- Gamerscore - right aligned -->
+                                                                <StackPanel Grid.Column="1" Orientation="Horizontal" 
+                                                                          HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                                    <TextBlock Margin="0,4,16,0" 
+                                                                             FontFamily="Segoe Fluent Icons"
+                                                                             Text="&#xe735;" 
+                                                                             FontSize="24">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Foreground" Value="#874233"/>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding GamerScore}" Value="15">
+                                                                                        <Setter Property="Foreground" Value="#874233"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding GamerScore}" Value="30">
+                                                                                        <Setter Property="Foreground" Value="#bcc6cc"/>
+                                                                                        <Setter Property="Effect">
+                                                                                            <Setter.Value>
+                                                                                                <DropShadowEffect Color="#e6ebf0" BlurRadius="8" ShadowDepth="0" Opacity="0.8"/>
+                                                                                            </Setter.Value>
+                                                                                        </Setter>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding GamerScore}" Value="90">
+                                                                                        <Setter Property="Foreground" Value="#efbf04"/>
+                                                                                        <Setter Property="Effect">
+                                                                                            <Setter.Value>
+                                                                                                <DropShadowEffect Color="#ffdb4d" BlurRadius="8" ShadowDepth="0" Opacity="0.8"/>
+                                                                                            </Setter.Value>
+                                                                                        </Setter>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                </StackPanel>
+
+                                                                <!-- Description and Achievement Stats -->
+                                                                <Grid Grid.Column="1" Grid.Row="1" Margin="16">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*" />
+                                                                        <ColumnDefinition Width="Auto" />
+                                                                    </Grid.ColumnDefinitions>
+
+                                                                    <!-- Description/Rarity - left aligned -->
+                                                                    <StackPanel Grid.Column="0" Orientation="Vertical" 
+                                                                          HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                                        <TextBlock
+                                                                             Text="{Binding Description}"
+                                                                             TextTrimming="CharacterEllipsis"
+                                                                             FontSize="24"
+                                                                             Opacity="0.8">
+                                                                            <TextBlock.Style>
+                                                                                <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                                                                    <Style.Triggers>
+                                                                                        <MultiDataTrigger>
+                                                                                            <MultiDataTrigger.Conditions>
+                                                                                                <Condition Binding="{Binding IsUnlock}" Value="False"/>
+                                                                                                <Condition Binding="{Binding IsHidden}" Value="True"/>
+                                                                                            </MultiDataTrigger.Conditions>
+                                                                                            <Setter Property="Effect">
+                                                                                                <Setter.Value>
+                                                                                                    <BlurEffect Radius="16" KernelType="Box"/>
+                                                                                                </Setter.Value>
+                                                                                            </Setter>
+                                                                                        </MultiDataTrigger>
+                                                                                    </Style.Triggers>
+                                                                                </Style>
+                                                                            </TextBlock.Style>
+                                                                        </TextBlock>
+                                                                        <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                                                            <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                 Text="{Binding DateWhenUnlockedString}"
+                                                                                 FontSize="11"
+                                                                                 Opacity="0.7"
+                                                                                 Visibility="{Binding IsUnlock, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                                                        </StackPanel>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                                <Border x:Name="MainBorder" BorderThickness="2"
+                                                                  BorderBrush="{DynamicResource PrimaryBrush}"
+                                                                  Margin="-2" Visibility="Collapsed" CornerRadius="16" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsFocused" Value="True">
+                                                            <Setter TargetName="MainBorder" Property="Visibility"
+                                                              Value="Visible" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                            </ListView>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="{x:Type GameDetails}">
         <Setter Property="Template">
             <Setter.Value>
@@ -274,6 +664,7 @@
 
                             <StackPanel
                                 pbeh:FocusBahaviors.FocusBinding="True"
+                                pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                 DockPanel.Dock="Top"
                                 Orientation="Horizontal">
                                 <ButtonEx
@@ -328,6 +719,13 @@
                                         </Style>
                                     </ButtonEx.Style>
                                     Exit
+                                </ButtonEx>
+                                <ButtonEx
+                                    Margin="32,2,2,2"
+                                    BorderThickness="2"
+                                    Style="{StaticResource ButtonBig}"
+                                    Command="{PluginSettings Plugin=SSHelper,
+                                                             Path=OpenGameAchievementWindow}" Content="{DynamicResource LOCSuccessStoryAchievements}">
                                 </ButtonEx>
                                 <ButtonEx
                                     x:Name="PART_ButtonOptions"
