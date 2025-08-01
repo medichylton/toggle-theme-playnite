@@ -35,199 +35,181 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="ListViewItem">
-                                                <Grid
-                                                    Width="700"
-                                                    Height="130"
-                                                    Margin="4,32,4,0"
-                                                    VerticalAlignment="Top">
-                                                    <Border Background="{DynamicResource ControlBackgroundDarkBrush}" CornerRadius="15">
-                                                        <Grid>
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="*" />
-                                                            </Grid.ColumnDefinitions>
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="*" />
-                                                                <RowDefinition Height="Auto" />
-                                                                <RowDefinition Height="Auto" />
-                                                            </Grid.RowDefinitions>
-
-                                                            <!--  Cover Image - fixed height, variable width based on aspect ratio  -->
-                                                            <Image
-                                                                Grid.RowSpan="3"
-                                                                Grid.Column="0"
-                                                                Height="130"
-                                                                MinWidth="98"
-                                                                Margin="0,0,8,0"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"
-                                                                Source="{Binding CoverImagePath}"
-                                                                Stretch="UniformToFill">
-                                                                <Image.Clip>
-                                                                    <RectangleGeometry
-                                                                        RadiusX="15"
-                                                                        RadiusY="15"
-                                                                        Rect="0,0,200,130" />
-                                                                </Image.Clip>
-                                                            </Image>
-
-                                                            <!--  Title - spans remaining width  -->
-                                                            <TextBlock
-                                                                Grid.Row="0"
-                                                                Grid.Column="1"
-                                                                Margin="10,0,10,0"
-                                                                VerticalAlignment="Top"
-                                                                Style="{DynamicResource TextBlockBaseStyle}"
-                                                                Text="{Binding Name}"
-                                                                TextTrimming="CharacterEllipsis" />
-
-                                                            <!--  Progress and Achievement Icons - same line  -->
-                                                            <Grid
-                                                                Grid.Row="1"
-                                                                Grid.Column="1"
-                                                                Margin="10,0,10,10">
+                                                <ButtonEx Margin="8,32" Command="{Binding OpenAchievementWindow}">
+                                                    <Grid
+                                                        Width="700"
+                                                        Height="130"
+                                                        Margin="4,32,4,0"
+                                                        VerticalAlignment="Top">
+                                                        <Border CornerRadius="15">
+                                                            <Grid>
                                                                 <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="*" />
                                                                     <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="*" />
                                                                 </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                    <RowDefinition Height="Auto" />
+                                                                </Grid.RowDefinitions>
 
-                                                                <!--  Progress - left aligned  -->
-                                                                <ProgressBar
+                                                                <!--  Cover Image - fixed height, variable width based on aspect ratio  -->
+                                                                <Image
+                                                                    Grid.RowSpan="3"
                                                                     Grid.Column="0"
-                                                                    Width="330"
-                                                                    Height="24"
-                                                                    Margin="0,4,0,0"
-                                                                    HorizontalAlignment="Left"
-                                                                    Maximum="100"
-                                                                    Minimum="-6.1"
-                                                                    Style="{StaticResource BarRound12}"
-                                                                    Value="{Binding Progress, Mode=OneWay}" />
-
-                                                                <!--  Achievement Icons - right aligned  -->
-                                                                <StackPanel
-                                                                    Grid.Column="1"
-                                                                    HorizontalAlignment="Right"
+                                                                    Height="130"
+                                                                    MinWidth="98"
+                                                                    Margin="0,0,8,0"
+                                                                    HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center"
-                                                                    Orientation="Horizontal">
-                                                                    <Grid x:Name="Plat" Visibility="Collapsed">
+                                                                    Source="{Binding CoverImagePath}"
+                                                                    Stretch="UniformToFill">
+                                                                    <Image.Clip>
+                                                                        <RectangleGeometry
+                                                                            RadiusX="15"
+                                                                            RadiusY="15"
+                                                                            Rect="0,0,200,130" />
+                                                                    </Image.Clip>
+                                                                </Image>
+
+                                                                <!--  Title - spans remaining width  -->
+                                                                <TextBlock
+                                                                    Grid.Row="0"
+                                                                    Grid.Column="1"
+                                                                    Margin="10,0,10,0"
+                                                                    VerticalAlignment="Top"
+                                                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                                                    Text="{Binding Name}"
+                                                                    TextTrimming="CharacterEllipsis" />
+
+                                                                <!--  Progress and Achievement Icons - same line  -->
+                                                                <Grid
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    Margin="10,0,10,10">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*" />
+                                                                        <ColumnDefinition Width="Auto" />
+                                                                    </Grid.ColumnDefinitions>
+
+                                                                    <!--  Progress - left aligned  -->
+                                                                    <ProgressBar
+                                                                        Grid.Column="0"
+                                                                        Width="330"
+                                                                        Height="24"
+                                                                        Margin="0,4,0,0"
+                                                                        HorizontalAlignment="Left"
+                                                                        Maximum="100"
+                                                                        Minimum="-6.1"
+                                                                        Style="{StaticResource BarRound12}"
+                                                                        Value="{Binding Progress, Mode=OneWay}" />
+
+                                                                    <!--  Achievement Icons - right aligned  -->
+                                                                    <StackPanel
+                                                                        Grid.Column="1"
+                                                                        HorizontalAlignment="Right"
+                                                                        VerticalAlignment="Center"
+                                                                        Orientation="Horizontal">
+                                                                        <Grid x:Name="Plat" Visibility="Collapsed">
+                                                                            <TextBlock
+                                                                                Margin="0,4,0,0"
+                                                                                FontFamily="Segoe Fluent Icons"
+                                                                                FontSize="30"
+                                                                                Foreground="#1072d3"
+                                                                                Text="&#xe735;">
+                                                                                <TextBlock.Effect>
+                                                                                    <DropShadowEffect
+                                                                                        BlurRadius="16"
+                                                                                        Opacity="0.95"
+                                                                                        ShadowDepth="0"
+                                                                                        Color="#4da6ff" />
+                                                                                </TextBlock.Effect>
+                                                                            </TextBlock>
+                                                                            <TextBlock
+                                                                                Margin="0,2,0,0"
+                                                                                HorizontalAlignment="Center"
+                                                                                VerticalAlignment="Center"
+                                                                                FontSize="18"
+                                                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                Text="1" />
+                                                                        </Grid>
                                                                         <TextBlock
-                                                                            Margin="0,4,0,0"
+                                                                            Margin="16,4,0,0"
                                                                             FontFamily="Segoe Fluent Icons"
                                                                             FontSize="30"
-                                                                            Foreground="#1072d3"
+                                                                            Foreground="#efbf04"
                                                                             Text="&#xe735;">
                                                                             <TextBlock.Effect>
                                                                                 <DropShadowEffect
-                                                                                    BlurRadius="16"
-                                                                                    Opacity="0.95"
+                                                                                    BlurRadius="8"
+                                                                                    Opacity="0.8"
                                                                                     ShadowDepth="0"
-                                                                                    Color="#4da6ff" />
+                                                                                    Color="#ffdb4d" />
                                                                             </TextBlock.Effect>
                                                                         </TextBlock>
                                                                         <TextBlock
-                                                                            Margin="0,2,0,0"
-                                                                            HorizontalAlignment="Center"
+                                                                            Margin="4,0,0,0"
                                                                             VerticalAlignment="Center"
-                                                                            FontSize="18"
+                                                                            FontSize="24"
                                                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                                                            Text="1" />
-                                                                    </Grid>
+                                                                            Text="{Binding GS90Count}" />
+                                                                        <TextBlock
+                                                                            Margin="16,4,0,0"
+                                                                            FontFamily="Segoe Fluent Icons"
+                                                                            FontSize="30"
+                                                                            Foreground="#bcc6cc"
+                                                                            Text="&#xe735;">
+                                                                            <TextBlock.Effect>
+                                                                                <DropShadowEffect
+                                                                                    BlurRadius="8"
+                                                                                    Opacity="0.8"
+                                                                                    ShadowDepth="0"
+                                                                                    Color="#e6ebf0" />
+                                                                            </TextBlock.Effect>
+                                                                        </TextBlock>
+                                                                        <TextBlock
+                                                                            Margin="4,0,0,0"
+                                                                            VerticalAlignment="Center"
+                                                                            FontSize="24"
+                                                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                                                            Text="{Binding GS30Count}" />
+                                                                        <TextBlock
+                                                                            Margin="16,4,0,0"
+                                                                            FontFamily="Segoe Fluent Icons"
+                                                                            FontSize="30"
+                                                                            Foreground="#874233"
+                                                                            Text="&#xe735;" />
+                                                                        <TextBlock
+                                                                            Margin="4,0,0,0"
+                                                                            VerticalAlignment="Center"
+                                                                            FontSize="24"
+                                                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                                                            Text="{Binding GS15Count}" />
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                                <StackPanel
+                                                                    Grid.Row="2"
+                                                                    Grid.Column="1"
+                                                                    Margin="10,0,10,10"
+                                                                    HorizontalAlignment="Left"
+                                                                    VerticalAlignment="Center"
+                                                                    Orientation="Horizontal">
                                                                     <TextBlock
-                                                                        Margin="16,4,0,0"
-                                                                        FontFamily="Segoe Fluent Icons"
-                                                                        FontSize="30"
-                                                                        Foreground="#efbf04"
-                                                                        Text="&#xe735;">
-                                                                        <TextBlock.Effect>
-                                                                            <DropShadowEffect
-                                                                                BlurRadius="8"
-                                                                                Opacity="0.8"
-                                                                                ShadowDepth="0"
-                                                                                Color="#ffdb4d" />
-                                                                        </TextBlock.Effect>
-                                                                    </TextBlock>
-                                                                    <TextBlock
-                                                                        Margin="4,0,0,0"
-                                                                        VerticalAlignment="Center"
-                                                                        FontSize="24"
+                                                                        FontSize="16"
+                                                                        Opacity="0.67"
                                                                         Style="{DynamicResource TextBlockBaseStyle}"
-                                                                        Text="{Binding GS90Count}" />
+                                                                        Text="Progress:" />
                                                                     <TextBlock
-                                                                        Margin="16,4,0,0"
-                                                                        FontFamily="Segoe Fluent Icons"
-                                                                        FontSize="30"
-                                                                        Foreground="#bcc6cc"
-                                                                        Text="&#xe735;">
-                                                                        <TextBlock.Effect>
-                                                                            <DropShadowEffect
-                                                                                BlurRadius="8"
-                                                                                Opacity="0.8"
-                                                                                ShadowDepth="0"
-                                                                                Color="#e6ebf0" />
-                                                                        </TextBlock.Effect>
-                                                                    </TextBlock>
-                                                                    <TextBlock
-                                                                        Margin="4,0,0,0"
-                                                                        VerticalAlignment="Center"
-                                                                        FontSize="24"
+                                                                        Margin="5,0,0,0"
+                                                                        FontSize="16"
                                                                         Style="{DynamicResource TextBlockBaseStyle}"
-                                                                        Text="{Binding GS30Count}" />
-                                                                    <TextBlock
-                                                                        Margin="16,4,0,0"
-                                                                        FontFamily="Segoe Fluent Icons"
-                                                                        FontSize="30"
-                                                                        Foreground="#874233"
-                                                                        Text="&#xe735;" />
-                                                                    <TextBlock
-                                                                        Margin="4,0,0,0"
-                                                                        VerticalAlignment="Center"
-                                                                        FontSize="24"
-                                                                        Style="{DynamicResource TextBlockBaseStyle}"
-                                                                        Text="{Binding GS15Count}" />
+                                                                        Text="{Binding Progress, StringFormat={}{0}%}" />
                                                                 </StackPanel>
                                                             </Grid>
-                                                            <StackPanel
-                                                                Grid.Row="2"
-                                                                Grid.Column="1"
-                                                                Margin="10,0,10,10"
-                                                                HorizontalAlignment="Left"
-                                                                VerticalAlignment="Center"
-                                                                Orientation="Horizontal">
-                                                                <TextBlock
-                                                                    FontSize="16"
-                                                                    Opacity="0.67"
-                                                                    Style="{DynamicResource TextBlockBaseStyle}"
-                                                                    Text="Progress:" />
-                                                                <TextBlock
-                                                                    Margin="5,0,0,0"
-                                                                    FontSize="16"
-                                                                    Style="{DynamicResource TextBlockBaseStyle}"
-                                                                    Text="{Binding Progress, StringFormat={}{0}%}" />
-                                                            </StackPanel>
-
-                                                            <Border
-                                                                Grid.RowSpan="3"
-                                                                Grid.ColumnSpan="2"
-                                                                Margin="-1"
-                                                                BorderBrush="{DynamicResource ControlBackgroundBrush}"
-                                                                BorderThickness="1"
-                                                                CornerRadius="16" />
-                                                            <Border
-                                                                x:Name="MainBorder"
-                                                                Grid.RowSpan="3"
-                                                                Grid.ColumnSpan="2"
-                                                                Margin="-2"
-                                                                BorderBrush="{DynamicResource PrimaryBrush}"
-                                                                BorderThickness="2"
-                                                                CornerRadius="16"
-                                                                Visibility="Collapsed" />
-                                                        </Grid>
-                                                    </Border>
-                                                </Grid>
+                                                        </Border>
+                                                    </Grid>
+                                                </ButtonEx>
                                                 <ControlTemplate.Triggers>
-                                                    <Trigger Property="IsFocused" Value="True">
-                                                        <Setter TargetName="MainBorder" Property="Visibility" Value="Visible" />
-                                                    </Trigger>
                                                     <DataTrigger Binding="{Binding IsPlatinum}" Value="True">
                                                         <Setter TargetName="Plat" Property="Visibility" Value="Visible" />
                                                     </DataTrigger>
