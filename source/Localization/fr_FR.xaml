@@ -2,56 +2,56 @@
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:sys="clr-namespace:System;assembly=mscorlib">
-  <!-- This Session -->
+  <!--  This Session  -->
   <sys:String x:Key="LOCThisSession">Cette Session</sys:String>
-  <!-- Started -->
+  <!--  Started  -->
   <sys:String x:Key="LOCStarted">Démarré</sys:String>
-  <!-- Free Space: -->
+  <!--  Free Space:  -->
   <sys:String x:Key="LOCFreeSpace">Espace Libre :</sys:String>
-  <!-- Manage Apps and Games -->
+  <!--  Manage Apps and Games  -->
   <sys:String x:Key="LOCManageApps">Gérer les Applications et Jeux</sys:String>
-  <!-- NOW PLAYING -->
+  <!--  NOW PLAYING  -->
   <sys:String x:Key="LOCNowPlayingCaps">EN COURS DE LECTURE</sys:String>
-  <!-- Currently Playing -->
+  <!--  Currently Playing  -->
   <sys:String x:Key="LOCCurrentlyPlaying">En Cours de Lecture</sys:String>
-  <!-- Network Connectivity -->
+  <!--  Network Connectivity  -->
   <sys:String x:Key="LOCNetworkConnectivity">Connectivité Réseau</sys:String>
-  <!-- Storage -->
+  <!--  Storage  -->
   <sys:String x:Key="LOCStorage">Stockage</sys:String>
-  <!-- Sky -->
+  <!--  Sky  -->
   <sys:String x:Key="LOCColorSky">Ciel</sys:String>
-  <!-- Green -->
+  <!--  Green  -->
   <sys:String x:Key="LOCColorGreen">Vert</sys:String>
-  <!-- Red -->
+  <!--  Red  -->
   <sys:String x:Key="LOCColorRed">Rouge</sys:String>
-  <!-- Blue -->
+  <!--  Blue  -->
   <sys:String x:Key="LOCColorBlue">Bleu</sys:String>
-  <!-- Yellow -->
+  <!--  Yellow  -->
   <sys:String x:Key="LOCColorYellow">Jaune</sys:String>
-  <!-- Purple -->
+  <!--  Purple  -->
   <sys:String x:Key="LOCColorPurple">Violet</sys:String>
-  <!-- Pink -->
+  <!--  Pink  -->
   <sys:String x:Key="LOCColorPink">Rose</sys:String>
-  <!-- Indigo -->
+  <!--  Indigo  -->
   <sys:String x:Key="LOCColorIndigo">Indigo</sys:String>
-  <!-- Teal -->
+  <!--  Teal  -->
   <sys:String x:Key="LOCColorTeal">Sarcelle</sys:String>
-  <!-- Cyan -->
+  <!--  Cyan  -->
   <sys:String x:Key="LOCColorCyan">Cyan</sys:String>
-  <!-- Orange -->
+  <!--  Orange  -->
   <sys:String x:Key="LOCColorOrange">Orange</sys:String>
-  <!-- Amber -->
+  <!--  Amber  -->
   <sys:String x:Key="LOCColorAmber">Ambre</sys:String>
-  <!-- Lime -->
+  <!--  Lime  -->
   <sys:String x:Key="LOCColorLime">Citron Vert</sys:String>
-  <!-- Emerald -->
+  <!--  Emerald  -->
   <sys:String x:Key="LOCColorEmerald">Émeraude</sys:String>
-  <!-- Violet -->
+  <!--  Violet  -->
   <sys:String x:Key="LOCColorViolet">Violet</sys:String>
-  <!-- Fuchsia -->
+  <!--  Fuchsia  -->
   <sys:String x:Key="LOCColorFuchsia">Fuchsia</sys:String>
-  <!-- Rose -->
+  <!--  Rose  -->
   <sys:String x:Key="LOCColorRose">Rose</sys:String>
-  <!-- Slate -->
+  <!--  Slate  -->
   <sys:String x:Key="LOCColorSlate">Ardoise</sys:String>
 </ResourceDictionary>

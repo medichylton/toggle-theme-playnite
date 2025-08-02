@@ -99,4 +99,14 @@
                         </Setter.Value>
                 </Setter>
         </Style>
+
+        <!--  Achievement Rarity Colors  -->
+        <SolidColorBrush x:Key="UltraRareColor" Color="#00F0FF" />
+        <SolidColorBrush x:Key="RareColor" Color="#efbf04" />
+        <SolidColorBrush x:Key="NoCommonColor" Color="#bcc6cc" />
+        <SolidColorBrush x:Key="CommonColor" Color="#CE8946" />
+        <Color x:Key="UltraRareGlow">#4da6ff</Color>
+        <Color x:Key="RareGlow">#ffdb4d</Color>
+        <Color x:Key="NoCommonGlow">#e6ebf0</Color>
+
 </ResourceDictionary>

@@ -11,11 +11,12 @@
         <Setter Property="CornerRadius" Value="16" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect Color="Black" 
-                                 Direction="315" 
-                                 ShadowDepth="5" 
-                                 Opacity="0.5" 
-                                 BlurRadius="10"/>
+                <DropShadowEffect
+                    BlurRadius="10"
+                    Direction="315"
+                    Opacity="0.5"
+                    ShadowDepth="5"
+                    Color="Black" />
             </Setter.Value>
         </Setter>
         <Setter Property="Padding" Value="40,16,8,16" />
@@ -25,12 +26,14 @@
             <EventTrigger RoutedEvent="Window.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
-                        <Int32Animation Storyboard.TargetProperty="(Grid.Column)"
-                            Duration="0:0:0"
-                            To="0"/>
-                        <Int32Animation Storyboard.TargetProperty="(Grid.ColumnSpan)"
-                            Duration="0:0:0"
-                            To="2"/>
+                        <Int32Animation
+                            Storyboard.TargetProperty="(Grid.Column)"
+                            To="0"
+                            Duration="0:0:0" />
+                        <Int32Animation
+                            Storyboard.TargetProperty="(Grid.ColumnSpan)"
+                            To="2"
+                            Duration="0:0:0" />
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>

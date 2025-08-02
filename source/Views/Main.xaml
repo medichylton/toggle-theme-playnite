@@ -7,6 +7,514 @@
     xmlns:pin="clr-namespace:Playnite.Input;assembly=Playnite"
     mc:Ignorable="d">
 
+    <Style x:Key="AchievementsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            Grid.Column="1"
+                            Width="776"
+                            Margin="0,16,-17,16"
+                            Padding="16,5,49,0"
+                            HorizontalAlignment="Right"
+                            Background="{DynamicResource OverlayMenuBackgroundBrush}"
+                            BorderBrush="{DynamicResource DefaultBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="16">
+                            <!--  Set initial state for animation  -->
+                            <Border.Opacity>0</Border.Opacity>
+                            <Border.RenderTransform>
+                                <TranslateTransform X="200" />
+                            </Border.RenderTransform>
+                            <Border.Effect>
+                                <DropShadowEffect
+                                    BlurRadius="10"
+                                    Direction="315"
+                                    Opacity="0.5"
+                                    ShadowDepth="5"
+                                    Color="Black" />
+                            </Border.Effect>
+                            <Border.Triggers>
+                                <!--  Fade in animation on load  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                                To="0"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseOut" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <!--  Fade out animation on unload  -->
+                                <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0"
+                                                Duration="0:0:0.2" />
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                                To="200"
+                                                Duration="0:0:0.2">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuadraticEase EasingMode="EaseIn" />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
+                            <StackPanel Margin="16,16,16,0" Orientation="Vertical">
+
+                                <Grid Margin="0,0,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Level section on the left  -->
+                                    <StackPanel
+                                        Grid.Column="0"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            Margin="0,12,8,0"
+                                            VerticalAlignment="Top"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="32"
+                                            Foreground="{StaticResource TextBrush}"
+                                            Opacity="0.7"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="LVL" />
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="64"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GSLevel,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+
+                                    <!--  Gamerscore section on the right  -->
+                                    <StackPanel
+                                        Grid.Column="2"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                        <Border
+                                            Width="48"
+                                            Height="48"
+                                            Margin="0,0,12,0"
+                                            Background="{StaticResource ControlBackgroundDarkBrush}"
+                                            BorderBrush="{StaticResource TextBrushDark}"
+                                            BorderThickness="1"
+                                            CornerRadius="24">
+                                            <TextBlock
+                                                Margin="7,-6,0,0"
+                                                FontSize="40"
+                                                FontWeight="Bold"
+                                                Foreground="{StaticResource TextBrushDark}"
+                                                Text="G" />
+                                        </Border>
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            Style="{StaticResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GSScore,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <ProgressBar
+                                    Height="24"
+                                    Margin="0,0,0,32"
+                                    HorizontalAlignment="Stretch"
+                                    Maximum="100"
+                                    Style="{StaticResource BarRound12}"
+                                    Value="{PluginSettings Plugin=SSHelper,
+                                                           Path=GSLevelProgress}" />
+
+                                <Grid Margin="0,0,0,32">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--  Ultra-Rare (Blue Star)  -->
+                                    <StackPanel
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <TextBlock Margin="0,0,8,0" FontSize="36">
+                                            <TextBlock.Style>
+                                                <Style BasedOn="{StaticResource FluentIconStyle}" TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="{StaticResource UltraRareColor}" />
+                                                    <Setter Property="Text" Value="&#xe735;" />
+                                                    <Setter Property="Effect">
+                                                        <Setter.Value>
+                                                            <DropShadowEffect
+                                                                BlurRadius="16"
+                                                                Opacity="0.95"
+                                                                ShadowDepth="0"
+                                                                Color="{StaticResource UltraRareGlow}" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="24"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GSPlat,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+
+                                    <!--  Rare (Gold Star)  -->
+                                    <StackPanel
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            Margin="0,0,8,0"
+                                            FontSize="36"
+                                            Opacity="0.75">
+                                            <TextBlock.Style>
+                                                <Style BasedOn="{StaticResource FluentIconStyle}" TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="{StaticResource RareColor}" />
+                                                    <Setter Property="Text" Value="&#xe735;" />
+                                                    <Setter Property="Effect">
+                                                        <Setter.Value>
+                                                            <DropShadowEffect
+                                                                BlurRadius="8"
+                                                                Opacity="0.8"
+                                                                ShadowDepth="0"
+                                                                Color="{StaticResource RareGlow}" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="24"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GS90,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+
+                                    <!--  No Common (Silver Star)  -->
+                                    <StackPanel
+                                        Grid.Column="2"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            Margin="0,0,8,0"
+                                            FontSize="36"
+                                            Opacity="0.75">
+                                            <TextBlock.Style>
+                                                <Style BasedOn="{StaticResource FluentIconStyle}" TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="{StaticResource NoCommonColor}" />
+                                                    <Setter Property="Text" Value="&#xe735;" />
+                                                    <Setter Property="Effect">
+                                                        <Setter.Value>
+                                                            <DropShadowEffect
+                                                                BlurRadius="8"
+                                                                Opacity="0.8"
+                                                                ShadowDepth="0"
+                                                                Color="{StaticResource NoCommonGlow}" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="24"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GS30,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+
+                                    <!--  Common (Bronze Star)  -->
+                                    <StackPanel
+                                        Grid.Column="3"
+                                        HorizontalAlignment="Left"
+                                        Orientation="Horizontal">
+                                        <TextBlock
+                                            Margin="0,0,8,0"
+                                            FontSize="36"
+                                            Opacity="0.75">
+                                            <TextBlock.Style>
+                                                <Style BasedOn="{StaticResource FluentIconStyle}" TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="{StaticResource CommonColor}" />
+                                                    <Setter Property="Text" Value="&#xe735;" />
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <TextBlock
+                                            VerticalAlignment="Center"
+                                            FontFamily="{DynamicResource FontDefaultBold}"
+                                            FontSize="24"
+                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                            Text="{PluginSettings Plugin=SSHelper,
+                                                                  Path=GS15,
+                                                                  FallbackValue='-'}" />
+                                    </StackPanel>
+                                </Grid>
+                                <ListView
+                                    x:Name="AchievementsList"
+                                    Height="811"
+                                    Margin="-24,0,-48,0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    pbeh:FocusBahaviors.FocusBinding="True"
+                                    pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    FocusVisualStyle="{x:Null}"
+                                    Focusable="True"
+                                    ItemsSource="{PluginSettings Plugin=SSHelper,
+                                                                 Path=AllGamesWithAchievements}"
+                                    VirtualizingPanel.IsVirtualizing="True"
+                                    VirtualizingPanel.VirtualizationMode="Recycling">
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                            <Setter Property="Focusable" Value="False" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="ListViewItem">
+                                                        <ButtonEx
+                                                            Margin="8,8,8,20"
+                                                            Command="{Binding OpenAchievementWindow}"
+                                                            Style="{StaticResource ButtonAchMenu}">
+                                                            <Grid
+                                                                Width="700"
+                                                                Height="130"
+                                                                Margin="0"
+                                                                VerticalAlignment="Top">
+                                                                <Border
+                                                                    Margin="-2"
+                                                                    Background="{StaticResource ControlBackgroundDarkBrush}"
+                                                                    BorderBrush="{StaticResource DefaultBorderBrush}"
+                                                                    BorderThickness="2"
+                                                                    CornerRadius="16">
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="Auto" />
+                                                                            <ColumnDefinition Width="*" />
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="*" />
+                                                                            <RowDefinition Height="Auto" />
+                                                                            <RowDefinition Height="Auto" />
+                                                                        </Grid.RowDefinitions>
+
+                                                                        <!--  Cover Image - fixed height, variable width based on aspect ratio  -->
+                                                                        <Image
+                                                                            Grid.RowSpan="3"
+                                                                            Grid.Column="0"
+                                                                            Height="130"
+                                                                            MinWidth="98"
+                                                                            Margin="0,0,8,0"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"
+                                                                            Source="{Binding CoverImagePath}"
+                                                                            Stretch="UniformToFill">
+                                                                            <Image.Clip>
+                                                                                <RectangleGeometry
+                                                                                    RadiusX="15"
+                                                                                    RadiusY="15"
+                                                                                    Rect="0,0,200,130" />
+                                                                            </Image.Clip>
+                                                                        </Image>
+
+                                                                        <!--  Title - spans remaining width  -->
+                                                                        <TextBlock
+                                                                            Grid.Row="0"
+                                                                            Grid.Column="1"
+                                                                            Margin="10,0,10,0"
+                                                                            VerticalAlignment="Top"
+                                                                            Style="{DynamicResource TextBlockBaseStyle}"
+                                                                            Text="{Binding Name}"
+                                                                            TextTrimming="CharacterEllipsis" />
+
+                                                                        <!--  Progress and Achievement Icons - same line  -->
+                                                                        <Grid
+                                                                            Grid.Row="1"
+                                                                            Grid.Column="1"
+                                                                            Margin="10,0,10,10">
+                                                                            <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="*" />
+                                                                                <ColumnDefinition Width="Auto" />
+                                                                            </Grid.ColumnDefinitions>
+
+                                                                            <!--  Progress - left aligned  -->
+                                                                            <ProgressBar
+                                                                                Grid.Column="0"
+                                                                                Width="330"
+                                                                                Height="24"
+                                                                                Margin="0,4,0,0"
+                                                                                HorizontalAlignment="Left"
+                                                                                Maximum="100"
+                                                                                Minimum="-6.1"
+                                                                                Style="{StaticResource BarRound12Light}"
+                                                                                Value="{Binding Progress, Mode=OneWay}" />
+
+                                                                            <!--  Achievement Icons - right aligned  -->
+                                                                            <StackPanel
+                                                                                Grid.Column="1"
+                                                                                HorizontalAlignment="Right"
+                                                                                VerticalAlignment="Center"
+                                                                                Orientation="Horizontal">
+                                                                                <Grid x:Name="Plat" Visibility="Collapsed">
+                                                                                    <TextBlock
+                                                                                        Margin="0,4,0,0"
+                                                                                        FontFamily="Segoe Fluent Icons"
+                                                                                        FontSize="30"
+                                                                                        Foreground="{StaticResource UltraRareColor}"
+                                                                                        Text="&#xe735;">
+                                                                                        <TextBlock.Effect>
+                                                                                            <DropShadowEffect
+                                                                                                BlurRadius="16"
+                                                                                                Opacity="0.95"
+                                                                                                ShadowDepth="0"
+                                                                                                Color="{StaticResource UltraRareGlow}" />
+                                                                                        </TextBlock.Effect>
+                                                                                    </TextBlock>
+                                                                                    <TextBlock
+                                                                                        Margin="0,2,0,0"
+                                                                                        HorizontalAlignment="Center"
+                                                                                        VerticalAlignment="Center"
+                                                                                        FontSize="18"
+                                                                                        Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                        Text="1" />
+                                                                                </Grid>
+                                                                                <TextBlock
+                                                                                    Margin="16,4,0,0"
+                                                                                    FontFamily="Segoe Fluent Icons"
+                                                                                    FontSize="30"
+                                                                                    Foreground="{StaticResource RareColor}"
+                                                                                    Text="&#xe735;">
+                                                                                    <TextBlock.Effect>
+                                                                                        <DropShadowEffect
+                                                                                            BlurRadius="8"
+                                                                                            Opacity="0.8"
+                                                                                            ShadowDepth="0"
+                                                                                            Color="{StaticResource RareGlow}" />
+                                                                                    </TextBlock.Effect>
+                                                                                </TextBlock>
+                                                                                <TextBlock
+                                                                                    Margin="4,0,0,0"
+                                                                                    VerticalAlignment="Center"
+                                                                                    FontSize="24"
+                                                                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                    Text="{Binding GS90Count}" />
+                                                                                <TextBlock
+                                                                                    Margin="16,4,0,0"
+                                                                                    FontFamily="Segoe Fluent Icons"
+                                                                                    FontSize="30"
+                                                                                    Foreground="{StaticResource NoCommonColor}"
+                                                                                    Text="&#xe735;">
+                                                                                    <TextBlock.Effect>
+                                                                                        <DropShadowEffect
+                                                                                            BlurRadius="8"
+                                                                                            Opacity="0.8"
+                                                                                            ShadowDepth="0"
+                                                                                            Color="{StaticResource NoCommonGlow}" />
+                                                                                    </TextBlock.Effect>
+                                                                                </TextBlock>
+                                                                                <TextBlock
+                                                                                    Margin="4,0,0,0"
+                                                                                    VerticalAlignment="Center"
+                                                                                    FontSize="24"
+                                                                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                    Text="{Binding GS30Count}" />
+                                                                                <TextBlock
+                                                                                    Margin="16,4,0,0"
+                                                                                    FontFamily="Segoe Fluent Icons"
+                                                                                    FontSize="30"
+                                                                                    Foreground="{StaticResource CommonColor}"
+                                                                                    Text="&#xe735;" />
+                                                                                <TextBlock
+                                                                                    Margin="4,0,0,0"
+                                                                                    VerticalAlignment="Center"
+                                                                                    FontSize="24"
+                                                                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                    Text="{Binding GS15Count}" />
+                                                                            </StackPanel>
+                                                                        </Grid>
+                                                                        <StackPanel
+                                                                            Grid.Row="2"
+                                                                            Grid.Column="1"
+                                                                            Margin="10,0,10,10"
+                                                                            HorizontalAlignment="Left"
+                                                                            VerticalAlignment="Center"
+                                                                            Orientation="Horizontal">
+                                                                            <TextBlock
+                                                                                FontSize="16"
+                                                                                Opacity="0.67"
+                                                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                Text="Progress:" />
+                                                                            <TextBlock
+                                                                                Margin="5,0,0,0"
+                                                                                FontSize="16"
+                                                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                                                Text="{Binding Progress, StringFormat={}{0}%}" />
+                                                                        </StackPanel>
+                                                                    </Grid>
+                                                                </Border>
+                                                            </Grid>
+                                                        </ButtonEx>
+                                                        <ControlTemplate.Triggers>
+                                                            <DataTrigger Binding="{Binding IsPlatinum}" Value="True">
+                                                                <Setter TargetName="Plat" Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                </ListView>
+
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <Style x:Key="NowPlayingWindowStyle" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
@@ -768,9 +1276,9 @@
                                                     <Style.Triggers>
                                                         <MultiDataTrigger>
                                                             <MultiDataTrigger.Conditions>
-                                                                <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[HideChangeView]}" Value="True"/>
+                                                                <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[HideChangeView]}" Value="True" />
                                                             </MultiDataTrigger.Conditions>
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Visibility" Value="Collapsed" />
                                                         </MultiDataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -864,6 +1372,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
@@ -1000,8 +1509,77 @@
                                     </Border>
                                 </StackPanel>
                                 <ButtonEx
-                                    x:Name="ShowDataButton"
+                                    x:Name="ShowAchButton"
                                     Grid.Column="5"
+                                    Margin="0,0,24,0"
+                                    VerticalAlignment="Center"
+                                    Background="#20000000"
+                                    Command="{PluginSettings Plugin=SSHelper,
+                                                             Path=OpenAchievementWindow}">
+                                    <ButtonEx.Style>
+                                        <Style BasedOn="{StaticResource ButtonTopMenuData}" TargetType="ButtonEx">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{PluginStatus Plugin=SuccessStoryFullscreenHelper, Status=Installed}" Value="False">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ButtonEx.Style>
+                                    <ButtonEx.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="16"
+                                            Direction="315"
+                                            Opacity="0.9"
+                                            ShadowDepth="0"
+                                            Color="Black" />
+                                    </ButtonEx.Effect>
+                                    <Grid
+                                        Height="76"
+                                        Margin="16,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Top">
+                                        <StackPanel
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Orientation="Horizontal">
+                                            <TextBlock
+                                                Margin="0,6,4,0"
+                                                VerticalAlignment="Top"
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                FontSize="24"
+                                                Foreground="{StaticResource TextBrush}"
+                                                Opacity="0.7"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="LVL" />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontFamily="{DynamicResource FontDefaultBold}"
+                                                FontSize="40"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=SSHelper,
+                                                                      Path=GSLevel,
+                                                                      FallbackValue='-'}" />
+                                            <TextBlock
+                                                Margin="16,4,0,0"
+                                                VerticalAlignment="Center"
+                                                FontFamily="Segoe Fluent Icons"
+                                                FontSize="30"
+                                                Opacity="0.67"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="&#xe735;" />
+                                            <TextBlock
+                                                Margin="4,0,0,0"
+                                                VerticalAlignment="Center"
+                                                FontSize="24"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{PluginSettings Plugin=SSHelper,
+                                                                      Path=GSTotal}" />
+                                        </StackPanel>
+                                    </Grid>
+                                </ButtonEx>
+                                <ButtonEx
+                                    x:Name="ShowDataButton"
+                                    Grid.Column="6"
                                     VerticalAlignment="Center"
                                     Background="#20000000"
                                     Command="{PluginSettings Plugin=MoData,

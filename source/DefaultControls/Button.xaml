@@ -141,6 +141,35 @@
                 </Setter>
         </Style>
 
+        <Style x:Key="ButtonAchMenu" TargetType="Button">
+                <Setter Property="Background" Value="{StaticResource ControlBackgroundDarkBrush}" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Template">
+                        <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                        <Border
+                                                x:Name="MainBorder"
+                                                Margin="-4"
+                                                Padding="0"
+                                                Background="Transparent"
+                                                BorderBrush="Transparent"
+                                                BorderThickness="4"
+                                                CornerRadius="16">
+                                                <ContentPresenter />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                                <Trigger Property="IsFocused" Value="True">
+                                                        <Setter TargetName="MainBorder" Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+                                                        <Setter TargetName="MainBorder" Property="Background" Value="#1AFFFFFF" />
+                                                </Trigger>
+                                        </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                        </Setter.Value>
+                </Setter>
+        </Style>
+
         <Style
                 x:Key="ButtonBigRound"
                 BasedOn="{StaticResource {x:Type Button}}"
