@@ -29,10 +29,11 @@
                                 <TextBlock
                                     Margin="0,0,0,64"
                                     FontFamily="{DynamicResource FontDefaultBold}"
-                                    FontSize="64"
+                                    FontSize="48"
                                     Foreground="White"
                                     Style="{DynamicResource TextBlockBaseStyle}"
-                                    Text="{DynamicResource LOCSuccessStoryManualAchievements}" />
+                                    Text="{Binding SelectedGame.DisplayName}"
+                                    TextWrapping="Wrap"/>
                                 <StackPanel Margin="0,0,0,32" Orientation="Horizontal">
                                     <TextBlock
                                         Margin="0,0,12,0"
