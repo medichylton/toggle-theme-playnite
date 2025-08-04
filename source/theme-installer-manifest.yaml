@@ -81,3 +81,9 @@ Packages:
     Changelog:
       - Add Support for SuccessStory Achievements
       - ⚠️IMPORTANT⚠️ You must install SuccessStory Fullscreen Helper for this to work
+  - Version: 1.4.2
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-08-04
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.4.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_4_2.pthm
+    Changelog:
+      - Fix ThemeOptions not loading correctly
