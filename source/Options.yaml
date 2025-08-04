@@ -153,3 +153,4 @@ Variables:
     Title: Hide Change View Button
     LocKey: LOCHideChangeView
     Type: Boolean
+    Default: true
