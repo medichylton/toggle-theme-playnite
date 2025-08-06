@@ -148,6 +148,28 @@
             Type: SolidColorBrush
             Value: '#64748b'
         Preview: color-swatches/Slate.png
+  ButtonPromptOption:
+    Name: ButtonPrompts
+    LocKey: LOCSettingsFullscreenButtonPrompts
+    Presets:
+      Default:
+        Name: Xbox
+      PlayStation:
+        Name: PlayStation
+        Files:
+          - Images\ButtonPrompts\Others\PlayStation.xaml
+      Steamdeck:
+        Name: Steamdeck
+        Files:
+          - Images\ButtonPrompts\Others\Steamdeck.xaml
+      Switch:
+        Name: Switch
+        Files:
+          - Images\ButtonPrompts\Others\Switch.xaml
+      Generic:
+        Name: Platform-Agnostic
+        Files:
+          - Images\ButtonPrompts\Others\Generic.xaml
 Variables:
   HideChangeView:
     Title: Hide Change View Button

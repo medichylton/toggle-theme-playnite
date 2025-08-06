@@ -1171,7 +1171,7 @@
                                     Height="72"
                                     Margin="16,0"
                                     HorizontalAlignment="Right"
-                                    ContentTemplate="{StaticResource ButtonPromptLB}"
+                                    ContentTemplate="{DynamicResource ButtonPromptLB}"
                                     Focusable="False"
                                     Opacity="0.67" />
                                 <Border
@@ -1301,7 +1301,7 @@
                                     Height="72"
                                     Margin="16,0"
                                     HorizontalAlignment="Left"
-                                    ContentTemplate="{StaticResource ButtonPromptRB}"
+                                    ContentTemplate="{DynamicResource ButtonPromptRB}"
                                     Focusable="False"
                                     Opacity="0.67" />
                             </Grid>
