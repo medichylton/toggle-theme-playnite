@@ -87,3 +87,9 @@ Packages:
     PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.4.2/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_4_2.pthm
     Changelog:
       - Fix ThemeOptions not loading correctly
+  - Version: 1.5.0
+    RequiredApiVersion: 2.8.0
+    ReleaseDate: 2024-08-07
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.5.0/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_5_0.pthm
+    Changelog:
+      - Add additional controller icons within Theme Options
