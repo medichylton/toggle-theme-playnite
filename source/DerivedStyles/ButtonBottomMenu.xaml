@@ -24,9 +24,10 @@
                                 ContentTemplate="{TemplateBinding InputHint}"
                                 Focusable="False" />
                             <TextBlock
+                                Margin="0,-4,0,0"
                                 VerticalAlignment="Center"
                                 FontFamily="{DynamicResource FontDefault}"
-                                FontSize="16"
+                                FontSize="24"
                                 FontWeight="SemiBold"
                                 Foreground="{DynamicResource TextBrush}"
                                 Style="{DynamicResource TextBlockBaseStyle}"
