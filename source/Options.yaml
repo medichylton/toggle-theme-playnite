@@ -176,3 +176,13 @@ Variables:
     LocKey: LOCHideChangeView
     Type: Boolean
     Default: true
+  CenterBottomMenu:
+    Title: Center Bottom Button Menu
+    LocKey: LOCCenterBottomMenu
+    Type: Boolean
+    Default: false
+  HideBottomMenu:
+    Title: Hide Bottom Button Menu
+    LocKey: LOCHideBottomMenu
+    Type: Boolean
+    Default: false

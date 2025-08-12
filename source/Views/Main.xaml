@@ -1306,6 +1306,22 @@
                                     Opacity="0.67" />
                             </Grid>
                             <Grid Grid.Row="4" Height="70">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                        <Setter Property="HorizontalAlignment" Value="Left" />
+                                        <Style.Triggers>
+                                            <!-- Hide entire bottom button menu -->
+                                            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[HideBottomMenu]}" Value="True">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <!-- Center alignment when requested -->
+                                            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[CenterBottomMenu]}" Value="True">
+                                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
                                 <Grid.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                         <GradientStop Offset="0" Color="#000F0F0F" />
@@ -1319,6 +1335,7 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="24" />
                                 </Grid.ColumnDefinitions>
+                                <!-- Menu container border; reflow to center by spanning when centered -->
                                 <Border Grid.Column="1">
                                     <Border.Effect>
                                         <DropShadowEffect

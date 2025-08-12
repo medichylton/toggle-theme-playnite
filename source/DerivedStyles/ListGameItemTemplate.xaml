@@ -22,6 +22,20 @@
                             RenderOptions.BitmapScalingMode="Fant"
                             Stretch="{Settings CoverArtStretch}"
                             StretchDirection="Both" />
+                        <!-- ExtraMetadataLoader: Game Logo overlay on main selection tiles -->
+                        <ContentControl
+                            x:Name="ExtraMetadataLoader_LogoLoaderControl"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <ContentControl.Style>
+                                <Style TargetType="ContentControl">
+                                    <Setter Property="MaxWidth" Value="360" />
+                                    <Setter Property="MaxHeight" Value="140" />
+                                    <Setter Property="Opacity" Value="1" />
+                                    <Setter Property="Margin" Value="16" />
+                                </Style>
+                            </ContentControl.Style>
+                        </ContentControl>
                         <Border
                             x:Name="BorderDarken"
                             Background="#AA000000"

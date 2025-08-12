@@ -28,4 +28,6 @@
   <sys:String x:Key="LOCColorFuchsia">Fuchsia</sys:String>
   <sys:String x:Key="LOCColorRose">Rose</sys:String>
   <sys:String x:Key="LOCColorSlate">Slate</sys:String>
+  <sys:String x:Key="LOCCenterBottomMenu">Center Bottom Button Menu</sys:String>
+  <sys:String x:Key="LOCHideBottomMenu">Hide Bottom Button Menu</sys:String>
 </ResourceDictionary>
