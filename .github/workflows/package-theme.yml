@@ -1,0 +1,57 @@
+# This workflow packages the Playnite theme using Toolbox.exe on Windows
+# and uploads the .pthm as an artifact. If triggered by a tag push (v*),
+# it also creates/updates a GitHub release with the packaged asset.
+
+name: Package Playnite Theme
+
+on:
+  workflow_dispatch: {}
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Playnite via Chocolatey
+        shell: powershell
+        run: |
+          choco install playnite -y --no-progress
+
+      - name: Locate Toolbox.exe
+        id: find_toolbox
+        shell: powershell
+        run: |
+          $toolbox = Get-ChildItem -Recurse 'C:\\Program Files*' -Filter Toolbox.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $toolbox) {
+            Write-Error "Toolbox.exe not found"
+            exit 1
+          }
+          echo "toolbox=$($toolbox.FullName)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Package theme with Toolbox
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Path "$env:GITHUB_WORKSPACE\\dist" -Force | Out-Null
+          & '${{ steps.find_toolbox.outputs.toolbox }}' pack "$env:GITHUB_WORKSPACE\\source" "$env:GITHUB_WORKSPACE\\dist"
+          Get-ChildItem "$env:GITHUB_WORKSPACE\\dist" | Write-Host
+
+      - name: Upload .pthm artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-package
+          path: dist/*.pthm
+
+      - name: Upload to GitHub Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.pthm
+          name: Toggle Remix ${{ github.ref_name }}
+          fail_on_unmatched_files: true
+
+
