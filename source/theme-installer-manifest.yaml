@@ -1,4 +1,4 @@
-AddonId: 'Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2'
+AddonId: 'ToggleFork_c618e1cb-d3b5-489f-8cda-f1e557765787'
 Packages:
   - Version: 1.0.3
     RequiredApiVersion: 2.8.0
@@ -110,6 +110,6 @@ Packages:
   - Version: 1.6.1
     RequiredApiVersion: 2.8.0
     ReleaseDate: 2025-08-12
-    PackageUrl: https://github.com/medichylton/toggle-theme-playnite/releases/download/v1.6.1/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_6_1.pthm
+    PackageUrl: https://github.com/medichylton/toggle-theme-playnite/releases/download/v1.6.1/ToggleFork_c618e1cb-d3b5-489f-8cda-f1e557765787_1_6_1.pthm
     Changelog:
       - Fix packaging to exclude dev files and ensure correct install structure
