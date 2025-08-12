@@ -113,9 +113,9 @@ Packages:
     PackageUrl: https://github.com/medichylton/toggle-theme-playnite/releases/download/v1.6.1/ToggleFork_c618e1cb-d3b5-489f-8cda-f1e557765787_1_6_1.pthm
     Changelog:
       - Fix packaging to exclude dev files and ensure correct install structure
-  - Version: 1.6.2
-    RequiredApiVersion: 2.8.0
+  - Version: 1.6.3
+    RequiredApiVersion: 2.7.0
     ReleaseDate: 2025-08-12
-    PackageUrl: https://github.com/medichylton/toggle-theme-playnite/releases/download/v1.6.2/ToggleFork_c618e1cb-d3b5-489f-8cda-f1e557765787_1_6_2.pthm
+    PackageUrl: https://github.com/medichylton/toggle-theme-playnite/releases/download/v1.6.3/ToggleFork_c618e1cb-d3b5-489f-8cda-f1e557765787_1_6_3.pthm
     Changelog:
-      - Repackaged using Playnite Toolbox pack spec (exclude dev files; include only modified files per docs)
+      - Repackaged for Playnite 10.37 compatibility (ThemeApiVersion 2.7.0); clean theme-only package
